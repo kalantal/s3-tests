@@ -26,7 +26,7 @@ virtualenv --no-site-packages --distribute virtualenv
 #./virtualenv/bin/pip install setuptools --find-links=./piprepo/ --no-index --use-wheel --upgrade
 #./virtualenv/bin/pip download --no-index --find-links="./piprepo" -r requirements.txt
 #./virtualenv/bin/pip install --download="./piprepo2" -r requirements.txt
-./virtualenv/bin/pip install --no-index --find-links="./piprepo2" -r requirements.txt
+./virtualenv/bin/pip install --no-index --find-links="./piprepo" -r requirements.txt
 #./virtualenv/bin/pip install ./piprepo/* --find-links="./piprepo2/" --no-index --use-wheel
 # forbid setuptools from using the network because it'll try to use
 # easy_install, and we really wanted pip; next line will fail if pip
