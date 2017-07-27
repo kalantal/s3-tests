@@ -23,7 +23,7 @@ virtualenv --no-site-packages --distribute virtualenv
 # slightly old version of setuptools; newer fails w/ requests 0.14.0
 #./virtualenv/bin/pip install setuptools==32.3.1
 #./virtualenv/bin/pip install -r requirements.txt
-./virtualenv/bin/pip install setuptools==32.3.1 --find-links=./piprepo/ --no-index --use-wheel
+./virtualenv/bin/pip install setuptools --find-links=./piprepo/ --no-index --use-wheel
 ./virtualenv/bin/pip install -r requirements.txt --find-links=./piprepo/ --no-index --use-wheel
 
 # forbid setuptools from using the network because it'll try to use
