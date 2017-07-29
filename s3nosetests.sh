@@ -2,7 +2,7 @@
 
 if [[ $# -eq 0 ]] ; then
   echo -en "No argeuments supplied.\n"
-  echo -en " tests: run tests\n convert:convert results\n results: move results\n clean:secondary bucket cleanup\n empty: null\n"
+  echo -en " tests: run tests\n convert:convert results\n results: move results\n clean:secondary bucket cleanup\n"
   exit 0
 fi
  
@@ -586,10 +586,6 @@ fi
  
 if [[ $4 -eq clean ]] ; then
                 $4
-fi
- 
-if [[ $5 -eq empty ]] ; then
-                echo
 fi
  
 exit 0
