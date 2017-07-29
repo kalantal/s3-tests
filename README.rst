@@ -10,12 +10,15 @@ This test suite takes about an hour to run.
 
 Download the repo::
 
-	git clone https://github.com/kalantal/s3-tests.git
+	git clone https://github.com/kalantal/s3-tests
+	git clone https://github.com/s3tools/s3cmd
 
 Setup::
 
-	cd s3-tests-master
-	chmod u+x bootstrap
+	mv s3-tests-master /usr/bin/s3-tests/
+	mv s3cmd /usr/bin/s3cmd/
+	cd /usr/bin/s3-tests/
+	sudo chmod u+x bootstrap
 	
 Prerequisites auto install with ./bootstrap::
 
