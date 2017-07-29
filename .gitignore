@@ -1,14 +1,12 @@
 *~
 .#*
-## the next line needs to start with a backslash to avoid looking like
-## a comment
 \#*#
 .*.swp
 .conf
 *.pyc
 *.pyo
-*.conf
+/*.conf
 /*.egg-info
 /virtualenv
-
+/results
 config.yaml
