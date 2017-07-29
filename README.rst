@@ -140,3 +140,44 @@ Notes::
 	yum install --downloadonly --downloaddir=./ [packages]
 	pip install [package] --download="./"
 	xmlutils-1.3.tar.gz is unused
+	
+/devtools
+	RPM dependencies
+/piprepo
+	Python dependencies
+/s3tests
+	Core functions
+.gitignore
+	Used by Git to stop files listed from pushing
+README.rst
+	General information
+bootstrap
+	Installs the dependencies, suite, and configuration
+config.yaml.SAMPLE
+	Unused configuration
+deplist
+	RPM dependencies list
+localrepo.repo
+	Used to install dependencies
+parse-nose.pl
+	Converts results
+request_decision_graph.yml
+	Unused configuration
+requirements.txt
+	Python dependencies list
+s3.conf
+	Suite configuration file
+s3deletebuckets.sh
+	Deletes all prefixed buckets
+s3nosetests-all.sh
+	Runs full suite
+s3nosetests-old.sh
+	Depredated full suite
+s3nosetests-specific.sh
+	Runs suite against specified tests
+setup.py
+	Used for initial configuration
+siege.conf
+	Unused configuration
+testlist
+	List of all tests
