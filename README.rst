@@ -136,12 +136,9 @@ Notes::
 	Python 2.7.5
 
 	sudo yum groupinstall "Development tools" -y
-	sudo yum install -y epel-release git wget curl
 	yum install --downloadonly --downloaddir=./ [packages]
 	pip install [package] --download="./"
-	xmlutils-1.3.tar.gz is unused
 
-\\
 devtools
 	RPM dependencies
 piprepo
