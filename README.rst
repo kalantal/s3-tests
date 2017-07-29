@@ -2,7 +2,7 @@
  S3 compatibility tests
 ========================
 
-These tests verify ingegrity of an S3-like enviornment. AWS Specific tests have been removed.
+These tests verify ingegrity of an S3-like enviornment.
 
 To get started, make sure the testing system time and date are accurate. Calls to many object storage enviornements will not allow access if it's not correct.
 
