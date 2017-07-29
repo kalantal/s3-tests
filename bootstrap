@@ -1,7 +1,6 @@
 #!/bin/sh
 set -e
 
-
 if [ ! -f /etc/yum.repos.d/localrepo.repo ]; then
 sudo mkdir -p /usr/localrepo/
 sudo cp -vn ./devtools/* /usr/localrepo/
@@ -10,13 +9,10 @@ sudo createrepo -v /usr/localrepo/
 sudo yum-config-manager --enable localrepo
 sudo yum clean all
 sudo yum update
-<<<<<<< HEAD
 fi
-=======
->>>>>>> 1f3f522e5d7bb1907d0e034d21d2e6a38e6557e0
 
 if [ -f /etc/redhat-release ]; then
-    for package in s3cmd libevent libgcrypt-devel libgpg-error-devel libxml2 libxml2-devel libxml2-python libxslt-devel perl-Data-Dumper perl-srpm-macros perl-Test-Harness perl-Thread-Queue perl-XML-LibXML perl-XML-Parser perl-XML-SAX perl-XML-SAX-Base perl-XML-Simple python-devel python-docs python-javapackages python-magic python-setuptools python-virtualenv xml-commons-apis xml-commons-resolver xz-devel zlib-devel ; do
+    for package in $(cat deplist) ; do
         if [ "$(rpm -qa $package 2>/dev/null)" = "" ]; then
             missing="${missing:+$missing }$package"
         fi
