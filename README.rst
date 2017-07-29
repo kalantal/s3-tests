@@ -72,13 +72,9 @@ service and two different credentials. The empty configuraion file is s3.conf::
 	access_key =
 	secret_key =
 	
-To install dependancies, run the suite, and call a human-readable file::
-
-	./bootstrap && ./s3nosetests.sh && cat results/nosetests.csv
-	
 Just running the tests and saving the output in a human-readable format::
 
-	./s3nosetests.sh
+	./s3nosetests-specific.sh tests convery results clean
 	
 Test notes:
 	The default is all 338 tests found in ./extras/testlist.txt
