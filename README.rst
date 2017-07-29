@@ -179,5 +179,5 @@ Notes::
 	Used for initial configuration
 /siege.conf
 	Unused configuration
-//testlist
+/testlist
 	List of all tests
