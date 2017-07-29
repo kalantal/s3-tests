@@ -559,9 +559,9 @@ echo "Converting"
 }
  
 results() {
-mkdir -p /RESULTS/
-cp nosetests.xml /RESULTS/"$(date -d "today" +"s3-test-results-%Y-%m-%d-%H-%M").xml"
-cp nosetests.csv /RESULTS/"$(date -d "today" +"s3-test-results-%Y-%m-%d-%H-%M").csv"
+mkdir -p ./RESULTS/
+cp nosetests.xml ./RESULTS/"$(date -d "today" +"s3-test-results-%Y-%m-%d-%H-%M").xml"
+cp nosetests.csv ./RESULTS/"$(date -d "today" +"s3-test-results-%Y-%m-%d-%H-%M").csv"
 rm nosetests.csv -rf
 rm nosetests.xml -rf
 echo "Cleaning Results"
