@@ -17,7 +17,7 @@ if [ -e ~/.s3cfg ]
 fi
  
 #assumes s3cmd moved to /opt/
-cd /opt/s3cmd/
+cd /usr/bin/s3cmd/
  
 #Variables
 #export s3cmd=/bin/s3cmd
