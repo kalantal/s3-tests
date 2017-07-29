@@ -1,6 +1,8 @@
 #!/bin/sh
 set -e
 
+sudo chmod u+x *.sh
+
 if [ ! -f /etc/yum.repos.d/localrepo.repo ]; then
 sudo mkdir -p /usr/localrepo/
 sudo cp -vn ./devtools/* /usr/localrepo/

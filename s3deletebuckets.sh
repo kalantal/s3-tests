@@ -31,7 +31,7 @@ export admin=justin_restivo
  
  
 function gatherlist {
-./s3cmd ls > $vaultlist
+s3cmd ls > $vaultlist
 #delete the unnessecay prefix to give us an easy to read vault list
 #removes the first 18 characters from every line
 #remove any lines that do not have our test suite prefix: 's3-'
@@ -49,12 +49,12 @@ gatherlist && echo -en '\nLsit of vaults:\n' && cat $vaultlist
 #delete all vaults that do not have 1) items inside. 2) versions inside. 3) ACLs
 echo -en '\nDeleting vaults\n'
 function deletevaults {
-        cat $vaultlist | while read line ; do ./s3cmd rb $line ; done
+        cat $vaultlist | while read line ; do s3cmd rb $line ; done
 }
 deletevaults
  
 function itemlist {
-./s3cmd la > $itemlist
+s3cmd la > $itemlist
 #clean up itemlist
 #delete the unnessecay prefix to give us an easy to read vault list
 #removes the first 18 characters from every line
@@ -70,7 +70,7 @@ function deleteitems {
 #second pass
 #delete vaults with items inside
 #clean up vaults with items inside
-cat $itemlist | while read line ; do ./s3cmd del --recursive --force $line ; done
+cat $itemlist | while read line ; do s3cmd del --recursive --force $line ; done
 }
 deleteitems
 deletevaults
@@ -80,17 +80,17 @@ function vaultfix {
 #third pass
 #move broken keys to new vault for deletion
 #attempt a vaultfix
-cat $itemlist | while read line ; do ./s3cmd fixbucket --recursive --force $line ; done
+cat $itemlist | while read line ; do s3cmd fixbucket --recursive --force $line ; done
 }
 vaultfix
  
 echo -en '\nMoving empty objects\n'
 function emptyfiles {
 #make a temp vault to move empty files
-./s3cmd mb s3://s3delete
+s3cmd mb s3://s3delete
 cat $itemlist | while read line ; do ./s3cmd mv $line s3://s3delete --recursive --force ; done
 #remove the temp vault
-./s3cmd rb s3://s3delete --recursive --force
+s3cmd rb s3://s3delete --recursive --force
 }
 emptyfiles
  
@@ -99,8 +99,8 @@ function acls {
 #fourth pass
 #add access to delete vaults with ACLs
 #should be a superadmin account, not justin_Restivo
-cat $vaultlist | while read line ; do ./s3cmd setacl --recursive --force --acl-grant=full_control:$admin $line ; done
-cat $itemlist | while read line ; do ./s3cmd setacl --recursive --force --acl-grant=full_control:$admin $line ; done
+cat $vaultlist | while read line ; do s3cmd setacl --recursive --force --acl-grant=full_control:$admin $line ; done
+cat $itemlist | while read line ; do s3cmd setacl --recursive --force --acl-grant=full_control:$admin $line ; done
 }
 acls
  

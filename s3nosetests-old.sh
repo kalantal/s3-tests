@@ -22,6 +22,8 @@ cp nosetests.csv results/$(date -d "today" +"s3-test-results-%Y-%m-%d-%H-%M").cs
 rm nosetests.csv -rf
 rm nosetests.xml -rf
 
+./s3deletebuckets.sh
+
 #FOR CITI ONLY
 #mkdir -p /auto/RESULTS/s3tests/
 #cp nosetests.xml /auto/RESULTS/s3tests/$(date -d "today" +"s3-test-results-%Y-%m-%d-%H-%M").xml
