@@ -2,10 +2,14 @@
 set -e
 
 sudo mkdir -p /usr/localrepo/
-sudo cp ./devtools/* /usr/localrepo/
+sudo cp -vn ./devtools/* /usr/localrepo/
 sudo cp -vn ./localrepo.repo /etc/yum.repos.d/localrepo.repo
 sudo createrepo -v /usr/localrepo/
+sudo yum --enablerepo="localrepo"
+sudo yum-config-manager --enable localrepo
 sudo yum clean all
+sudo yum update
+
 
 if [ -f /etc/redhat-release ]; then
     for package in libevent libgcrypt-devel libgpg-error-devel libxml2 libxml2-devel libxml2-python libxslt-devel perl-Data-Dumper perl-srpm-macros perl-Test-Harness perl-Thread-Queue perl-XML-LibXML perl-XML-Parser perl-XML-SAX perl-XML-SAX-Base perl-XML-Simple python-devel python-docs python-javapackages python-magic python-setuptools python-virtualenv xml-commons-apis xml-commons-resolver xz-devel zlib-devel ; do
