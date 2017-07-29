@@ -1,35 +1,30 @@
 #!/bin/sh
 set -e
 
+sudo mkdir -p /usr/localrepo/
+sudo cp ./devtools/* /usr/localrepo/
+sudo cp -vn ./localrepo.repo /etc/yum.repos.d/localrepo.repo
+sudo createrepo -v /usr/localrepo/
+sudo yum clean all
+
 if [ -f /etc/redhat-release ]; then
-    for package in python-virtualenv python-devel libevent libxml2-devel libxslt-devel zlib-devel; do
+    for package in libevent libgcrypt-devel libgpg-error-devel libxml2 libxml2-devel libxml2-python libxslt-devel perl-Data-Dumper perl-srpm-macros perl-Test-Harness perl-Thread-Queue perl-XML-LibXML perl-XML-Parser perl-XML-SAX perl-XML-SAX-Base perl-XML-Simple python-devel python-docs python-javapackages python-magic python-setuptools python-virtualenv xml-commons-apis xml-commons-resolver xz-devel zlib-devel ; do
         if [ "$(rpm -qa $package 2>/dev/null)" = "" ]; then
             missing="${missing:+$missing }$package"
         fi
     done
     if [ -n "$missing" ]; then
-        echo "$0: missing required RPM packages. Installing via sudo." 1>&2
+        echo "$missing"
+	echo "$0: missing required RPM packages. Installing via sudo." 1>&2
 		cd ./devtools
-        sudo yum -y localinstall $missing
-		cd .. #./s3-tests-7.3
+        sudo yum install $missing
+		cd ..
     fi
 fi
 
 virtualenv --no-site-packages --distribute virtualenv
 
-# avoid pip bugs
-#./virtualenv/bin/pip install --upgrade pip
-
-# slightly old version of setuptools; newer fails w/ requests 0.14.0
-#./virtualenv/bin/pip install setuptools==32.3.1
-#./virtualenv/bin/pip install -r requirements.txt
-#./virtualenv/bin/pip install setuptools --find-links=./piprepo/ --no-index --use-wheel --upgrade
-#./virtualenv/bin/pip download --no-index --find-links="./piprepo" -r requirements.txt
-#./virtualenv/bin/pip install --download="./piprepo2" -r requirements.txt
 ./virtualenv/bin/pip install --no-index --find-links="./piprepo" -r requirements.txt
-#./virtualenv/bin/pip install ./piprepo/* --find-links="./piprepo2/" --no-index --use-wheel
-# forbid setuptools from using the network because it'll try to use
-# easy_install, and we really wanted pip; next line will fail if pip
-# requirements.txt does not match setup.py requirements
+
 ./virtualenv/bin/python setup.py develop
 
