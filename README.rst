@@ -170,8 +170,6 @@ s3nosetests-all.sh
 	Runs full suite
 s3nosetests-old.sh
 	Depredated full suite
-s3nosetests-specific.sh
-	Runs suite against specified tests
 setup.py
 	Used for initial configuration
 siege.conf
