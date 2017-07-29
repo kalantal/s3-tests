@@ -28,3 +28,8 @@ virtualenv --no-site-packages --distribute virtualenv
 
 ./virtualenv/bin/python setup.py develop
 
+if [ ! -f /usr/bin/s3cmd/ ]; then
+    echo "s3cmd not found, will not be able to move results! Remember to 's3cmd --configure' once installed." && exit 0
+fi
+
+

@@ -4,10 +4,10 @@
 ## a comment
 \#*#
 .*.swp
-/s3.conf
+.conf
 *.pyc
 *.pyo
-
+*.conf
 /*.egg-info
 /virtualenv
 
