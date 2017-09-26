@@ -49,7 +49,7 @@ gatherlist && echo -en '\nLsit of vaults:\n' && cat $vaultlist
 #delete all vaults that do not have 1) items inside. 2) versions inside. 3) ACLs
 echo -en '\nDeleting vaults\n'
 function deletevaults {
-        cat $vaultlist | while read line ; do s3cmd rb $line ; done
+        cat $vaultlist | while read line ; do s3cmd rb --recursive --force $line ; done
 }
 deletevaults
  
@@ -107,7 +107,48 @@ acls
 #delete all vaults again
 echo -en '\nDeleting vaults\n'
 deletevaults
- 
+
+###########
+Agressive
+###########
+
+echo -en '\nDeleting Vaults\n'
+function deletecors {
+#fifth pass
+#add access to delete vaults CORS
+        cat $vaultlist | while read line ; do s3cmd delcors --recursive --force $line ; done
+}
+deletecors
+
+echo -en '\nDeleting Vault Policies\n'
+function deletepolicy {
+#sixth pass
+#remove vault policies
+        cat $vaultlist | while read line ; do s3cmd delpolicy --recursive --force $line ; done
+}
+deletepolicy
+
+echo -en '\nDeleting Vault Lifecycles\n'
+function deletelifecycle {
+#seventh pass
+#remove vault lifecycles
+        cat $vaultlist | while read line ; do s3cmd dellifecycle --recursive --force $line ; done
+}
+deletelifecycle
+
+echo -en '\nExpiring Vaults\n'
+function expirevaults {
+#eighth pass
+#expire all vaults specified
+        cat $vaultlist | while read line ; do s3cmd expire --recursive --force $line ; done
+}
+expirevaults
+
+#delete all vaults again
+#Last Pass
+echo -en '\nDeleting vaults\n'
+deletevaults
+
 gatherlist && echo -en '\nLsit of vaults:\n' && cat $vaultlist && echo -en '\nDone\n\n'
  
 exit 0
