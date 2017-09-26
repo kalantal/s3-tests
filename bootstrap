@@ -1,7 +1,9 @@
 #!/bin/sh
-set -e
+#set -e
 
 sudo chmod u+x *.sh
+
+sudo yum install createrepo --disablerepo=localrepo
 
 if [ ! -f /etc/yum.repos.d/localrepo.repo ]; then
 sudo mkdir -p /usr/localrepo/
@@ -21,7 +23,7 @@ if [ -f /etc/redhat-release ]; then
     done
     if [ -n "$missing" ]; then
         echo "$missing"
-	echo "$0: missing required RPM packages. Installing via sudo." 1>&2
+        echo "$0: missing required RPM packages. Installing via sudo." 1>&2
         sudo yum install -y $missing
     fi
 fi
@@ -35,3 +37,4 @@ virtualenv --no-site-packages --distribute virtualenv
 if [ ! -f ~/.s3cfg ]; then
     echo "s3cmd not configured.\n$USER# s3cmd --configure" && exit 0
 fi
+
