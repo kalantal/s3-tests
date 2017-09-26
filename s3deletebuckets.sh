@@ -140,7 +140,7 @@ echo -en '\nExpiring Vaults\n'
 function expirevaults {
 #eighth pass
 #expire all vaults specified
-        cat $vaultlist | while read line ; do s3cmd expire --recursive --force $line ; done
+        cat $vaultlist | while read line ; do s3cmd expire --recursive --force --expiry-days=1 $line ; done
 }
 expirevaults
 
