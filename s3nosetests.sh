@@ -2,6 +2,7 @@
 
 if [[ $# -eq 0 ]] ; then
   echo -en "No argeuments supplied.\n"
+  echo -en "ex: s3nosetests.sh tests convert results clean"
   echo -en " tests: run tests\n convert:convert results\n results: move results\n clean:secondary bucket cleanup\n"
   exit 0
 fi
@@ -589,4 +590,3 @@ if [[ $4 -eq clean ]] ; then
 fi
  
 exit 0
-
