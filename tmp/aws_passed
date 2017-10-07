@@ -478,34 +478,6 @@ test_put_obj_with_tags, PASSED
 test_get_tags_acl_public, PASSED
 test_put_tags_acl_public, PASSED
 test_delete_tags_obj_public, PASSED
-runTest, ERROR, exceptions.TypeError, issubclass() arg 1 must be a class
-runTest, ERROR, exceptions.TypeError, issubclass() arg 1 must be a class
-runTest, ERROR, exceptions.TypeError, issubclass() arg 1 must be a class
-runTest, ERROR, exceptions.TypeError, issubclass() arg 1 must be a class
-runTest, ERROR, exceptions.TypeError, issubclass() arg 1 must be a class
-runTest, ERROR, exceptions.TypeError, issubclass() arg 1 must be a class
-runTest, ERROR, exceptions.TypeError, issubclass() arg 1 must be a class
-runTest, ERROR, exceptions.TypeError, issubclass() arg 1 must be a class
-runTest, ERROR, exceptions.TypeError, issubclass() arg 1 must be a class
-runTest, ERROR, exceptions.TypeError, issubclass() arg 1 must be a class
-runTest, ERROR, exceptions.TypeError, issubclass() arg 1 must be a class
-runTest, ERROR, exceptions.TypeError, issubclass() arg 1 must be a class
-runTest, ERROR, exceptions.TypeError, issubclass() arg 1 must be a class
-runTest, ERROR, exceptions.TypeError, issubclass() arg 1 must be a class
-runTest, ERROR, exceptions.TypeError, issubclass() arg 1 must be a class
-runTest, ERROR, exceptions.TypeError, issubclass() arg 1 must be a class
-runTest, ERROR, exceptions.TypeError, issubclass() arg 1 must be a class
-runTest, ERROR, exceptions.TypeError, issubclass() arg 1 must be a class
-runTest, ERROR, exceptions.TypeError, issubclass() arg 1 must be a class
-runTest, ERROR, exceptions.TypeError, issubclass() arg 1 must be a class
-runTest, ERROR, exceptions.TypeError, issubclass() arg 1 must be a class
-runTest, ERROR, exceptions.TypeError, issubclass() arg 1 must be a class
-runTest, ERROR, exceptions.TypeError, issubclass() arg 1 must be a class
-runTest, ERROR, exceptions.TypeError, issubclass() arg 1 must be a class
-runTest, ERROR, exceptions.TypeError, issubclass() arg 1 must be a class
-runTest, ERROR, exceptions.TypeError, issubclass() arg 1 must be a class
-runTest, ERROR, exceptions.TypeError, issubclass() arg 1 must be a class
-runTest, ERROR, exceptions.TypeError, issubclass() arg 1 must be a class
 test_generate, PASSED
 test_load_graph, PASSED
 test_descend_leaf_node, PASSED
@@ -537,9 +509,5 @@ test_weighted_set, PASSED
 test_header_presence, PASSED
 test_duplicate_header, PASSED
 test_expand_headers, PASSED
-runTest, ERROR, exceptions.ImportError, No module named test_realistic
-runTest, ERROR, exceptions.ImportError, No module named test_realistic
-runTest, ERROR, exceptions.ImportError, No module named test_realistic
-runTest, ERROR, exceptions.ImportError, No module named test_realistic
 
 Tests = 541: Passed = 370, Errors = 79, Failures = 37, Skip = 55

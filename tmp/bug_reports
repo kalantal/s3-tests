@@ -1,0 +1,139 @@
+test_object_create_bad_md5_unreadable, FAILED, exceptions.AssertionError, 400 != 403
+test_object_create_bad_expect_mismatch, ERROR, boto.exception.S3ResponseError, S3ResponseError: 417 Expectation Failed
+test_object_create_bad_expect_empty, ERROR, boto.exception.S3ResponseError, S3ResponseError: 417 Expectation Failed
+test_object_create_bad_expect_unreadable, ERROR, boto.exception.S3ResponseError, S3ResponseError: 400 Illegal character 0x7
+test_object_create_bad_contentlength_empty, FAILED, exceptions.AssertionError, 'bad content-length' != 'bad request'
+test_object_create_bad_contentlength_unreadable, FAILED, exceptions.AssertionError, 'illegal character 0x7' != 'bad request'
+test_object_create_bad_contentlength_mismatch_above, ERROR, socket.timeout, timed out
+test_object_create_bad_contenttype_unreadable, FAILED, exceptions.AssertionError, 400 != 403
+test_object_create_bad_authorization_unreadable, FAILED, exceptions.AssertionError, 400 != 403
+test_bucket_create_bad_expect_mismatch, ERROR, boto.exception.S3ResponseError, S3ResponseError: 417 Expectation Failed
+test_bucket_create_bad_expect_empty, ERROR, boto.exception.S3ResponseError, S3ResponseError: 417 Expectation Failed
+test_bucket_create_bad_expect_unreadable, ERROR, boto.exception.S3ResponseError, S3ResponseError: 400 Illegal character 0x7
+test_bucket_create_bad_contentlength_empty, FAILED, exceptions.AssertionError, 'bad content-length' != 'bad request'
+test_bucket_create_bad_contentlength_unreadable, FAILED, exceptions.AssertionError, 'illegal character 0x7' != 'bad request'
+test_bucket_create_bad_authorization_unreadable, FAILED, exceptions.AssertionError, 400 != 403
+test_object_create_bad_ua_unreadable_aws2, ERROR, boto.exception.S3ResponseError, S3ResponseError: 400 Illegal character 0x7
+test_object_create_bad_date_unreadable_aws2, FAILED, exceptions.AssertionError, 400 != 403
+test_bucket_create_bad_ua_unreadable_aws2, ERROR, boto.exception.S3ResponseError, S3ResponseError: 400 Illegal character 0x7
+test_bucket_create_bad_date_unreadable_aws2, FAILED, exceptions.AssertionError, 400 != 403
+test_object_write_to_nonexist_bucket, FAILED, exceptions.AssertionError, u'NoSuchKey' != 'NoSuchBucket'
+test_object_write_cache_control, FAILED, exceptions.AssertionError, None != 'public| max-age=14400'
+test_object_write_expires, FAILED, exceptions.AssertionError, None != 'Sat| 07 Oct 2017 03:26:10 GMT'
+test_object_set_get_non_utf8_metadata, ERROR, boto.exception.S3ResponseError, S3ResponseError: 400 Illegal character 0x4
+test_object_set_get_metadata_empty_to_unreadable_prefix, ERROR, boto.exception.S3ResponseError, S3ResponseError: 400 Illegal character 0x4
+test_object_set_get_metadata_empty_to_unreadable_suffix, ERROR, boto.exception.S3ResponseError, S3ResponseError: 400 Illegal character 0x4
+test_object_set_get_metadata_empty_to_unreadable_infix, ERROR, boto.exception.S3ResponseError, S3ResponseError: 400 Illegal character 0x4
+test_object_set_get_metadata_overwrite_to_unreadable_prefix, ERROR, boto.exception.S3ResponseError, S3ResponseError: 400 Illegal character 0x4
+test_object_set_get_metadata_overwrite_to_unreadable_suffix, ERROR, boto.exception.S3ResponseError, S3ResponseError: 400 Illegal character 0x4
+test_object_set_get_metadata_overwrite_to_unreadable_infix, ERROR, boto.exception.S3ResponseError, S3ResponseError: 400 Illegal character 0x4
+test_post_object_empty_conditions, FAILED, exceptions.AssertionError, 403 != 400
+test_put_object_ifmatch_nonexisted_failed, FAILED, exceptions.AssertionError, S3ResponseError not raised
+test_object_delete_key_bucket_gone, FAILED, exceptions.AssertionError, u'NoSuchKey' != 'NoSuchBucket'
+test_object_raw_get_object_acl, FAILED, exceptions.AssertionError, 200 != 403
+test_bucket_create_naming_bad_starts_nonalpha, FAILED, exceptions.AssertionError, S3ResponseError not raised
+test_bucket_create_naming_bad_short_one, ERROR, boto.exception.S3CreateError, S3CreateError: 409 Conflict
+test_bucket_create_naming_bad_short_two, ERROR, boto.exception.S3CreateError, S3CreateError: 409 Conflict
+test_bucket_create_naming_bad_ip, ERROR, boto.exception.S3CreateError, S3CreateError: 409 Conflict
+test_bucket_create_naming_dns_dot_dot, ERROR, boto.exception.S3ResponseError, S3ResponseError: 400 Bad Request
+test_bucket_create_exists_nonowner, FAILED, exceptions.AssertionError, u'BucketAlreadyOwnedByYou' != 'BucketAlreadyExists'
+test_bucket_delete_nonowner, FAILED, exceptions.AssertionError, S3ResponseError not raised
+test_bucket_acl_default, ERROR, exceptions.AttributeError, user_id
+test_bucket_acl_canned, FAILED, exceptions.AssertionError, 2 != 1
+test_bucket_acl_canned_authenticatedread, ERROR, boto.exception.S3ResponseError, S3ResponseError: 400 Bad Request
+test_object_acl_canned_publicreadwrite, FAILED, exceptions.AssertionError, 2 != 3
+test_object_acl_canned_bucketownerread, ERROR, boto.exception.S3ResponseError, S3ResponseError: 400 Bad Request
+test_object_acl_canned_bucketownerfullcontrol, ERROR, boto.exception.S3ResponseError, S3ResponseError: 400 Bad Request
+test_object_acl_full_control_verify_owner, ERROR, exceptions.AttributeError, user_id
+test_object_acl_full_control_verify_attributes, ERROR, exceptions.AttributeError, user_id
+test_bucket_acl_xml_fullcontrol, ERROR, exceptions.AttributeError, user_id
+test_bucket_acl_xml_write, ERROR, exceptions.AttributeError, user_id
+test_bucket_acl_xml_writeacp, ERROR, exceptions.AttributeError, user_id
+test_bucket_acl_xml_read, ERROR, exceptions.AttributeError, user_id
+test_bucket_acl_xml_readacp, ERROR, exceptions.AttributeError, user_id
+test_object_acl_xml, ERROR, exceptions.AttributeError, user_id
+test_object_acl_xml_write, ERROR, exceptions.AttributeError, user_id
+test_object_acl_xml_writeacp, ERROR, exceptions.AttributeError, user_id
+test_object_acl_xml_read, ERROR, exceptions.AttributeError, user_id
+test_object_acl_xml_readacp, ERROR, exceptions.AttributeError, user_id
+test_bucket_acl_grant_userid_fullcontrol, ERROR, exceptions.AttributeError, user_id
+test_bucket_acl_grant_userid_read, ERROR, exceptions.AttributeError, user_id
+test_bucket_acl_grant_userid_readacp, ERROR, exceptions.AttributeError, user_id
+test_bucket_acl_grant_userid_write, ERROR, exceptions.AttributeError, user_id
+test_bucket_acl_grant_userid_writeacp, ERROR, exceptions.AttributeError, user_id
+test_bucket_acl_no_grants, ERROR, boto.exception.S3ResponseError, S3ResponseError: 400 Bad Request
+test_object_header_acl_grants, ERROR, exceptions.AttributeError, user_id
+test_bucket_header_acl_grants, ERROR, exceptions.AttributeError, user_id
+test_bucket_acl_grant_email, ERROR, boto.exception.S3ResponseError, S3ResponseError: 400 Bad Request
+test_bucket_acl_revoke_all, ERROR, boto.exception.S3ResponseError, S3ResponseError: 400 Bad Request
+test_logging_toggle, ERROR, socket.timeout, timed out
+test_access_bucket_private_object_private, FAILED, exceptions.AssertionError, S3ResponseError not raised
+test_access_bucket_private_object_publicread, FAILED, exceptions.AssertionError, S3ResponseError not raised
+test_access_bucket_private_object_publicreadwrite, FAILED, exceptions.AssertionError, S3ResponseError not raised
+test_access_bucket_publicread_object_private, FAILED, exceptions.AssertionError, S3ResponseError not raised
+test_access_bucket_publicread_object_publicread, FAILED, exceptions.AssertionError, S3ResponseError not raised
+test_access_bucket_publicread_object_publicreadwrite, FAILED, exceptions.AssertionError, S3ResponseError not raised
+test_access_bucket_publicreadwrite_object_private, FAILED, exceptions.AssertionError, S3ResponseError not raised
+test_access_bucket_publicreadwrite_object_publicread, FAILED, exceptions.AssertionError, S3ResponseError not raised
+test_access_bucket_publicreadwrite_object_publicreadwrite, FAILED, exceptions.AssertionError, S3ResponseError not raised
+test_object_set_valid_acl, ERROR, exceptions.AttributeError, user_id
+test_object_giveaway, ERROR, exceptions.AttributeError, user_id
+test_list_buckets_anonymous, FAILED, exceptions.AssertionError, 31 != 0
+test_list_buckets_invalid_auth, FAILED, exceptions.AssertionError, u'AccessDenied' != 'InvalidAccessKeyId'
+test_bucket_recreate_not_overriding, ERROR, boto.exception.S3CreateError, S3CreateError: 409 Conflict
+test_object_copy_not_owned_object_bucket, ERROR, exceptions.AttributeError, user_id
+test_multipart_copy_special_names, ERROR, boto.exception.S3ResponseError, S3ResponseError: 400 Bad Request
+test_bucket_acls_changes_persistent, ERROR, exceptions.AttributeError, user_id
+test_stress_bucket_acls_changes, ERROR, exceptions.AttributeError, user_id
+test_cors_origin_response, ERROR, exceptions.KeyError, 'access-control-allow-origin'
+test_cors_origin_wildcard, ERROR, exceptions.KeyError, 'access-control-allow-origin'
+test_versioning_obj_plain_null_version_overwrite, FAILED, exceptions.AssertionError, u'NoSuchVersion' != 'NoSuchKey'
+test_versioning_obj_plain_null_version_overwrite_suspended, FAILED, exceptions.AssertionError, u'NoSuchVersion' != 'NoSuchKey'
+test_versioning_multi_object_delete_with_marker_create, FAILED, exceptions.AssertionError, 0 != 1
+test_lifecycle_set, ERROR, boto.exception.S3ResponseError, S3ResponseError: 400 Bad Request
+test_lifecycle_get, ERROR, boto.exception.S3ResponseError, S3ResponseError: 400 Bad Request
+test_lifecycle_expiration, ERROR, boto.exception.S3ResponseError, S3ResponseError: 400 Bad Request
+test_lifecycle_id_too_long, FAILED, exceptions.AssertionError, u'UnsupportedOperation' != 'InvalidArgument'
+test_lifecycle_same_id, FAILED, exceptions.AssertionError, u'UnsupportedOperation' != 'InvalidArgument'
+test_lifecycle_invalid_status, FAILED, exceptions.AssertionError, u'UnsupportedOperation' != 'MalformedXML'
+test_lifecycle_rules_conflicted, FAILED, exceptions.AssertionError, u'UnsupportedOperation' != 'InvalidRequest'
+test_lifecycle_set_date, FAILED, exceptions.AssertionError, 400 != 200
+test_lifecycle_expiration_date, FAILED, exceptions.AssertionError, 2 != 1
+test_lifecycle_set_noncurrent, FAILED, exceptions.AssertionError, 400 != 200
+test_lifecycle_noncur_expiration, FAILED, exceptions.AssertionError, 6 != 4
+test_lifecycle_set_deletemarker, FAILED, exceptions.AssertionError, 400 != 200
+test_lifecycle_deletemarker_expiration, FAILED, exceptions.AssertionError, 4 != 2
+test_lifecycle_set_multipart, FAILED, exceptions.AssertionError, 400 != 200
+test_lifecycle_multipart_expiration, FAILED, exceptions.AssertionError, 2 != 1
+test_encryption_sse_c_method_head, FAILED, exceptions.AssertionError, 200 != 400
+test_encryption_sse_c_present, ERROR, boto.exception.S3CreateError, S3CreateError: 409 Conflict
+test_encryption_sse_c_other_key, FAILED, exceptions.AssertionError, S3ResponseError not raised
+test_encryption_sse_c_invalid_md5, FAILED, exceptions.AssertionError, S3ResponseError not raised
+test_encryption_sse_c_no_md5, FAILED, exceptions.AssertionError, S3ResponseError not raised
+test_encryption_sse_c_no_key, FAILED, exceptions.AssertionError, S3ResponseError not raised
+test_encryption_sse_c_multipart_invalid_chunks_1, FAILED, exceptions.AssertionError, S3ResponseError not raised
+test_encryption_sse_c_multipart_invalid_chunks_2, FAILED, exceptions.AssertionError, S3ResponseError not raised
+test_encryption_sse_c_multipart_bad_download, FAILED, exceptions.AssertionError, S3ResponseError not raised
+test_sse_kms_transfer_1kb, ERROR, boto.exception.S3CreateError, S3CreateError: 409 Conflict
+test_sse_kms_method_head, FAILED, exceptions.AssertionError, None != 'aws:kms'
+test_sse_kms_no_key, FAILED, exceptions.AssertionError, S3ResponseError not raised
+test_sse_kms_not_declared, ERROR, boto.exception.S3CreateError, S3CreateError: 409 Conflict
+test_bucket_policy, ERROR, boto.exception.S3ResponseError, S3ResponseError: 400 Bad Request
+test_bucket_policy_acl, ERROR, boto.exception.S3ResponseError, S3ResponseError: 400 Bad Request
+test_bucket_policy_different_tenant, ERROR, boto.exception.S3ResponseError, S3ResponseError: 400 Bad Request
+test_bucket_policy_another_bucket, ERROR, boto.exception.S3ResponseError, S3ResponseError: 400 Bad Request
+test_bucket_policy_set_condition_operator_end_with_IfExists, ERROR, boto.exception.S3ResponseError, S3ResponseError: 400 Bad Request
+test_get_obj_tagging, FAILED, exceptions.AssertionError, [<boto.s3.tagging.Tag object at 0x4014c50>| <boto.s3.tagging.Tag object at 0x4014c90>] != []
+test_get_obj_head_tagging, ERROR, exceptions.TypeError, int() argument must be a string or a number| not 'NoneType'
+test_put_max_tags, FAILED, exceptions.AssertionError, [<boto.s3.tagging.Tag object at 0x401ca10>| <boto.s3.tagging.Tag object at 0x401ca50>| <boto.s3.tagging.Tag object at 0x401cb90>| <boto.s3.tagging.Tag object at 0x401c910>| <boto.s3.tagging.Tag object at 0x401cc10>| <boto.s3.tagging.Tag object at 0x401cad0>| <boto.s3.tagging.Tag object at 0x401cc50>| <boto.s3.tagging.Tag object at 0x401cbd0>| <boto.s3.tagging.Tag object at 0x401cc90>| <boto.s3.tagging.Tag object at 0x401cd10>] != []
+test_put_excess_tags, FAILED, exceptions.AssertionError, 200 != 400
+test_put_max_kvsize_tags, FAILED, exceptions.AssertionError, [<boto.s3.tagging.Tag object at 0x4028b90>| <boto.s3.tagging.Tag object at 0x4028b50>| <boto.s3.tagging.Tag object at 0x4028c90>| <boto.s3.tagging.Tag object at 0x40288d0>| <boto.s3.tagging.Tag object at 0x4028cd0>| <boto.s3.tagging.Tag object at 0x4028c50>| <boto.s3.tagging.Tag object at 0x4028d10>| <boto.s3.tagging.Tag object at 0x4028d50>| <boto.s3.tagging.Tag object at 0x4028d90>| <boto.s3.tagging.Tag object at 0x4028dd0>] != []
+test_put_excess_key_tags, FAILED, exceptions.AssertionError, 200 != 400
+test_put_excess_val_tags, FAILED, exceptions.AssertionError, 200 != 400
+test_put_modify_tags, FAILED, exceptions.AssertionError, [<boto.s3.tagging.Tag object at 0x4038190>| <boto.s3.tagging.Tag object at 0x4038390>] != []
+test_put_delete_tags, FAILED, exceptions.AssertionError, [<boto.s3.tagging.Tag object at 0x4038bd0>| <boto.s3.tagging.Tag object at 0x4038c10>] != []
+test_post_object_tags_anonymous_request, ERROR, xml.etree.ElementTree.ParseError, syntax error: line 1| column 0
+test_put_obj_with_tags, ERROR, xml.etree.ElementTree.ParseError, syntax error: line 1| column 0
+test_get_tags_acl_public, ERROR, boto.exception.S3ResponseError, S3ResponseError: 400 Bad Request
+test_put_tags_acl_public, ERROR, boto.exception.S3ResponseError, S3ResponseError: 400 Bad Request
+test_delete_tags_obj_public, ERROR, boto.exception.S3ResponseError, S3ResponseError: 400 Bad Request
