@@ -29,7 +29,6 @@ export admin=justin_restivo
 #export prefix=~/.s3cfg line 2 "s3-"
 #export prefix=s3-
 
-
 function gatherlist {
 s3cmd ls > $vaultlist
 #delete the unnessecay prefix to give us an easy to read vault list
