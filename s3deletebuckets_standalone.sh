@@ -5,7 +5,22 @@
 #need to make testing prefix more complex/random
 #this is intentionally iterative to speed up the process
 
-echo -en '\nThis script will attempt to purge any vaults with the specified prefix\n'
+#needs .s3cfg, an admin name, and a prefix
+#for your customizations
+export admin=justin_restivo
+export prefix=s3-
+
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+echo -en "\n${RED}This script will attempt to purge any vaults with the specified prefix: $prefix ${NC}\n"
+
+#variables
+export vaultlist_=/tmp/s3dir/s3vaultlist_
+export vaultlist=/tmp/s3dir/s3vaultlist
+export logfile=/tmp/s3dir/s3deletelog
+export itemlist_=/tmp/s3dir/s3itemlist_
+export itemlist=/tmp/s3dir/s3itemlist
+export s3dir=/tmp/s3dir/
 
 #verify configuration
 #requires configured s3cmd
@@ -16,16 +31,12 @@ if [ -e ~/.s3cfg ]
                 exit 0
 fi
 
-#Variables
-export vaultlist_=/tmp/s3vaultlist_
-export vaultlist=/tmp/s3vaultlist
-export logfile=/tmp/s3deletelog
-export itemlist_=/tmp/s3itemlist_
-export itemlist=/tmp/s3itemlist
-
-#needs .s3cfg, an admin name, and a prefix
-export admin=justin_restivo
-export prefix=s3-
+if [ -d $s3dir ]
+        then
+                rm -rf {$s3dir/*}
+        else
+                mkdir -p $s3dir
+fi
 
 function gatherlist {
 s3cmd ls > $vaultlist_
@@ -49,9 +60,9 @@ echo -en '\nDeleting vaults\n'
 function deletevaults {
         cat $vaultlist | while read line ; do s3cmd rb --recursive --force $line ; done
 }
-deletevaults
+deletevaults & deletevaults & deletevaults
 
-function itemlist {
+function itemlistgen {
 s3cmd la > $itemlist_
 #clean up itemlist
 #delete the unnessecay prefix to give us an easy to read vault list
@@ -62,7 +73,9 @@ cat $itemlist_ | grep $prefix &> $itemlist
 #sed -ri '/$prefix/!d' $itemlist
 sed -ri 's .{29}  ' $itemlist
 }
-itemlist && echo -en '\nLsit of vaults containing keys:\n' && cat $itemlist && echo -en '\n'
+timeout --signal=SIGINT 30 itemlistgen
+
+echo -en '\nLsit of vaults containing keys:\n'
 
 echo -en '\nDeleting items\n'
 function deleteitems {
@@ -87,7 +100,7 @@ echo -en '\nMoving empty objects\n'
 function emptyfiles {
 #make a temp vault to move empty files
 s3cmd mb s3://s3delete
-cat $itemlist | while read line ; do /s3cmd mv $line s3://s3delete --recursive --force ; done
+cat $itemlist | while read line ; do s3cmd mv $line s3://s3delete --recursive --force ; done
 #remove the temp vault
 s3cmd rb s3://s3delete --recursive --force
 }
@@ -105,10 +118,10 @@ acls
 
 #delete all vaults again
 echo -en '\nDeleting vaults\n'
-deletevaults
+deletevaults & deletevaults & deletevaults
 
 ###########
-Agressive
+#Agressive#
 ###########
 
 echo -en '\nDeleting Vaults\n'
@@ -146,7 +159,7 @@ expirevaults
 #delete all vaults again
 #Last Pass
 echo -en '\nDeleting vaults\n'
-deletevaults
+deletevaults & deletevaults & deletevaults
 
 gatherlist && echo -en '\nLsit of vaults:\n' && cat $vaultlist && echo -en '\nDone\n\n'
 
