@@ -29,6 +29,8 @@ S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --with-xunit \
     s3tests.functional.test_headers:test_object_create_bad_contenttype_unreadable \
     s3tests.functional.test_headers:test_object_create_bad_authorization_unreadable \
     s3tests.functional.test_headers:test_object_create_bad_authorization_empty \
+    s3tests.functional.test_headers:test_object_create_date_and_amz_date \
+    s3tests.functional.test_headers:test_object_create_amz_date_and_no_date \
     s3tests.functional.test_headers:test_object_create_bad_authorization_none \
     s3tests.functional.test_headers:test_bucket_create_contentlength_none \
     s3tests.functional.test_headers:test_object_acl_create_contentlength_none \
@@ -151,6 +153,7 @@ S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --with-xunit \
     s3tests.functional.test_s3:test_bucket_list_marker_before_list \
     s3tests.functional.test_s3:test_bucket_list_return_data \
     s3tests.functional.test_s3:test_bucket_list_return_data_versioning \
+    s3tests.functional.test_s3:test_bucket_list_marker_versioning \
     s3tests.functional.test_s3:test_bucket_list_object_time \
     s3tests.functional.test_s3:test_bucket_list_objects_anonymous \
     s3tests.functional.test_s3:test_bucket_list_objects_anonymous_fail \
@@ -355,6 +358,7 @@ S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --with-xunit \
     s3tests.functional.test_s3:test_multipart_upload_empty \
     s3tests.functional.test_s3:test_multipart_upload_small \
     s3tests.functional.test_s3:test_multipart_copy_small \
+    s3tests.functional.test_s3:test_multipart_copy_invalid_range \
     s3tests.functional.test_s3:test_multipart_upload \
     s3tests.functional.test_s3:test_multipart_copy_special_names \
     s3tests.functional.test_s3:test_multipart_copy_versioned \
@@ -420,6 +424,7 @@ S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --with-xunit \
     s3tests.functional.test_s3:test_versioned_concurrent_object_create_and_remove \
     s3tests.functional.test_s3:test_lifecycle_set \
     s3tests.functional.test_s3:test_lifecycle_get \
+    s3tests.functional.test_s3:test_lifecycle_get_no_id \
     s3tests.functional.test_s3:test_lifecycle_expiration \
     s3tests.functional.test_s3:test_lifecycle_id_too_long \
     s3tests.functional.test_s3:test_lifecycle_same_id \
@@ -431,6 +436,8 @@ S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --with-xunit \
     s3tests.functional.test_s3:test_lifecycle_set_noncurrent \
     s3tests.functional.test_s3:test_lifecycle_noncur_expiration \
     s3tests.functional.test_s3:test_lifecycle_set_deletemarker \
+    s3tests.functional.test_s3:test_lifecycle_set_filter \
+    s3tests.functional.test_s3:test_lifecycle_set_empty_filter \
     s3tests.functional.test_s3:test_lifecycle_deletemarker_expiration \
     s3tests.functional.test_s3:test_lifecycle_set_multipart \
     s3tests.functional.test_s3:test_lifecycle_multipart_expiration \
@@ -456,7 +463,6 @@ S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --with-xunit \
     s3tests.functional.test_s3:test_sse_kms_transfer_13b \
     s3tests.functional.test_s3:test_sse_kms_method_head \
     s3tests.functional.test_s3:test_sse_kms_present \
-    s3tests.functional.test_s3:test_sse_kms_other_key \
     s3tests.functional.test_s3:test_sse_kms_no_key \
     s3tests.functional.test_s3:test_sse_kms_not_declared \
     s3tests.functional.test_s3:test_sse_kms_multipart_upload \
@@ -467,6 +473,7 @@ S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --with-xunit \
     s3tests.functional.test_s3:test_sse_kms_barb_transfer_1kb \
     s3tests.functional.test_s3:test_sse_kms_barb_transfer_1MB \
     s3tests.functional.test_s3:test_sse_kms_barb_transfer_13b \
+    s3tests.functional.test_s3:test_sse_kms_read_declare \
     s3tests.functional.test_s3:test_bucket_policy \
     s3tests.functional.test_s3:test_bucket_policy_acl \
     s3tests.functional.test_s3:test_bucket_policy_different_tenant \
@@ -487,36 +494,7 @@ S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --with-xunit \
     s3tests.functional.test_s3:test_get_tags_acl_public \
     s3tests.functional.test_s3:test_put_tags_acl_public \
     s3tests.functional.test_s3:test_delete_tags_obj_public \
-    s3tests.functional.test_s3_website.check_can_test_website \
-    s3tests.functional.test_s3_website.test_website_nonexistant_bucket_s3 \
-    s3tests.functional.test_s3_website.test_website_nonexistant_bucket_rgw \
-    s3tests.functional.test_s3_website.test_website_public_bucket_list_public_index \
-    s3tests.functional.test_s3_website.test_website_private_bucket_list_public_index \
-    s3tests.functional.test_s3_website.test_website_private_bucket_list_empty \
-    s3tests.functional.test_s3_website.test_website_public_bucket_list_empty \
-    s3tests.functional.test_s3_website.test_website_public_bucket_list_private_index \
-    s3tests.functional.test_s3_website.test_website_private_bucket_list_private_index \
-    s3tests.functional.test_s3_website.test_website_private_bucket_list_empty_missingerrordoc \
-    s3tests.functional.test_s3_website.test_website_public_bucket_list_empty_missingerrordoc \
-    s3tests.functional.test_s3_website.test_website_public_bucket_list_private_index_missingerrordoc \
-    s3tests.functional.test_s3_website.test_website_private_bucket_list_private_index_missingerrordoc \
-    s3tests.functional.test_s3_website.test_website_private_bucket_list_empty_blockederrordoc \
-    s3tests.functional.test_s3_website.test_website_public_bucket_list_empty_blockederrordoc \
-    s3tests.functional.test_s3_website.test_website_public_bucket_list_private_index_blockederrordoc \
-    s3tests.functional.test_s3_website.test_website_private_bucket_list_private_index_blockederrordoc \
-    s3tests.functional.test_s3_website.test_website_private_bucket_list_empty_gooderrordoc \
-    s3tests.functional.test_s3_website.test_website_public_bucket_list_empty_gooderrordoc \
-    s3tests.functional.test_s3_website.test_website_public_bucket_list_private_index_gooderrordoc \
-    s3tests.functional.test_s3_website.test_website_private_bucket_list_private_index_gooderrordoc \
-    s3tests.functional.test_s3_website.test_website_bucket_private_redirectall_base \
-    s3tests.functional.test_s3_website.test_website_bucket_private_redirectall_path \
-    s3tests.functional.test_s3_website.test_website_bucket_private_redirectall_path_upgrade \
-    s3tests.functional.test_s3_website.test_website_xredirect_nonwebsite \
-    s3tests.functional.test_s3_website.test_website_xredirect_public_relative \
-    s3tests.functional.test_s3_website.test_website_xredirect_public_abs \
-    s3tests.functional.test_s3_website.test_website_xredirect_private_relative \
-    s3tests.functional.test_s3_website.test_website_xredirect_private_abs \
-    s3tests.functional.test_utils:test_generate \
+    s3tests.functional.test_utils.test_generate \
     s3tests.fuzz.test.test_fuzzer:test_load_graph \
     s3tests.fuzz.test.test_fuzzer:test_descend_leaf_node \
     s3tests.fuzz.test.test_fuzzer:test_descend_node \
@@ -550,7 +528,7 @@ S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --with-xunit \
     test_realistic.TestFileValidator:test_new_file_is_valid \
     test_realistic.TestFileValidator:test_new_file_is_valid_on_several_calls \
     test_realistic.TestFileValidator:test_new_file_is_valid_when_size_is_1 \
-    test_realistic.TestFiles:test_random_file_valid
+    test_realistic.TestFiles:test_random_file_valid \
 echo "Running Tests"
 }
  
@@ -569,7 +547,7 @@ echo "Cleaning Results"
 }
  
 clean() {
-source ./s3deletebuckets.sh
+source ./s3deletebuckets_standalone.sh
 echo "Cleanup"
 }
  
