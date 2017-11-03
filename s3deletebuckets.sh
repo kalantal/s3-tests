@@ -73,7 +73,7 @@ cat $itemlist_ | grep $prefix &> $itemlist
 #sed -ri '/$prefix/!d' $itemlist
 sed -ri 's .{29}  ' $itemlist
 }
-timeout --signal=SIGINT 30 itemlistgen
+itemlistgen
 
 echo -en '\nLsit of vaults containing keys:\n'
 
