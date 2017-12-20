@@ -1,7 +1,0 @@
-[localrepo]
-name=localrepo
-baseurl=file:///usr/localrepo/
-enabled=1
-gpgcheck=0
-protect=1
-

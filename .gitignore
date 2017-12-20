@@ -11,3 +11,4 @@
 /results
 config.yaml
 s3.conf
+*.conf
