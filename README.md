@@ -76,9 +76,9 @@ Just running the tests and saving the output in a human-readable format:
 	./s3nosetests-specific.sh tests convert results clean
 	
 Test notes:
-	The default is all 570 tests found in ./testlist
+	The default is all 338 tests found in ./extras/testlist.txt
 	34 of the tests listed as "test.fuzzer" are framework tests
-	The effective test count: 536
+	The effective test count: 304
 
 Additonal options and outputs :
 
@@ -195,3 +195,4 @@ Notes:
 
 	testlist
 	List of all tests
+
