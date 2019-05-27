@@ -28,11 +28,6 @@ Additonal options and outputs:
 
 	#To gather a list of tests being run, use the flags:
 	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -vv --collect-only 2>&1 | tee testlist
-	#Note that the output does not add ":" between the test prefix and the test name
-	#ex: s3tests.functional.test_s3.test_bucket_list_empty needs to be -> s3tests.functional.test_s3:test_bucket_list_empty to pass them in as a "test list".
-
-	#Run tests to Console
-	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests
 	
 	#Run tests to Raw CSV
 	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -vv 2>&1 | tee nosetestresults.csv
