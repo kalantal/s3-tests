@@ -38,7 +38,7 @@ Additonal options and outputs:
 	#Conversation for XML to Human-Readable CSV/XLS
 	perl parse-nose.pl -i nosetests.xml -o nosetests.csv
 
-You can specify what test(s) to run::
+You can specify what test(s) to run:
 
 	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests s3tests.functional.test_s3:test_bucket_list_empty
 
