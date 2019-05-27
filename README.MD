@@ -27,13 +27,13 @@ Notes:
 Additonal options and outputs:
 
 	#To gather a list of tests being run, use the flags:
-	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -vv --collect-only 2>&1 | tee testlist
+	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --collect-only 2>&1 | tee testlist
 	
 	#Run tests to Raw CSV
-	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -vv 2>&1 | tee nosetestresults.csv
+	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v 2>&1 | tee nosetestresults.csv
 	
 	#Run tests to Raw XML
-	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -vv --with-xunit --xunit-file=nosetestxunit.xml
+	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --with-xunit --xunit-file=nosetestxunit.xml
 	
 	#Conversation for XML to Human-Readable CSV/XLS
 	perl parse-nose.pl -i nosetests.xml -o nosetests.csv
@@ -47,3 +47,6 @@ Additonal options and outputs:
 	#Tests can be run in a list:
 	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --with-xunit \
 		s3tests.functional.test_headers:test_object_create_bad_md5_invalid_short \
+		
+	#Debug (Any stdout output will be printed immediately)
+	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -vv -s 2>&1 | tee debug_run
