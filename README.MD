@@ -40,12 +40,8 @@ Additonal options and outputs:
 	#Conversation for XML to Human-Readable CSV/XLS
 	perl parse-nose.pl -i nosetests.xml -o nosetests.csv
 
-You can specify what test(s) to run:
-
+	#You can specify what test(s) to run:
 	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests s3tests.functional.test_s3:test_bucket_list_empty
 
-Some tests have attributes set based on their current reliability and
-things like AWS not enforcing their spec stricly. You can filter tests
-based on their attributes::
-
+	#Some tests have attributes set based on their current reliability and things like AWS not enforcing their spec stricly. You can filter tests based on their attributes:
 	S3TEST_CONF=aws.conf ./virtualenv/bin/nosetests -a '!fails_on_aws'
