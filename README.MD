@@ -17,7 +17,7 @@ You will need to create configuration files with two different credentials. The 
 	s3.conf
 	boto.conf
 	
-Test notes:
+Notes:
 
 	The default run is all tests, which can be found in "testlist"
 	34 of the tests listed as "test.fuzzer" are framework tests
