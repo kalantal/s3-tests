@@ -6,6 +6,7 @@ These tests verify ingegrity of an S3-like enviornment.
 This test suite takes about an hour to run.
 
 Setup:
+
 	sudo chmod u+x bootstrap
 	sudo ./bootstrap
 	
@@ -14,6 +15,7 @@ This is built to run in a RHEL 7.6 environment.
 You will need to create a configuration file with two different credentials. The empty configuraion files are s3.conf & boto.conf
 	
 Test notes:
+
 	The default run is all tests, which can be found in "testlist"
 	34 of the tests listed as "test.fuzzer" are framework tests
 	The effective test count: 638
