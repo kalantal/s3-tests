@@ -13,8 +13,6 @@
 
 output/*
 
-s3.conf
-boto.ini
 config.yaml
 siege.conf
 
