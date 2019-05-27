@@ -27,7 +27,7 @@ Test notes:
 Additonal options and outputs:
 
 	#To gather a list of tests being run, use the flags:
-	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --collect-only 2>&1 | tee testlist
+	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -vv --collect-only 2>&1 | tee testlist
 	#Note that the output does not add ":" between the test prefix and the test name
 	#ex: s3tests.functional.test_s3.test_bucket_list_empty needs to be -> s3tests.functional.test_s3:test_bucket_list_empty to pass them in as a "test list".
 
@@ -35,10 +35,10 @@ Additonal options and outputs:
 	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests
 	
 	#Run tests to Raw CSV
-	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v 2>&1 | tee nosetestresults.csv
+	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -vv 2>&1 | tee nosetestresults.csv
 	
 	#Run tests to Raw XML
-	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --with-xunit
+	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -vv --with-xunit
 	
 	#Conversation for XML to Human-Readable CSV/XLS
 	perl parse-nose.pl -i nosetests.xml -o nosetests.csv
