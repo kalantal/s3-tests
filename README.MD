@@ -33,7 +33,7 @@ Additonal options and outputs:
 	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -vv 2>&1 | tee nosetestresults.csv
 	
 	#Run tests to Raw XML
-	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -vv --with-xunit
+	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -vv --with-xunit --xunit-file=nosetestxunit.xml
 	
 	#Conversation for XML to Human-Readable CSV/XLS
 	perl parse-nose.pl -i nosetests.xml -o nosetests.csv
@@ -43,3 +43,7 @@ Additonal options and outputs:
 
 	#Some tests have attributes set based on their current reliability and things like AWS not enforcing their spec stricly. You can filter tests based on their attributes:
 	S3TEST_CONF=aws.conf ./virtualenv/bin/nosetests -a '!fails_on_aws'
+
+	#Tests can be run in a list:
+	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --with-xunit \
+		s3tests.functional.test_headers:test_object_create_bad_md5_invalid_short \
