@@ -1,7 +1,7 @@
 #!/bin/bash
 
 export S3TEST_CONF=s3.conf
-export BOTO_CONFIG=boto.ini
+export BOTO_CONFIG=boto.conf
 
 DATE=$(date +%Y-%m-%d_%H%M)
 
