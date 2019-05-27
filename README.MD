@@ -5,14 +5,17 @@ These tests verify ingegrity of an S3-like enviornment.
 
 This test suite takes about an hour to run.
 
+This is built to run in a RHEL 7.6 environment.
+
 Setup:
 
 	sudo chmod u+x bootstrap
 	sudo ./bootstrap
-	
-This is built to run in a RHEL 7.6 environment.
 
-You will need to create configuration files with two different credentials. The empty configuraion files are s3.conf & boto.conf
+You will need to create configuration files with two different credentials. The empty configuraion files are:
+
+	s3.conf
+	boto.conf
 	
 Test notes:
 
