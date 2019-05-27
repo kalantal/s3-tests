@@ -5,11 +5,11 @@ yum install dependencies/rpms/*
 
 virtualenv --no-site-packages --distribute virtualenv
 
-./virtualenv/bin/pip install --upgrade pip --no-index --find-links="dependencies/pip/"
+virtualenv/bin/pip install --upgrade pip --no-index --find-links="dependencies/pip/"
 
-./virtualenv/bin/pip install setuptools==32.3.1 --no-index --find-links="dependencies/pip/"
+virtualenv/bin/pip install setuptools==32.3.1 --no-index --find-links="dependencies/pip/"
 
-./virtualenv/bin/pip install -r requirements.txt --no-index --find-links="dependencies/pip/"
+virtualenv/bin/pip install -r requirements.txt --no-index --find-links="dependencies/pip/"
 
-./virtualenv/bin/python setup.py develop
+virtualenv/bin/python setup.py develop
 
