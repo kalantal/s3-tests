@@ -48,5 +48,8 @@ Additonal options and outputs:
 	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --with-xunit \
 		s3tests.functional.test_headers:test_object_create_bad_md5_invalid_short \
 		
+	#Tests can be blacklisted:
+	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --with-xunit --with-blacklist --blacklist-file=blacklists/blacklist.txt
+		
 	#Debug (Any stdout output will be printed immediately)
 	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -vv -s 2>&1 | tee output/$(date +%Y-%m-%d_%H%M)_debug_run
