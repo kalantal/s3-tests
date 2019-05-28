@@ -14,8 +14,8 @@ Setup:
 
 You will need to create configuration files with two different credentials. The empty configuraion files are:
 
-	s3.conf
-	boto.conf
+	s3.conf_sample
+	boto.conf_sample
 	
 Notes:
 
