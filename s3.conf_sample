@@ -1,11 +1,7 @@
 [DEFAULT]
 host = s3.amazonaws.com
-
-## uncomment the port to use something other than 80
-port = 8080
-
-## say "no" to disable TLS
-is_secure = yes
+port = 443
+is_secure = true
 
 [fixtures]
 bucket prefix = s3tests-{random}-
