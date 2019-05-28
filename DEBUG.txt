@@ -1,3 +1,12 @@
+nose.config: INFO: Ignoring files matching ['^\\.', '^_', '^setup\\.py$']
+nose.selector: INFO: /root/s3-tests/bootstrap is executable; skipped
+nose.selector: INFO: /root/s3-tests/ibm_runtests.sh is executable; skipped
+nose.selector: INFO: /root/s3-tests/run_all.sh is executable; skipped
+nose.selector: INFO: /root/s3-tests/run_as_list.sh is executable; skipped
+nose.selector: INFO: /root/s3-tests/s3deletebuckets.sh is executable; skipped
+nose.selector: INFO: /root/s3-tests/s3deletebuckets_standalone.sh is executable; skipped
+nose.selector: INFO: /root/s3-tests/s3nosetests.sh is executable; skipped
+nose.selector: INFO: /root/s3-tests/s3nosetests_standalone.sh is executable; skipped
 s3tests.functional.test_headers.test_object_create_bad_contentlength_none ... ok
 s3tests.functional.test_headers.test_object_create_bad_contentlength_mismatch_above ... ok
 s3tests.functional.test_headers.test_object_create_bad_authorization_empty ... ok
@@ -638,6 +647,6 @@ test_realistic.TestFileValidator.test_new_file_is_valid_when_size_is_1 ... ok
 test_realistic.TestFiles.test_random_file_valid ... ok
 
 ----------------------------------------------------------------------
-Ran 638 tests in 0.516s
+Ran 638 tests in 0.442s
 
 OK
