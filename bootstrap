@@ -1,7 +1,7 @@
 #!/bin/sh
 #set -e
 
-yum install dependencies/rpms/*
+sudo yum install dependencies/rpms/* --nogpgcheck -y
 
 virtualenv --no-site-packages --distribute virtualenv
 virtualenv/bin/pip install --upgrade pip --no-index --find-links="dependencies/pip/"
