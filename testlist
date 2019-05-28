@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 s3tests.functional.test_headers.test_object_create_bad_contentlength_none ... ok
 s3tests.functional.test_headers.test_object_create_bad_contentlength_mismatch_above ... ok
 s3tests.functional.test_headers.test_object_create_bad_authorization_empty ... ok
@@ -1279,4 +1278,3 @@ test_realistic.TestFileValidator.test_new_file_is_valid
 test_realistic.TestFileValidator.test_new_file_is_valid_on_several_calls
 test_realistic.TestFileValidator.test_new_file_is_valid_when_size_is_1
 test_realistic.TestFiles.test_random_file_valid
->>>>>>> b3feee32fa963d8116f955e86dde369c1cb86707
