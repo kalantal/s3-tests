@@ -22,7 +22,7 @@ export itemlist=/tmp/s3itemlist
 
 #needs .s3cfg, an admin name, and a prefix
 export admin=justin_restivo
-export prefix=s3-
+export prefix=s3tests-
 
 function gatherlist {
 s3cmd ls > $vaultlist_

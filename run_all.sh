@@ -8,9 +8,7 @@ DATE=$(date +%Y-%m-%d_%H%M)
 LOG_DIR=output/$DATE
 mkdir -p $LOG_DIR
 
-# process-timeout needs to be set to a value greater than the runtime of the longest test, in seconds.
-#test_cmd="./virtualenv/bin/nosetests -vv"
-test_cmd="./virtualenv/bin/nosetests -v --with-xunit --xunit-file=$LOG_DIR/nosetests.xml"
+test_cmd="S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --with-xunit --xunit-file=$LOG_DIR/nosetests.xml --with-blacklist --blacklist-file=blacklists/blacklist.txt"
 
 (
   echo "COMMAND: $test_cmd"
@@ -31,4 +29,3 @@ test_cmd="./virtualenv/bin/nosetests -v --with-xunit --xunit-file=$LOG_DIR/noset
 eval $test_cmd 2>&1 | tee -a $LOG_DIR/output.log
 
 perl parse-nose.pl -i $LOG_DIR/nosetests.xml -o $LOG_DIR/nosetests.csv
-
