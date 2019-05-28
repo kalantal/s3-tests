@@ -13,7 +13,6 @@ echo "Converting"
 convert
  
 results() {
-rm -rf ./RESULTS/
 mkdir -p ./RESULTS/
 cp nosetests.xml ./RESULTS/"$(date -d "today" +"s3-test-results-%Y-%m-%d-%H-%M").xml"
 cp nosetests.csv ./RESULTS/"$(date -d "today" +"s3-test-results-%Y-%m-%d-%H-%M").csv"

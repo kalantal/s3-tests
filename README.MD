@@ -14,8 +14,8 @@ Setup:
 
 You will need to create configuration files with two different credentials. The empty configuraion files are:
 
-	s3.conf
-	boto.conf
+	sample_s3.conf
+	sample_boto.conf
 	
 Notes:
 
@@ -33,7 +33,7 @@ Additonal options and outputs:
 	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v 2>&1 | tee nosetestresults.csv
 	
 	#Run tests to Raw XML
-	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --with-xunit --xunit-file=nosetestxunit.xml
+	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --with-xunit --xunit-file=nosetests.xml
 	
 	#Conversation for XML to Human-Readable CSV/XLS
 	perl parse-nose.pl -i nosetests.xml -o nosetests.csv
@@ -49,4 +49,4 @@ Additonal options and outputs:
 		s3tests.functional.test_headers:test_object_create_bad_md5_invalid_short \
 		
 	#Debug (Any stdout output will be printed immediately)
-	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -vv -s 2>&1 | tee debug_run
+	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -vv -s 2>&1 | tee output/debug/$(date +%Y-%m-%d_%H%M)_debug_run

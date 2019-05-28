@@ -1,9 +1,6 @@
 #!/usr/bin/bash
 
-#list all vaults in Cleversafe Dev
 #delete all s3 test framework vaults ("s3-" or $prefix)
-#need to make testing prefix more complex/random
-#this is intentionally iterative to speed up the process
 
 echo -en '\nThis script will attempt to purge any vaults with the specified prefix\n'
 
