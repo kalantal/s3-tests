@@ -11,4 +11,3 @@ pytz >=2011k
 ordereddict
 httplib2
 lxml
-delete
