@@ -31,3 +31,4 @@ test_cmd="./virtualenv/bin/nosetests -v --with-xunit --xunit-file=$LOG_DIR/noset
 eval $test_cmd 2>&1 | tee -a $LOG_DIR/output.log
 
 perl parse-nose.pl -i $LOG_DIR/nosetests.xml -o $LOG_DIR/nosetests.csv
+
