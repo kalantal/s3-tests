@@ -3,10 +3,6 @@
 
 These tests verify ingegrity of an S3-like enviornment.
 
-This test suite takes about an hour to run.
-
-This is built to run in a RHEL 7.6 environment.
-
 Setup:
 
 	sudo chmod u+x bootstrap
@@ -19,6 +15,7 @@ You will need to create configuration files with two different credentials. The 
 	
 Notes:
 
+	This is built to run in a RHEL 7.6 environment.
 	The default run is all tests, which can be found in "testlist"
 	34 of the tests listed as "test.fuzzer" are framework tests
 	The effective test count: 638
