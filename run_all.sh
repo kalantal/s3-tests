@@ -29,3 +29,8 @@ test_cmd="S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --with-xunit --xunit
 eval $test_cmd 2>&1 | tee -a $LOG_DIR/output.log
 
 perl parse-nose.pl -i $LOG_DIR/nosetests.xml -o $LOG_DIR/nosetests.csv
+
+#Experimental nosetest parsing
+touch $LOG_DIR/nosetests.txt
+./nose-parse --xml=$LOG_DIR/nosetests.xml > $LOG_DIR/nosetests.txt
+
