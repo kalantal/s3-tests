@@ -12,3 +12,4 @@ ordereddict
 httplib2
 lxml
 nose-blacklist
+nose_picker
