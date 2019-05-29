@@ -26,7 +26,7 @@ Notes:
 	
 Additonal options and outputs:
 
-	#To gather a list of tests being run, use the flags:
+	#To gather a list of tests being run, use the flags: -v --collect-only
 	#s3tests.functional.test_s3_website.test_routing_generator -- needs to be stripped, as well as the " ... ok" 
 	#As well as the trailing test success notification at the bottom of the file
 	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --collect-only 2>&1 | tee testlist
