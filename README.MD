@@ -27,6 +27,8 @@ Notes:
 Additonal options and outputs:
 
 	#To gather a list of tests being run, use the flags:
+	#s3tests.functional.test_s3_website.test_routing_generator -- needs to be stripped, as well as the " ... ok" 
+	#As well as the trailing test success notification at the bottom of the file
 	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --collect-only 2>&1 | tee testlist
 	
 	#Run tests to Raw CSV
@@ -41,7 +43,7 @@ Additonal options and outputs:
 	#You can specify what test(s) to run:
 	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests s3tests.functional.test_s3:test_bucket_list_empty
 
-	#Some tests have attributes set based on their current reliability and things like AWS not enforcing their spec stricly. You can filter tests based on their attributes:
+	#You can filter tests based on their attributes:
 	S3TEST_CONF=aws.conf ./virtualenv/bin/nosetests -a '!fails_on_aws'
 
 	#Tests can be run in a list:
