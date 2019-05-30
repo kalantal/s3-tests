@@ -324,6 +324,7 @@ s3tests.functional.test_s3_website.test_routing_generator
 #s3tests_boto3.functional.test_s3.test_object_raw_get_x_amz_expires_not_expired
 #
 s3tests_boto3.functional.test_s3.test_object_raw_get_x_amz_expires_out_range_zero
+#
 #s3tests_boto3.functional.test_s3.test_object_raw_get_x_amz_expires_out_max_range
 #s3tests_boto3.functional.test_s3.test_object_raw_get_x_amz_expires_out_positive_range
 #s3tests_boto3.functional.test_s3.test_object_anon_put
@@ -347,7 +348,9 @@ s3tests_boto3.functional.test_s3.test_object_raw_get_x_amz_expires_out_range_zer
 #s3tests_boto3.functional.test_s3.test_bucket_create_naming_dns_underscore
 #s3tests_boto3.functional.test_s3.test_bucket_create_naming_dns_long
 #s3tests_boto3.functional.test_s3.test_bucket_create_naming_dns_dash_at_end
+#
 s3tests_boto3.functional.test_s3.test_bucket_create_naming_dns_dot_dot
+#
 #s3tests_boto3.functional.test_s3.test_bucket_create_naming_dns_dot_dash
 #s3tests_boto3.functional.test_s3.test_bucket_create_naming_dns_dash_dot
 #s3tests_boto3.functional.test_s3.test_bucket_create_exists
@@ -405,6 +408,7 @@ s3tests_boto3.functional.test_s3.test_bucket_create_naming_dns_dot_dot
 #s3tests_boto3.functional.test_s3.test_bucket_create_naming_good_contains_hyphen
 #
 s3tests_boto3.functional.test_s3.test_bucket_recreate_not_overriding
+#
 #s3tests_boto3.functional.test_s3.test_bucket_create_special_key_names
 #s3tests_boto3.functional.test_s3.test_bucket_list_special_prefix
 #s3tests_boto3.functional.test_s3.test_object_copy_zero_size
@@ -509,6 +513,7 @@ s3tests_boto3.functional.test_s3.test_lifecycle_set_empty_filter
 s3tests_boto3.functional.test_s3.test_lifecycle_deletemarker_expiration
 s3tests_boto3.functional.test_s3.test_lifecycle_set_multipart
 s3tests_boto3.functional.test_s3.test_lifecycle_multipart_expiration
+#
 #s3tests_boto3.functional.test_s3.test_encrypted_transfer_1b
 #s3tests_boto3.functional.test_s3.test_encrypted_transfer_1kb
 #s3tests_boto3.functional.test_s3.test_encrypted_transfer_1MB
