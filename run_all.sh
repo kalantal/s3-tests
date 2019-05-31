@@ -1,7 +1,9 @@
 #!/bin/bash
 
 export S3TEST_CONF=s3.conf
-export BOTO_CONFIG=boto.conf
+export BOTO_CONFIG=boto.cfg
+
+sudo cp boto.cfg /etc/boto.cfg
 
 DATE=$(date +%Y-%m-%d_%H%M)
 
@@ -29,4 +31,3 @@ test_cmd="S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --with-xunit --xunit
 eval $test_cmd 2>&1 | tee -a $LOG_DIR/output.log
 
 perl parse-nose.pl -i $LOG_DIR/nosetests.xml -o $LOG_DIR/nosetests.csv
-
