@@ -49,6 +49,9 @@ Additonal options and outputs:
 		
 	#Tests can be blacklisted:
 	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --with-xunit --with-blacklist --blacklist-file=blacklists/blacklist.txt
+	
+	#Test only Boto3 tests:
+	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v -s -A 'not fails_on_rgw' s3tests_boto3.functional
 		
 	#Debug (Any stdout output will be printed immediately)
 	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -vv -s 2>&1 | tee output/$(date +%Y-%m-%d_%H%M)_debug_run
