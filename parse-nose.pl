@@ -1,6 +1,7 @@
 #!/usr/bin/env perl
 
-#use XML::Simple;
+#testing XML::Simple
+use XML::Simple;
 use XML::LibXML;
 use Data::Dumper;
 use Getopt::Std;
