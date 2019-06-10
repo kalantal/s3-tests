@@ -1,5 +1,6 @@
 #!/bin/bash
 
+#These need to match your specific configuration files
 export S3TEST_CONF=s3.conf
 export BOTO_CONFIG=boto.cfg
 
