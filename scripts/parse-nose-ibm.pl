@@ -69,5 +69,5 @@ foreach $testsuite ($tests->findnodes('/testsuite')) {
 		}
 	}
 print OUTFILE "Tests = $test_num Errors = $test_errors Failures = $test_failures Skip = $test_skip\n";
-#print Dumper($tests);
+
 close(OUTFILE);
