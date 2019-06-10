@@ -1,6 +1,5 @@
 #!/usr/bin/env perl
 
-#testing XML::Simple
 use XML::Simple;
 use XML::LibXML;
 use Data::Dumper;
