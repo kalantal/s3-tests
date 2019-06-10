@@ -34,7 +34,7 @@ open(OUTFILE,">$output_file")||die "Error opening ouput file $output_file: $!\n"
 
 $parser = XML::LibXML->new();
 $tests = $parser->parse_file($xmlfilename);
-print OUTFILE "Test, Test status, Error/Failure Type, Error/Failure Message\n\n";
+print OUTFILE "Test, Test status, Error/Failure Type, Error/Failure Message\n";
 
 foreach $testsuite ($tests->findnodes('/testsuite')) {
         $test_num = $testsuite->getAttribute('tests');
