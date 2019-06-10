@@ -23,7 +23,7 @@ Notes:
 	
 Quick Start:
 	
-	./run_all.sh
+	sudo ./run_all.sh
 	
 Additonal options and outputs:
 
