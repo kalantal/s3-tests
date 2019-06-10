@@ -476,6 +476,7 @@ s3tests_boto3.functional.test_s3.test_set_cors
 s3tests_boto3.functional.test_s3.test_cors_origin_response
 s3tests_boto3.functional.test_s3.test_cors_origin_wildcard
 s3tests_boto3.functional.test_s3.test_cors_header_option
+s3tests_boto3.functional.test_s3.test_set_tagging
 s3tests_boto3.functional.test_s3.test_atomic_read_1mb
 s3tests_boto3.functional.test_s3.test_atomic_read_4mb
 s3tests_boto3.functional.test_s3.test_atomic_read_8mb
