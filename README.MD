@@ -18,8 +18,12 @@ Notes:
 	This is built to run in a RHEL 7.6 environment.
 	The default run is all tests, which can be found in "testlist"
 	34 of the tests listed as "test.fuzzer" are framework tests
-	The effective test count: 638
+	The effective test count: 525 (with blacklist)
 	Make sure the testing system time and date are accurate.
+	
+Quick Start:
+	
+	./run_all.sh
 	
 Additonal options and outputs:
 
