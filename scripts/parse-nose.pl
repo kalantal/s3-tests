@@ -37,7 +37,6 @@ print OUTFILE "Test, Test status, Error/Failure Type, Error/Failure Message\n";
 
 foreach $testsuite ($tests->findnodes('/testsuite')) {
         $test_num = $testsuite->getAttribute('tests');
-        #$test_passed = $testssuite->getAttribute('passed');
         $test_errors = $testsuite->getAttribute('errors');
         $test_failures = $testsuite->getAttribute('failures');
         $test_skip = $testsuite->getAttribute('skip');
