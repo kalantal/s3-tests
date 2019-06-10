@@ -1,5 +1,6 @@
 #!/bin/sh
-#set -e
+
+mkdir -p output
 
 sudo yum install dependencies/rpms/* --nogpgcheck -y
 
