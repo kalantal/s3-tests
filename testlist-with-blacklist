@@ -21,7 +21,6 @@ s3tests.functional.test_s3.test_append_object
 s3tests.functional.test_s3.test_append_normal_object
 s3tests.functional.test_s3.test_append_object_position_wrong
 s3tests.functional.test_s3.test_logging_toggle
-s3tests.functional.test_s3.test_lifecycle_transition
 s3tests.functional.test_s3.test_atomic_write_bucket_gone
 s3tests.functional.test_s3.test_encryption_sse_c_multipart_invalid_chunks_1
 s3tests.functional.test_s3.test_encryption_sse_c_multipart_invalid_chunks_2
