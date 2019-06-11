@@ -15,7 +15,4 @@ output/*
 
 s3.conf
 boto.conf
-
-config.yaml
 siege.conf
-
