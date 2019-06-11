@@ -59,7 +59,7 @@ s3tests.functional.test_headers.test_bucket_create_bad_amz_date_before_epoch_aws
 #s3tests.functional.test_s3.test_append_normal_object
 #s3tests.functional.test_s3.test_append_object_position_wrong
 #s3tests.functional.test_s3.test_logging_toggle
-#s3tests.functional.test_s3.test_lifecycle_transition
+s3tests.functional.test_s3.test_lifecycle_transition
 s3tests.functional.test_s3.test_lifecycle_transition_single_rule_multi_trans
 s3tests.functional.test_s3.test_lifecycle_set_noncurrent_transition
 s3tests.functional.test_s3.test_lifecycle_noncur_transition
@@ -69,7 +69,6 @@ s3tests.functional.test_s3.test_object_modify_storage_class
 s3tests.functional.test_s3.test_object_modify_storage_class_multipart
 s3tests.functional.test_s3.test_object_storage_class_copy
 s3tests.functional.test_s3.test_object_storage_class_copy_multipart
-#############################################################################test_atomic_dual_conditional_write_1mb might not be the test that is "skipping". Could be "test_lifecycle_transition"
 s3tests.functional.test_s3.test_atomic_dual_conditional_write_1mb
 #s3tests.functional.test_s3.test_atomic_write_bucket_gone
 #s3tests.functional.test_s3.test_encryption_sse_c_multipart_invalid_chunks_1
