@@ -21,6 +21,7 @@ s3tests.functional.test_s3.test_append_object
 s3tests.functional.test_s3.test_append_normal_object
 s3tests.functional.test_s3.test_append_object_position_wrong
 s3tests.functional.test_s3.test_logging_toggle
+s3tests.functional.test_s3.test_lifecycle_transition
 s3tests.functional.test_s3.test_atomic_write_bucket_gone
 s3tests.functional.test_s3.test_encryption_sse_c_multipart_invalid_chunks_1
 s3tests.functional.test_s3.test_encryption_sse_c_multipart_invalid_chunks_2
@@ -413,8 +414,8 @@ s3tests_boto3.functional.test_s3.test_lifecycle_set_date
 s3tests_boto3.functional.test_s3.test_lifecycle_set_invalid_date
 s3tests_boto3.functional.test_s3.test_lifecycle_expiration_date
 s3tests_boto3.functional.test_s3.test_lifecycle_expiration_days0
-Check for valid x-amz-expiration header after PUT
-Check for valid x-amz-expiration header on HEAD request
+Checkforvalidx-amz-expirationheaderafterPUT
+Checkforvalidx-amz-expirationheaderonHEADrequest
 s3tests_boto3.functional.test_s3.test_lifecycle_set_noncurrent
 s3tests_boto3.functional.test_s3.test_lifecycle_noncur_expiration
 s3tests_boto3.functional.test_s3.test_lifecycle_set_deletemarker
