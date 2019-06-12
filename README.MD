@@ -7,6 +7,8 @@ Setup:
 
 	sudo chmod u+x bootstrap run_all.sh scripts/*
 	sudo ./bootstrap
+	Place the applicable certificate chain(s) in your working directoy and run:
+	sudo ./scrtips/install_certificates.sh
 
 You will need to create configuration files with two different credentials. The empty configuraion files are:
 
