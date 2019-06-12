@@ -18,8 +18,8 @@ You will need to create configuration files with two different credentials. The 
 Notes:
 
 	This is built to run in a RHEL 7.6 environment
-	The default run is all tests, which can be found in "testlist"
-	34 of the tests listed as "test.fuzzer" are framework tests
+	"testlist" & "testlist-with-blacklist" contain a list of all tests that can run
+	The default run of the suite is with the blacklist: blacklist/blacklist.txt
 	The effective test count: 526 (with blacklist)
 	Make sure the testing system time and date are accurate
 	The script run_all.sh assumes the configuration files are: s3.conf and boto.cfg
