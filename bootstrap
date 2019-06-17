@@ -4,9 +4,6 @@ mkdir -p output
 
 sudo yum install dependencies/rpms/* --nogpgcheck -y
 
-#Only on Citi enviornments running python-2.7.5-79. This is a dependency for python-2.7.5-77.
-#sudo rpm -i --force dependencies/rpms/python-devel-2.7.5-77.el7_6.x86_64.rpm --nosignature --nodeps
-
 virtualenv --no-site-packages --distribute virtualenv
 virtualenv/bin/pip install --upgrade pip --no-index --find-links="dependencies/pip/"
 virtualenv/bin/pip install setuptools==32.3.1 --no-index --find-links="dependencies/pip/"
