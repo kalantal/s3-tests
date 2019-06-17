@@ -1,0 +1,6 @@
+sudo rm -rf /usr/lib/python2.7/site-packages/backports.ssl_match_hostname-3.*
+sudo yum install python-backports-ssl_match_hostname
+sudo yum update
+
+#Only on Citi enviornments running python-2.7.5-79. This is a dependency for python-2.7.5-77.
+sudo rpm -i --force dependencies/rpms/python-devel-2.7.5-77.el7_6.x86_64.rpm --nosignature --nodeps
