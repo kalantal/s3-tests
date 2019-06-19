@@ -5,7 +5,7 @@ These tests verify ingegrity of an S3-like enviornment.
 
 Setup:
 
-	sudo chmod u+x bootstrap run_all.sh scripts/*
+	sudo chmod +x bootstrap
 	sudo ./bootstrap
 	Place the applicable certificate chain(s) in your working directoy and run:
 	sudo ./scrtips/install_certificates.sh
@@ -13,7 +13,6 @@ Setup:
 You will need to create configuration files with two different credentials. The empty configuraion files are:
 
 	sample_s3.conf
-	sample_boto.cfg
 	
 Notes:
 
