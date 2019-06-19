@@ -2,9 +2,7 @@
 
 #These need to match your specific configuration files
 export S3TEST_CONF=s3.conf
-export BOTO_CONFIG=boto.cfg
-
-#cp boto.cfg /etc/boto.cfg
+export BOTO_CONFIG=boto.ini
 
 DATE=$(date +%Y-%m-%d_%H%M)
 
