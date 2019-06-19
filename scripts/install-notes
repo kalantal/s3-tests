@@ -11,6 +11,7 @@ git clone https:/github.com/ceph/s3-tests
 cd s3-tests
 git checkout b3d9487f14ca1b3725ef9f5aa1570fa871f4f910
 
+virtualenv/bin/pip install --download dependencies/pip setuptools
 virtualenv/bin/pip download nose-blacklist -d dependencies/pip
 virtualenv/bin/pip install nose-blacklist --find-links dependencies/pip
 
