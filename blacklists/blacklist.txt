@@ -439,6 +439,7 @@ s3tests.fuzz.test.test_fuzzer.test_load_graph
 #s3tests_boto3.functional.test_s3.test_multipart_upload_incorrect_etag
 #s3tests_boto3.functional.test_s3.test_100_continue
 #s3tests_boto3.functional.test_s3.test_set_cors
+#s3tests_boto3.functional.test_s3.test_set_tagging
 #s3tests_boto3.functional.test_s3.test_cors_origin_response
 #s3tests_boto3.functional.test_s3.test_cors_origin_wildcard
 #s3tests_boto3.functional.test_s3.test_cors_header_option
@@ -492,6 +493,8 @@ s3tests.fuzz.test.test_fuzzer.test_load_graph
 #s3tests_boto3.functional.test_s3.test_lifecycle_set_invalid_date
 #s3tests_boto3.functional.test_s3.test_lifecycle_expiration_date
 #s3tests_boto3.functional.test_s3.test_lifecycle_expiration_days0
+#Check for valid x-amz-expiration header after PUT
+#Check for valid x-amz-expiration header on HEAD request
 #s3tests_boto3.functional.test_s3.test_lifecycle_set_noncurrent
 #s3tests_boto3.functional.test_s3.test_lifecycle_noncur_expiration
 #s3tests_boto3.functional.test_s3.test_lifecycle_set_deletemarker
