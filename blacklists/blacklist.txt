@@ -439,6 +439,7 @@ s3tests.fuzz.test.test_fuzzer.test_load_graph
 #s3tests_boto3.functional.test_s3.test_multipart_upload_incorrect_etag
 #s3tests_boto3.functional.test_s3.test_100_continue
 #s3tests_boto3.functional.test_s3.test_set_cors
+#s3tests_boto3.functional.test_s3.test_set_tagging
 #s3tests_boto3.functional.test_s3.test_cors_origin_response
 #s3tests_boto3.functional.test_s3.test_cors_origin_wildcard
 #s3tests_boto3.functional.test_s3.test_cors_header_option
