@@ -34,6 +34,7 @@ Additonal options and outputs:
 	#s3tests.functional.test_s3_website.test_routing_generator -- needs to be stripped, as well as the " ... ok" 
 	#As well as the trailing test success notification at the bottom of the file
 	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --collect-only 2>&1 | tee testlist
+	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --collect-only --with-blacklist --blacklist-file=blacklists/blacklist.txt | tee testlist-with-blacklist
 	
 	#Run tests to Raw CSV
 	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v 2>&1 | tee nosetestresults.csv
