@@ -2,7 +2,6 @@
 
 #These need to match your specific configuration files
 export S3TEST_CONF=s3.conf
-export BOTO_CONFIG=boto.ini
 
 DATE=$(date +%Y-%m-%d_%H%M)
 
@@ -17,7 +16,6 @@ test_cmd="S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --with-xunit --xunit
   echo "ENVIRONMENT:"
   echo "======================================================================"
   env | grep S3
-  env | grep boto
   echo "======================================================================"
   echo
   echo "CONFIG:"
