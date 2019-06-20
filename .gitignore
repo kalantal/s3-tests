@@ -12,6 +12,7 @@
 /virtualenv
 
 output/*
+certificates/*
 
 s3.conf
 boto.conf
