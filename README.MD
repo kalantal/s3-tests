@@ -7,16 +7,15 @@ Setup:
 
 	sudo chmod +x bootstrap
 	sudo ./bootstrap
-	Place the applicable certificate chain(s) in your working directoy and run:
-	sudo ./scrtips/install_certificates.sh
 
 You will need to create configuration files with two different credentials. The empty configuraion files are:
 
 	sample_s3.conf
+	sample_boto.ini
 	
 Notes:
 
-	This is built to run in a RHEL 7.6 environment
+	This is built to run in a RHEL 7.7 environment
 	"testlist" & "testlist-with-blacklist" contain a list of all tests that can run
 	The default run of the suite is with the blacklist: blacklist/blacklist.txt
 	The effective test count: 526 (with blacklist)
