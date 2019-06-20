@@ -1,5 +1,13 @@
 #!/bin/sh
 
+if [ ! -f s3.conf ]; then
+	echo "no s3.conf found, see README.MD, exiting" && exit 0
+fi
+
+if [ ! -f boto.ini ]; then
+	echo "no boto.ini found, see README.MD, exiting" && exit 0
+fi
+
 mkdir -p output
 
 sudo chmod +x run_all.sh scripts/*
@@ -11,3 +19,6 @@ virtualenv/bin/pip install --upgrade pip --no-index --find-links="dependencies/p
 virtualenv/bin/pip install setuptools --no-index --find-links="dependencies/pip/"
 virtualenv/bin/pip install -r requirements.txt --no-index --find-links="dependencies/pip/"
 virtualenv/bin/python setup.py develop
+
+sudo cp certificates/Citi_DEVELOPMENT_chain.pem /etc/pki/ca-trust/source/
+sudo update-ca-trust extract
