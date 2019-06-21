@@ -33,3 +33,4 @@ eval $test_cmd 2>&1 | tee -a $LOG_DIR/output.log
 perl scripts/parse-nose.pl -i $LOG_DIR/nosetests.xml -o $LOG_DIR/nosetests.csv
 
 sed -ri '/teardown/d' $LOG_DIR/nosetests.csv
+
