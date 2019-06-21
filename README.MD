@@ -18,9 +18,12 @@ Notes:
 	This is built to run in a RHEL 7.7 environment
 	"testlist" & "testlist-with-blacklist" contain a list of all tests that can run
 	The default run of the suite is with the blacklist: blacklist/blacklist.txt
-	The effective test count: 526 (with blacklist)
+	The effective test count: 553 (with blacklist)
 	Make sure the testing system time and date are accurate
 	The script run_all.sh assumes the configuration files are: s3.conf and boto.cfg
+	#non-standard naming in tests
+	s3tests_boto3.functional.test_s3.test_lifecycle_expiration_header_head
+	s3tests_boto3.functional.test_s3.test_lifecycle_expiration_header_put
 	
 Quick Start:
 	
@@ -29,10 +32,8 @@ Quick Start:
 Additonal options and outputs:
 
 	#To gather a list of tests being run, use the flags: -v --collect-only
-	#s3tests.functional.test_s3_website.test_routing_generator -- needs to be stripped, as well as the " ... ok" 
-	#As well as the trailing test success notification at the bottom of the file
 	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --collect-only 2>&1 | tee testlist
-	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --collect-only --with-blacklist --blacklist-file=blacklists/blacklist.txt | tee testlist-with-blacklist
+	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --collect-only --with-blacklist --blacklist-file=blacklists/blacklist.txt 2>&1 | tee testlist-with-blacklist
 	
 	#Run tests to Raw CSV
 	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v 2>&1 | tee nosetestresults.csv

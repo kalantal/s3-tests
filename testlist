@@ -527,6 +527,12 @@ s3tests_boto3.functional.test_s3.test_lifecycle_set_date
 s3tests_boto3.functional.test_s3.test_lifecycle_set_invalid_date
 s3tests_boto3.functional.test_s3.test_lifecycle_expiration_date
 s3tests_boto3.functional.test_s3.test_lifecycle_expiration_days0
+s3tests_boto3.functional.test_s3.test_lifecycle_expiration_header_head
+s3tests_boto3.functional.test_s3.test_lifecycle_expiration_header_put
+#non-standard
+s3tests_boto3.functional.test_s3.test_lifecycle_expiration_header_head
+#non-standard
+s3tests_boto3.functional.test_s3.test_lifecycle_expiration_header_put
 Check for valid x-amz-expiration header after PUT
 Check for valid x-amz-expiration header on HEAD request
 s3tests_boto3.functional.test_s3.test_lifecycle_set_noncurrent
