@@ -17,4 +17,3 @@ boto.ini
 boto.cfg
 siege.conf
 cleanupKeys.cfg
-*.cfg
