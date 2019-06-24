@@ -12,8 +12,5 @@
 /virtualenv
 
 s3.conf
-boto.conf
-boto.ini
-boto.cfg
-siege.conf
-cleanupKeys.cfg
+cleanupKeys
+credentials
