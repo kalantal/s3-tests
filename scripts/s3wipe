@@ -92,7 +92,7 @@ def deleter(args, rmQueue, numThreads):
 
     # Set up per-thread boto objects
     myconn = boto.s3.connection.S3Connection(
-        host='111.222.333.444',
+        host='169.172.86.140',
         port=80,
         calling_format=OrdinaryCallingFormat(),
         is_secure=False,
@@ -146,7 +146,7 @@ def lister(subDir):
 
     # Set up our per-thread boto connection
     myconn = boto.s3.connection.S3Connection(
-        host='111.222.333.444',
+        host='169.172.86.140',
         port=80,
         calling_format=OrdinaryCallingFormat(),
         is_secure=False,
@@ -188,7 +188,7 @@ def main():
     # Our main boto object.  Really only used to start the
     # watcher threads on a per-subdir basis
     conn = boto.s3.connection.S3Connection(
-        host='111.222.333.444',
+        host='169.172.86.140',
         port=80,
         calling_format=OrdinaryCallingFormat(),
         is_secure=False,
