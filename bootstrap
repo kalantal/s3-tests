@@ -9,6 +9,7 @@ sudo yum install dependencies/rpms/* --nogpgcheck -y
 virtualenv --no-site-packages --distribute virtualenv
 virtualenv/bin/pip install --upgrade pip --no-index --find-links="dependencies/pip/"
 virtualenv/bin/pip install setuptools --no-index --find-links="dependencies/pip/"
+#This is a work-around for awscli
 virtualenv/bin/pip install dependencies/pip/PyYAML-5.1.tar.gz --no-index --find-links="dependencies/pip/"
 virtualenv/bin/pip install -r requirements.txt --no-index --find-links="dependencies/pip/"
 virtualenv/bin/python setup.py develop
