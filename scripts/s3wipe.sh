@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-source ../cleanupKeys.cfg
+source ../cleanupKeys
 
 export vaultlist=/tmp/s3vaultlist
 export prefix=s3tests-
