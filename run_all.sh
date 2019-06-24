@@ -4,14 +4,12 @@ if [ ! -f s3.conf ]; then
 	echo "no s3.conf found, see README.MD, exiting" && exit 0
 fi
 
-if [ ! -f boto.ini ]; then
-	echo "no boto.ini found, exiting" && exit 0
-fi
-
 export S3TEST_CONF=s3.conf
 export BOTO_CONFIG=boto.ini
 export AWS_SHARED_CREDENTIALS_FILE=credentials
 
+
+#Build key files from s3.conf
 access_key=$(grep -m 1 "access_key" s3.conf | sed 's/ //g')
 secret_key=$(grep -m 1 "secret_key" s3.conf | sed 's/ //g')
 
