@@ -18,6 +18,7 @@ credentials_secret_key=$(echo "$secret_key" | sed "s/secret_key/aws_secret_acces
 echo "[default]" > credentials
 echo $credentials_access_key >> credentials
 echo $credentials_secret_key >> credentials
+
 if [ ! -f credentials ]; then
 	echo "credentials build error, exiting" && exit 0
 fi
@@ -27,9 +28,18 @@ cleanup_access_key=$(echo "$access_key" | sed "s/access_key/id/")
 cleanup_secret_key=$(echo "$secret_key" | sed "s/secret_key/key/")
 echo $cleanup_access_key > cleanupKeys
 echo $cleanup_secret_key >> cleanupKeys
+
 if [ ! -f cleanupKeys ]; then
 	echo "cleanupKeys build error, exiting" && exit 0
 fi
+
+#Cleanup to prevent boto2 from calling the environmental variables
+credentials_access_key=
+credentials_secret_key=
+cleanup_secret_key=
+cleanup_secret_key=
+access_key=
+secret_key=
 
 DATE=$(date +%Y-%m-%d_%H%M)
 
@@ -57,8 +67,10 @@ test_cmd="S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --with-xunit --xunit
   echo
   echo "credentials"
   cat credentials
+  echo
   echo "cleanupKeys"
   cat cleanupKeys
+  echo
   echo "======================================================================"
   echo
 ) > $LOG_DIR/output.log

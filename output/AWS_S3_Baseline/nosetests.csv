@@ -27,7 +27,7 @@ s3tests.functional.test_s3,test_encryption_sse_c_multipart_invalid_chunks_1,ERRO
 s3tests.functional.test_s3,test_encryption_sse_c_multipart_invalid_chunks_2,ERROR,socket.error,[Errno 104] Connection reset by peer
 s3tests.functional.test_s3,test_bucket_policy_different_tenant,ERROR,boto.exception.S3ResponseError,S3ResponseError: 400 Bad Request
 s3tests.functional.test_s3,test_bucket_policy_set_condition_operator_end_with_IfExists,PASSED,
-s3tests.functional.test_s3,test_bucket_policy_put_obj_enc,ERROR,boto.exception.S3ResponseError,S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3,test_bucket_policy_put_obj_enc,FAILED,exceptions.AssertionError,S3ResponseError not raised
 s3tests.functional.test_s3,test_bucket_policy_put_obj_request_obj_tag,FAILED,exceptions.AssertionError,S3ResponseError not raised
 s3tests.functional.test_s3_website,check_can_test_website,PASSED,
 s3tests.fuzz.test.test_fuzzer,test_descend_leaf_node,PASSED,
@@ -119,7 +119,7 @@ s3tests_boto3.functional.test_s3,test_bucket_list_delimiter_basic,PASSED,
 s3tests_boto3.functional.test_s3,test_bucket_list_delimiter_prefix,PASSED,
 s3tests_boto3.functional.test_s3,test_bucket_list_delimiter_prefix_ends_with_delimiter,PASSED,
 s3tests_boto3.functional.test_s3,test_bucket_list_delimiter_alt,PASSED,
-s3tests_boto3.functional.test_s3,test_bucket_list_delimiter_prefix_underscore,ERROR,botocore.errorfactory.NoSuchBucket,An error occurred (NoSuchBucket) when calling the PutObject operation: The specified bucket does not exist
+s3tests_boto3.functional.test_s3,test_bucket_list_delimiter_prefix_underscore,PASSED,
 s3tests_boto3.functional.test_s3,test_bucket_list_delimiter_percentage,PASSED,
 s3tests_boto3.functional.test_s3,test_bucket_list_delimiter_whitespace,PASSED,
 s3tests_boto3.functional.test_s3,test_bucket_list_delimiter_dot,PASSED,
@@ -135,7 +135,7 @@ s3tests_boto3.functional.test_s3,test_bucket_list_prefix_not_exist,PASSED,
 s3tests_boto3.functional.test_s3,test_bucket_list_prefix_unreadable,FAILED,exceptions.AssertionError,'%0A' != '\n'
 s3tests_boto3.functional.test_s3,test_bucket_list_prefix_delimiter_basic,PASSED,
 s3tests_boto3.functional.test_s3,test_bucket_list_prefix_delimiter_alt,PASSED,
-s3tests_boto3.functional.test_s3,test_bucket_list_prefix_delimiter_prefix_not_exist,ERROR,botocore.errorfactory.NoSuchBucket,An error occurred (NoSuchBucket) when calling the PutObject operation: The specified bucket does not exist
+s3tests_boto3.functional.test_s3,test_bucket_list_prefix_delimiter_prefix_not_exist,PASSED,
 s3tests_boto3.functional.test_s3,test_bucket_list_prefix_delimiter_delimiter_not_exist,PASSED,
 s3tests_boto3.functional.test_s3,test_bucket_list_prefix_delimiter_prefix_delimiter_not_exist,PASSED,
 s3tests_boto3.functional.test_s3,test_bucket_list_maxkeys_one,PASSED,
@@ -241,7 +241,7 @@ s3tests_boto3.functional.test_s3,test_object_raw_authenticated_object_acl,PASSED
 s3tests_boto3.functional.test_s3,test_object_raw_authenticated_bucket_gone,PASSED,
 s3tests_boto3.functional.test_s3,test_object_raw_authenticated_object_gone,PASSED,
 s3tests_boto3.functional.test_s3,test_object_raw_get_x_amz_expires_not_expired,PASSED,
-s3tests_boto3.functional.test_s3,test_object_raw_get_x_amz_expires_out_range_zero,FAILED,exceptions.AssertionError,200 != 403
+s3tests_boto3.functional.test_s3,test_object_raw_get_x_amz_expires_out_range_zero,PASSED,
 s3tests_boto3.functional.test_s3,test_object_raw_get_x_amz_expires_out_max_range,FAILED,exceptions.AssertionError,400 != 403
 s3tests_boto3.functional.test_s3,test_object_raw_get_x_amz_expires_out_positive_range,FAILED,exceptions.AssertionError,400 != 403
 s3tests_boto3.functional.test_s3,test_object_anon_put,PASSED,
@@ -302,7 +302,7 @@ s3tests_boto3.functional.test_s3,test_object_header_acl_grants,FAILED,exceptions
 s3tests_boto3.functional.test_s3,test_bucket_header_acl_grants,FAILED,exceptions.AssertionError,'justinjrestivo' != 'JustinRestivo2'
 s3tests_boto3.functional.test_s3,test_bucket_acl_grant_email,FAILED,exceptions.AssertionError,'justinjrestivo' != 'JustinRestivo2'
 s3tests_boto3.functional.test_s3,test_bucket_acl_grant_email_notexist,PASSED,
-s3tests_boto3.functional.test_s3,test_bucket_acl_revoke_all,PASSED,
+s3tests_boto3.functional.test_s3,test_bucket_acl_revoke_all,FAILED,exceptions.AssertionError,1 != 0
 s3tests_boto3.functional.test_s3,test_logging_toggle,ERROR,botocore.exceptions.ClientError,An error occurred (InvalidTargetBucketForLogging) when calling the PutBucketLogging operation: You must give the log-delivery group WRITE and READ_ACP permissions to the target bucket
 s3tests_boto3.functional.test_s3,test_access_bucket_private_object_private,FAILED,exceptions.AssertionError,ClientError not raised
 s3tests_boto3.functional.test_s3,test_access_bucket_private_object_publicread,FAILED,exceptions.AssertionError,ClientError not raised
@@ -390,7 +390,7 @@ s3tests_boto3.functional.test_s3,test_versioning_obj_create_read_remove,PASSED,
 s3tests_boto3.functional.test_s3,test_versioning_obj_create_read_remove_head,PASSED,
 s3tests_boto3.functional.test_s3,test_versioning_obj_plain_null_version_removal,FAILED,exceptions.AssertionError,'Enabled' != None
 s3tests_boto3.functional.test_s3,test_versioning_obj_plain_null_version_overwrite,FAILED,exceptions.AssertionError,'Enabled' != None
-s3tests_boto3.functional.test_s3,test_versioning_obj_plain_null_version_overwrite_suspended,FAILED,exceptions.AssertionError,'Suspended' != 'Enabled'
+s3tests_boto3.functional.test_s3,test_versioning_obj_plain_null_version_overwrite_suspended,FAILED,exceptions.AssertionError,'Enabled' != None
 s3tests_boto3.functional.test_s3,test_versioning_obj_suspend_versions,FAILED,exceptions.AssertionError,'Enabled' != None
 s3tests_boto3.functional.test_s3,test_versioning_obj_create_versions_remove_all,FAILED,exceptions.AssertionError,'Enabled' != None
 s3tests_boto3.functional.test_s3,test_versioning_obj_create_versions_remove_special_names,FAILED,exceptions.AssertionError,'Enabled' != None
@@ -552,4 +552,4 @@ test_realistic.TestFileValidator,test_new_file_is_valid,PASSED,
 test_realistic.TestFileValidator,test_new_file_is_valid_on_several_calls,PASSED,
 test_realistic.TestFileValidator,test_new_file_is_valid_when_size_is_1,PASSED,
 test_realistic.TestFiles,test_random_file_valid,PASSED,
-Tests = 554 Errors = 64 Failures = 111 Skip = 0
+Tests = 554 Errors = 61 Failures = 112 Skip = 0
