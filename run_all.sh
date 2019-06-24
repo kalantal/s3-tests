@@ -8,7 +8,6 @@ export S3TEST_CONF=s3.conf
 export BOTO_CONFIG=boto.ini
 export AWS_SHARED_CREDENTIALS_FILE=credentials
 
-
 #Build key files from s3.conf
 access_key=$(grep -m 1 "access_key" s3.conf | sed 's/ //g')
 secret_key=$(grep -m 1 "secret_key" s3.conf | sed 's/ //g')
