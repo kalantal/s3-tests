@@ -8,10 +8,9 @@ Setup:
 	sudo chmod +x bootstrap
 	sudo ./bootstrap
 
-You will need to create configuration files with two different credentials. The empty configuraion files are:
+You will need to create a configuration file with credentials. The empty configuraion file is:
 
 	sample_s3.conf
-	sample_boto.ini
 	
 Notes:
 
@@ -20,7 +19,7 @@ Notes:
 	The default run of the suite is with the blacklist: blacklist/blacklist.txt
 	The effective test count: 553 (with blacklist)
 	Make sure the testing system time and date are accurate
-	The script run_all.sh assumes the configuration files are: s3.conf and boto.cfg
+	The scripts assume the configuration file is named: s3.conf
 	#non-standard naming in tests
 	s3tests_boto3.functional.test_s3.test_lifecycle_expiration_header_head
 	s3tests_boto3.functional.test_s3.test_lifecycle_expiration_header_put
@@ -32,8 +31,8 @@ Quick Start:
 Additonal options and outputs:
 
 	#To gather a list of tests being run, use the flags: -v --collect-only
-	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --collect-only 2>&1 | tee testlist
-	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --collect-only --with-blacklist --blacklist-file=blacklists/blacklist.txt 2>&1 | tee testlist-with-blacklist
+	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --collect-only 2>&1 | tee output/testlists/testlist
+	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --collect-only --with-blacklist --blacklist-file=blacklists/blacklist.txt 2>&1 | tee output/testlists/testlist-with-blacklist
 	
 	#Run tests to Raw CSV
 	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v 2>&1 | tee nosetestresults.csv
