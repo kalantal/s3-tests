@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-source cleanupKeys.cfg
+source ../cleanupKeys.cfg
 
 export vaultlist=/tmp/s3vaultlist
 export prefix=s3tests-
@@ -11,7 +11,7 @@ function gatherlist {
 	s3cmd ls | awk '{print $3}' | grep $prefix > $vaultlist
 }
 gatherlist 
-echo -en '\nLsit of vaults:\n' 
+echo -en '\n\nLsit of vaults:\n' 
 cat $vaultlist
 echo -en '\n'
 
@@ -20,8 +20,9 @@ function deletevaults {
 }
 deletevaults
 
-echo -en '\n'
+echo -en 'Done with cleanup\n'
+
 gatherlist 
-echo -en '\nLsit of vaults:\n'
+echo -en '\nLsit of remaining vaults:\n'
 cat $vaultlist
 echo -en '\n'
