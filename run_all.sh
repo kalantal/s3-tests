@@ -1,8 +1,38 @@
 #!/bin/bash
 
-#These need to match your specific configuration files
+if [ ! -f s3.conf ]; then
+	echo "no s3.conf found, see README.MD, exiting" && exit 0
+fi
+
+if [ ! -f boto.ini ]; then
+	echo "no boto.ini found, exiting" && exit 0
+fi
+
 export S3TEST_CONF=s3.conf
 export BOTO_CONFIG=boto.ini
+export AWS_SHARED_CREDENTIALS_FILE=credentials
+
+access_key=$(grep -m 1 "access_key" s3.conf | sed 's/ //g')
+secret_key=$(grep -m 1 "secret_key" s3.conf | sed 's/ //g')
+
+touch credentials
+credentials_access_key=$(echo "$access_key" | sed "s/access_key/aws_access_key_id/")
+credentials_secret_key=$(echo "$secret_key" | sed "s/secret_key/aws_secret_access_key/")
+echo "[default]" > credentials
+echo $credentials_access_key >> credentials
+echo $credentials_secret_key >> credentials
+if [ ! -f credentials ]; then
+	echo "credentials build error, exiting" && exit 0
+fi
+
+touch cleanupKeys
+cleanup_access_key=$(echo "$access_key" | sed "s/access_key/id/")
+cleanup_secret_key=$(echo "$secret_key" | sed "s/secret_key/key/")
+echo $cleanup_access_key > cleanupKeys
+echo $cleanup_secret_key >> cleanupKeys
+if [ ! -f cleanupKeys ]; then
+	echo "cleanupKeys build error, exiting" && exit 0
+fi
 
 DATE=$(date +%Y-%m-%d_%H%M)
 
@@ -22,8 +52,16 @@ test_cmd="S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --with-xunit --xunit
   echo
   echo "CONFIG:"
   echo "======================================================================"
+  echo "S3TEST_CONF"
   cat $S3TEST_CONF
+  echo
+  echo "BOTO_CONFIG"
   cat $BOTO_CONFIG
+  echo
+  echo "credentials"
+  cat credentials
+  echo "cleanupKeys"
+  cat cleanupKeys
   echo "======================================================================"
   echo
 ) > $LOG_DIR/output.log
