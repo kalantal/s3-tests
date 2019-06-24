@@ -1,13 +1,5 @@
 #!/bin/sh
 
-if [ ! -f s3.conf ]; then
-	echo "no s3.conf found, see README.MD, exiting" && exit 0
-fi
-
-if [ ! -f boto.ini ]; then
-	echo "no boto.ini found, see README.MD, exiting" && exit 0
-fi
-
 mkdir -p output
 
 sudo chmod +x run_all.sh scripts/*
