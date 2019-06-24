@@ -33,4 +33,5 @@ ipaddress
 pycparser
 colorama
 rsa
+pyasn1
 awscli
