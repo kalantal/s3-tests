@@ -12,7 +12,7 @@ export prefix=s3tests-
 
 # Gather and clean a list of vaults
 function gatherlist {
-	aws s3 ls | awk '{print $3}' | grep $prefix > $vaultlist
+	aws --endpoint=http://mwdc-plt-obj-wip1.nam.nsroot.net s3 ls | awk '{print $3}' | grep $prefix > $vaultlist
 }
 gatherlist && echo -en '\nLsit of vaults:\n' && cat $vaultlist
 
