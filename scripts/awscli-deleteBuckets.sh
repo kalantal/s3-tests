@@ -1,5 +1,8 @@
 #!/usr/bin/bash
 
+export vaultlist=/tmp/s3vaultlist
+export prefix=s3tests-
+
 if [ -e ~/.aws/credentials ]
         then echo -en "\ns3credentials found, continuing..\n"
         else
@@ -7,12 +10,9 @@ if [ -e ~/.aws/credentials ]
                 exit 0
 fi
 
-export vaultlist=/tmp/s3vaultlist
-export prefix=s3tests-
-
 # Gather and clean a list of vaults
 function gatherlist {
-	aws s3 ls | awk '{print $3}' | grep $prefix > $vaultlist
+	aws --endpoint=http://mwdc-plt-obj-wip1.nam.nsroot.net s3 ls | awk '{print $3}' | grep $prefix > $vaultlist
 }
 gatherlist && echo -en '\nLsit of vaults:\n' && cat $vaultlist
 
