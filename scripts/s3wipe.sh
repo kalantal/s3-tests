@@ -12,13 +12,13 @@ if [ -e ~/.s3cfg ]
 fi
 
 function gatherlist {
-	python scripts/listObjects.py | grep $prefix > $vaultlist
+  s3cmd ls | awk '{print $3}' | grep $prefix > $vaultlist
 }
 gatherlist && echo -en '\nLsit of vaults:\n' && cat $vaultlist
 
 echo -en '\nDeleting vaults\n\n'
 # Delete vaults
 function deletevaults {
-cat $vaultlist | while read line ; do python scripts/s3wipe --path $line --id $id --key $key --delbucket ; done
+  cat $vaultlist | while read line ; do python scripts/s3wipe --path $line --id $id --key $key --delbucket ; done
 }
 deletevaults
