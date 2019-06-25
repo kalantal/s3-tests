@@ -31,7 +31,4 @@ asn1crypto
 cffi
 ipaddress
 pycparser
-colorama
 rsa
-pyasn1
-awscli
