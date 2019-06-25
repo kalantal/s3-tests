@@ -31,7 +31,4 @@ asn1crypto
 cffi
 ipaddress
 pycparser
-<<<<<<< HEAD
 rsa
-=======
->>>>>>> 8e70f29a2dea6cd976f901402ea250191173441c
