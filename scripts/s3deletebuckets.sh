@@ -11,20 +11,20 @@ if [ -e ~/.s3cfg ]
 fi
 
 function gatherlist {
-	python scripts/listObjects.py | grep $prefix > $vaultlist
+  s3cmd ls | awk '{print $3}' | grep $prefix > $vaultlist
 }
 gatherlist && echo -en '\nLsit of vaults:\n' && cat $vaultlist
 
 echo -en '\nDeleting items\nWarnings will appear for vaults that do not have items.\n\n'
 # Delete items inside vaults
 function deleteitems {
-cat $vaultlist | while read line ; do s3cmd del --recursive --force $line ; done
+  cat $vaultlist | while read line ; do s3cmd del --recursive --force $line ; done
 }
 deleteitems
 
 echo -en '\nDeleting vaults\n'
 # Delete vaults
 function deletevaults {
-        cat $vaultlist | while read line ; do s3cmd rb --recursive --force $line ; done
+  cat $vaultlist | while read line ; do s3cmd rb --recursive --force $line ; done
 }
 deletevaults
