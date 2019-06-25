@@ -1,5 +1,7 @@
 #!/usr/bin/bash
 
+source credentials
+
 if [ -e ~/.s3cfg ]
         then echo -en "\ns3cfg found, continuing..\n"
         else
