@@ -11,7 +11,7 @@ export vaultlist=/tmp/s3vaultlist
 export prefix=s3tests-
 
 function gatherlist {
-	python listObjects.py | grep $prefix > $vaultlist
+	python scripts/listObjects.py | grep $prefix > $vaultlist
 }
 gatherlist && echo -en '\nLsit of vaults:\n' && cat $vaultlist
 
