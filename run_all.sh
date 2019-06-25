@@ -67,3 +67,9 @@ eval $test_cmd 2>&1 | tee -a $LOG_DIR/output.log
 
 perl scripts/parse-nose.pl -i $LOG_DIR/nosetests.xml -o $LOG_DIR/nosetests.csv
 sed -ri '/teardown/d' $LOG_DIR/nosetests.csv
+
+# Cleanup
+bash scripts/s3deletebuckets.sh 2>&1 | tee -a $LOG_DIR/output.log
+bash scripts/s3wipe.sh 2>&1 | tee -a $LOG_DIR/output.log
+echo echo -en '\nRemaining Vaults:\n" | tee -a $LOG_DIR/output.log
+python scripts/listObjects.py | grep $prefix 2>&1 | tee -a $LOG_DIR/output.log
