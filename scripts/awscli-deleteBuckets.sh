@@ -1,14 +1,14 @@
 #!/usr/bin/bash
 
+export vaultlist=/tmp/s3vaultlist
+export prefix=s3tests-
+
 if [ -e ~/.aws/credentials ]
         then echo -en "\ns3credentials found, continuing..\n"
         else
                 echo -en "\ns3credentials not found..\n"
                 exit 0
 fi
-
-export vaultlist=/tmp/s3vaultlist
-export prefix=s3tests-
 
 # Gather and clean a list of vaults
 function gatherlist {
