@@ -1,6 +1,8 @@
 #!/usr/bin/bash
 
 source credentials
+export vaultlist=/tmp/s3vaultlist
+export prefix=s3tests-
 
 if [ -e ~/.s3cfg ]
         then echo -en "\ns3cfg found, continuing..\n"
@@ -8,9 +10,6 @@ if [ -e ~/.s3cfg ]
                 echo -en "\ns3cfg not found..\n"
                 exit 0
 fi
-
-export vaultlist=/tmp/s3vaultlist
-export prefix=s3tests-
 
 function gatherlist {
 	python scripts/listObjects.py | grep $prefix > $vaultlist
