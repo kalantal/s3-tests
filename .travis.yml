@@ -3,5 +3,5 @@ sudo: required
 language: python
 
 script:
- - ./bootstrap
+ - bash bootstrap
  
