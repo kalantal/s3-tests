@@ -15,7 +15,7 @@ function gatherlist {
 }
 gatherlist && echo -en '\nLsit of vaults:\n' && cat $vaultlist
 
-echo -en '\nDeleting items\nWarnings will appear for vaults that do not have items.\n\n'
+echo -en '\nDeleting items\nWarnings will appear for vaults that do not have items\n\n'
 # Delete items inside vaults
 function deleteitems {
   cat $vaultlist | while read line ; do s3cmd del --recursive --force $line ; done
