@@ -31,6 +31,28 @@ if [ ! -f cleanupKeys ]; then
 	echo "cleanupKeys build error, exiting" && exit 0
 fi
 
+#s3cmd uses white-spaces, re-using vars
+access_key=$(grep -m 1 "access_key" s3.conf)
+secret_key=$(grep -m 1 "secret_key" s3.conf)
+host_base=$(grep -m 1 "host" s3.conf | sed "s/host/host_base/")
+
+touch ~/.s3cfg
+sed -i "s/access_key =.*/$access_key/" ~/.s3cfg
+sed -i "s/secret_key =.*/$secret_key/" ~/.s3cfg
+sed -i "s/host_base =.*/$host_base/" ~/.s3cfg
+
+if grep -q "is_secure = false" "$S3TEST_CONF"; then
+  sed -i "s/use_https =.*/use_https = False/" ~/.s3cfg
+  else
+  sed -i "s/use_https =.*/use_https = True/" ~/.s3cfg
+fi
+
+if [ ! -f ~/.s3cfg ]; then
+	echo "s3cmd build error, exiting" && exit 0
+fi
+
+cat ~/.s3cfg
+
 DATE=$(date +%Y-%m-%d_%H%M)
 LOG_DIR=output/$DATE
 mkdir -p $LOG_DIR
