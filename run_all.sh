@@ -33,14 +33,6 @@ if [ ! -f cleanupKeys ]; then
 	echo "cleanupKeys build error, exiting" && exit 0
 fi
 
-#Cleanup to prevent boto2 from calling the environmental variables
-credentials_access_key=
-credentials_secret_key=
-cleanup_secret_key=
-cleanup_secret_key=
-access_key=
-secret_key=
-
 DATE=$(date +%Y-%m-%d_%H%M)
 
 LOG_DIR=output/$DATE
