@@ -51,8 +51,6 @@ if [ ! -f ~/.s3cfg ]; then
 	echo "s3cmd build error, exiting" && exit 0
 fi
 
-cat ~/.s3cfg
-
 DATE=$(date +%Y-%m-%d_%H%M)
 LOG_DIR=output/$DATE
 mkdir -p $LOG_DIR
