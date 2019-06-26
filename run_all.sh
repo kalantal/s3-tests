@@ -47,6 +47,9 @@ if grep -q "is_secure = false" "$S3TEST_CONF"; then
   sed -i "s/use_https =.*/use_https = True/" ~/.s3cfg
 fi
 
+#Remove ^M endings
+sed -i "s/\r//g" ~/.s3cfg
+
 if [ ! -f ~/.s3cfg ]; then
 	echo "s3cmd build error, exiting" && exit 0
 fi
