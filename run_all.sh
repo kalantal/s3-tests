@@ -95,7 +95,7 @@ sed -ri '/teardown/d' $LOG_DIR/nosetests.csv
 
 # Cleanup
 echo -en "Cleanup/n"
-bash scripts/s3deletebuckets.sh 2>&1 | tee -a $LOG_DIR/output.log
-bash scripts/s3wipe.sh 2>&1 | tee -a $LOG_DIR/output.log
+. scripts/s3deletebuckets.sh 2>&1 | tee -a $LOG_DIR/output.log
+. scripts/s3wipe.sh 2>&1 | tee -a $LOG_DIR/output.log
 echo -en '\nRemaining Vaults:\n' | tee -a $LOG_DIR/output.log
 s3cmd ls | awk '{print $3}' | grep $prefix 2>&1 | tee -a $LOG_DIR/output.log
