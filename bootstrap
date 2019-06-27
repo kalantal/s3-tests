@@ -7,16 +7,16 @@ sudo chmod +x run_all.sh scripts/*
 echo -en "Verifying required packages\n"
 
 if [ -f /etc/redhat-release ]; then
-    for package in git libevent libevent-devel libffi-devel libgcrypt-devel libgpg-error-devel libxml2 libxslt mailcap perl-Business-ISBN perl-Business-ISBN-Data perl-Compress-Raw-Bzip2 perl-Compress-Raw-Zlib perl-Data-Dumper perl-Digest perl-Digest-MD5 perl-Encode-Locale perl-Error perl-File-Listing perl-Git perl-HTML-Parser perl-HTML-Tagset perl-HTTP-Cookies perl-HTTP-Daemon perl-HTTP-Date perl-HTTP-Message perl-HTTP-Negotiate perl-IO-Compress perl-IO-HTML perl-IO-Socket-IP perl-IO-Socket-SSL perl-libwww-perl perl-LWP-MediaTypes perl-Mozilla-CA perl-Net-HTTP perl-Net-LibIDN perl-Net-SSLeay perl-TermReadKey perl-TimeDate perl-URI perl-WWW-RobotRules perl-XML-LibXML perl-XML-NamespaceSupport perl-XML-SAX perl-XML-SAX-Base perl-XML-Simple python python2-pip python-backports-ssl_match_hostname python-devel python-libs python-setuptools python-virtualenv s3cmd xz-devel zlib-devel; do
-        if [ "$(rpm -qa $package 2>/dev/null)" == "" ]; then
-            missing="${missing:+$missing }$package"
+  for package in git libevent libevent-devel libffi-devel libgcrypt-devel libgpg-error-devel libxml2 libxslt mailcap perl-Business-ISBN perl-Business-ISBN-Data perl-Compress-Raw-Bzip2 perl-Compress-Raw-Zlib perl-Data-Dumper perl-Digest perl-Digest-MD5 perl-Encode-Locale perl-Error perl-File-Listing perl-Git perl-HTML-Parser perl-HTML-Tagset perl-HTTP-Cookies perl-HTTP-Daemon perl-HTTP-Date perl-HTTP-Message perl-HTTP-Negotiate perl-IO-Compress perl-IO-HTML perl-IO-Socket-IP perl-IO-Socket-SSL perl-libwww-perl perl-LWP-MediaTypes perl-Mozilla-CA perl-Net-HTTP perl-Net-LibIDN perl-Net-SSLeay perl-TermReadKey perl-TimeDate perl-URI perl-WWW-RobotRules perl-XML-LibXML perl-XML-NamespaceSupport perl-XML-SAX perl-XML-SAX-Base perl-XML-Simple python python2-pip python-backports-ssl_match_hostname python-devel python-libs python-setuptools python-virtualenv s3cmd xz-devel zlib-devel; do
+    if [ "$(rpm -qa $package 2>/dev/null)" == "" ]; then
+      missing="${missing:+$missing }$package"
         else echo -en "rpm: $package - found\n"
-        fi
-    done
-    if [ -n "$missing" ]; then
-        echo "$0: missing required RPM packages. Installing via sudo." 1>&2
-        sudo yum install dependencies/rpms/$missing* --nogpgcheck -y
     fi
+  done
+  if [ -n "$missing" ]; then
+    echo "$0: missing required RPM packages. Installing via sudo." 1>&2
+    sudo yum install dependencies/rpms/$missing* --nogpgcheck -y
+  fi
 fi
 
 virtualenv --no-site-packages --distribute virtualenv
