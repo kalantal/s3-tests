@@ -4,10 +4,10 @@ export vaultlist=/tmp/vaultlist
 export prefix=s3tests-
 
 if [ -e ~/.s3cfg ]
-        then echo -en "\ns3cfg found, continuing..\n"
-        else
-                echo -en "\ns3cfg not found..\n"
-                exit 0
+  then echo -en "\ns3cfg found, continuing..\n"
+  else
+    echo -en "\ns3cfg not found..\n"
+    exit 0
 fi
 
 function gatherlist {
