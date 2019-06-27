@@ -93,6 +93,7 @@ test_cmd="S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --with-xunit --xunit
   echo
 ) > $LOG_DIR/output.log
 
+echo -en "\ns3-tests:\n"
 eval $test_cmd 2>&1 | tee -a $LOG_DIR/output.log
 
 perl scripts/parse-nose.pl -i $LOG_DIR/nosetests.xml -o $LOG_DIR/nosetests.csv
