@@ -12,6 +12,7 @@ fi
 export S3TEST_CONF=s3.conf
 export BOTO_CONFIG=boto.ini
 export AWS_SHARED_CREDENTIALS_FILE=credentials
+export prefix=s3tests-
 
 #Build key files from s3.conf
 access_key=$(grep -m 1 "access_key" s3.conf | sed 's/ //g')
@@ -102,8 +103,8 @@ sed -ri '/teardown/d' $LOG_DIR/nosetests.csv
 # Cleanup
 (
   echo -en "Cleanup/n"
-  . scripts/s3deletebuckets.sh
-  . scripts/s3wipe.sh
+  bash scripts/s3deletebuckets.sh
+  bash scripts/s3wipe.sh
   echo -en "\nRemaining Vaults:\n"
   s3cmd ls | awk '{print $3}' | grep $prefix
 ) > $LOG_DIR/output.log
