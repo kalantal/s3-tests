@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ ! -d "virtualenv" ]; then
+  echo "Setting up enviornment\n"
+  bash bootstrap
+fi
+
 if [ ! -f s3.conf ]; then
 	echo "no s3.conf found, see README.MD, exiting" && exit 0
 fi
