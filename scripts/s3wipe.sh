@@ -22,3 +22,5 @@ function deletevaults {
   cat $vaultlist | while read line ; do python scripts/s3wipe --path $line --id $id --key $key --delbucket ; done
 }
 deletevaults
+
+exit 0
