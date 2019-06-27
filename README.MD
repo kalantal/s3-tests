@@ -15,11 +15,14 @@ You will need to create a configuration file with credentials. The empty configu
 Notes:
 
 	This is built to run in a RHEL 7.7 environment
+	If you want to change the prefix, you need to change it in:
+		run_all.sh scripts/s3deletebuckets.sh scripts/s3wipe.sh
+		Hardcoded to prevent a user from creating vaults with no pragmatic way to clean up
+	The scripts assume the configuration file is named: s3.conf
 	"testlist" & "testlist-with-blacklist" contain a list of all tests that can run
 	The default run of the suite is with the blacklist: blacklist/blacklist.txt
 	The effective test count: 553 (with blacklist)
 	Make sure the testing system time and date are accurate
-	The scripts assume the configuration file is named: s3.conf
 	#non-standard naming in tests
 	s3tests_boto3.functional.test_s3.test_lifecycle_expiration_header_head
 	s3tests_boto3.functional.test_s3.test_lifecycle_expiration_header_put
