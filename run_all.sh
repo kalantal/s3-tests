@@ -47,14 +47,14 @@ if grep -q "is_secure = false" "$S3TEST_CONF"; then
   sed -i "s/use_https =.*/use_https = True/" ~/.s3cfg
 fi
 
+if [ ! -f ~/.s3cfg ]; then
+	echo "s3cmd build error, exiting" && exit 0
+fi
+
 #Remove ^M endings
 sed -i "s/\r//g" ~/.s3cfg
 sed -i "s/\r//g" credentials
 sed -i "s/\r//g" cleanupKeys
-
-if [ ! -f ~/.s3cfg ]; then
-	echo "s3cmd build error, exiting" && exit 0
-fi
 
 DATE=$(date +%Y-%m-%d_%H%M)
 LOG_DIR=output/$DATE
