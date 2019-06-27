@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 source cleanupKeys
-export vaultlist=/tmp/s3vaultlist
+export vaultlist=/tmp/vaultlist
 export prefix=s3tests-
 
 if [ -e ~/.s3cfg ]
