@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ ! -d "virtualenv" ]; then
-  echo "Setting up enviornment\n"
+  echo -en "Setting up enviornment:\n"
   bash bootstrap
 fi
 
