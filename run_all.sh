@@ -49,6 +49,8 @@ fi
 
 #Remove ^M endings
 sed -i "s/\r//g" ~/.s3cfg
+sed -i "s/\r//g" credentials
+sed -i "s/\r//g" cleanupKeys
 
 if [ ! -f ~/.s3cfg ]; then
 	echo "s3cmd build error, exiting" && exit 0
