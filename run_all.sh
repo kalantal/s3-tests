@@ -6,7 +6,7 @@ if [ ! -d "virtualenv" ]; then
 fi
 
 if [ ! -f s3.conf ]; then
-	echo "no s3.conf found, see README.MD, exiting" && exit 0
+  echo "no s3.conf found, see README.MD, exiting" && exit 0
 fi
 
 export S3TEST_CONF=s3.conf
@@ -24,7 +24,7 @@ echo "[default]" > credentials
 echo $credentials_access_key >> credentials
 echo $credentials_secret_key >> credentials
 if [ ! -f credentials ]; then
-	echo "credentials build error, exiting" && exit 0
+  echo "credentials build error, exiting" && exit 0
 fi
 
 touch cleanupKeys
@@ -33,7 +33,7 @@ cleanup_secret_key=$(echo "$secret_key" | sed "s/secret_key/key/")
 echo $cleanup_access_key > cleanupKeys
 echo $cleanup_secret_key >> cleanupKeys
 if [ ! -f cleanupKeys ]; then
-	echo "cleanupKeys build error, exiting" && exit 0
+  echo "cleanupKeys build error, exiting" && exit 0
 fi
 
 #s3cmd uses white-spaces, re-using vars
