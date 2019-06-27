@@ -28,3 +28,5 @@ function deletevaults {
   cat $vaultlist | while read line ; do s3cmd rb --recursive --force $line ; done
 }
 deletevaults
+
+exit 0
