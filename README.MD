@@ -34,8 +34,8 @@ Quick Start:
 Additonal options and outputs:
 
 	#To gather a list of tests being run, use the flags: -v --collect-only
-	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --collect-only 2>&1 | tee output/testlists/testlist
-	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --collect-only --with-blacklist --blacklist-file=blacklists/blacklist.txt 2>&1 | tee output/testlists/testlist-with-blacklist
+	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --collect-only 2>&1 | tee output/testlists/testlist.txt
+	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --collect-only --with-blacklist --blacklist-file=blacklists/blacklist.txt 2>&1 | tee output/testlists/testlist-with-blacklist.txt
 	
 	#Run tests to Raw CSV
 	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v 2>&1 | tee nosetestresults.csv
