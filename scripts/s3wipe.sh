@@ -21,6 +21,16 @@ echo -en '\nDeleting vaults:\n'
 function deletevaults {
   cat $vaultlist | while read line ; do python scripts/s3wipe --path $line --id $id --key $key --delbucket ; done
 }
+
+function deletevaults-hc {
+  cat $vaultlist | while read line ; do python scripts/s3wipe-hc --path $line --id $id --key $key --delbucket ; done
+}
+
+if [ `whoami` = 'root' ]
+  then deletevaults
+    else deletevaults-hc
+fi
+
 deletevaults
 
 exit 0
