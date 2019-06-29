@@ -1,6 +1,5 @@
 #!/usr/bin/bash
 
-export itemList=/tmp/itemList
 export vaultList=/tmp/vaultList
 export prefix=s3tests-
 
@@ -8,29 +7,16 @@ if [ ! -f ~/.s3cfg ]; then
 	echo "s3cmd not found, exiting" && exit 0
 fi
 
-echo
-
 function gatherlist-vaults {
   s3cmd ls | awk '{print $3}' | grep $prefix > $vaultList
 }
-gatherlist-vaults && echo -en '\nLsit of items in vaults:\n' && cat $vaultList
-
-function gatherlist-items {
-  s3cmd la | awk '{print $4}' | grep $prefix > $itemList
-}
-gatherlist-items && echo -en '\nLsit of items in vaults:\n' && cat $itemList
-
-echo -en '\nDeleting items:\n'
-# Delete items inside vaults
-function deleteitems {
-  cat $itemList | while read line ; do s3cmd del --recursive --force $line -v ; done
-}
-deleteitems
+gatherlist-vaults
+echo -en '\nLsit of vaults:\n'
+cat $vaultList
 
 echo -en '\nDeleting vaults:\n'
-# Delete vaults
 function deletevaults {
-  cat $vaultList | while read line ; do s3cmd rb --recursive --force $line -v ; done
+  cat $vaultList | while read -r line ; do s3cmd rb --recursive --force "$line" -v ; done
 }
 deletevaults
 
