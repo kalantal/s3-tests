@@ -30,4 +30,6 @@ if [ `whoami` != 'root' ]
   else deletevaults
 fi
 
+echo
+
 exit 0
