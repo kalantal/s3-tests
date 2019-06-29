@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
-source cleanupKeys
-export vaultlist=/tmp/vaultlist
+export itemList=/tmp/itemList
+export vaultList=/tmp/vaultList
 export prefix=s3tests-
 
 if [ -e ~/.s3cfg ]
@@ -11,24 +11,32 @@ if [ -e ~/.s3cfg ]
     exit 0
 fi
 
-function gatherlist {
-  s3cmd ls | awk '{print $3}' | grep $prefix > $vaultlist
+echo
+
+function gatherlist-vaults {
+  s3cmd ls | awk '{print $3}' | grep $prefix > $vaultList
 }
-gatherlist && echo -en '\nLsit of vaults:\n' && cat $vaultlist
+gatherlist-vaults && echo -en '\nLsit of items in vaults:\n' && cat $vaultList
+
+function gatherlist-items {
+  s3cmd la | awk '{print $4}' | grep $prefix > $itemList
+}
+gatherlist-items && echo -en '\nLsit of items in vaults:\n' && cat $itemList
+
+echo -en '\nDeleting items:\n'
+# Delete items inside vaults
+function deleteitems {
+  cat $itemList | while read line ; do s3cmd del --recursive --force $line -v ; done
+}
+deleteitems
 
 echo -en '\nDeleting vaults:\n'
 # Delete vaults
-function deletevaults-hc {
-  cat $vaultlist | while read line ; do python scripts/s3wipe-hc --path $line --id $id --key $key --delbucket ; done
-}
-
 function deletevaults {
-  cat $vaultlist | while read line ; do python scripts/s3wipe --path $line --id $id --key $key --delbucket ; done
+  cat $vaultList | while read line ; do s3cmd rb --recursive --force $line -v ; done
 }
+deletevaults
 
-if [ `whoami` != 'root' ]
-  then deletevaults-hc
-	else deletevaults
-fi
+echo
 
 exit 0
