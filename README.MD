@@ -30,6 +30,9 @@ Notes:
 Quick Start:
 	
 	sudo ./run_all.sh
+	or
+	nohup ./run_all.sh > /tmp/nohup.out &
+	tail -f /tmp/nohup.out
 	
 Additonal options and outputs:
 
