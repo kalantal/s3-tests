@@ -7,5 +7,5 @@ sudo cp CitiInternalCAChain_PROD.pem /etc/pki/ca-trust/source/
 
 #sudo cp *.pem /etc/pki/ca-trust/source/
 
-cd /etc/pki/ca-trust/source/
+cd /etc/pki/ca-trust/source/ || exit
 sudo update-ca-trust extract
