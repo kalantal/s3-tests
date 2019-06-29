@@ -23,6 +23,7 @@ virtualenv --no-site-packages --distribute virtualenv
 virtualenv/bin/pip install -r requirements.txt --no-index --find-links="dependencies/pip/"
 virtualenv/bin/python setup.py develop
 
-#Comment this out or edit the file name to fit your certificate needs
-sudo cp certificates/Citi_DEVELOPMENT_chain.pem /etc/pki/ca-trust/source/
-sudo update-ca-trust extract
+if [ -f certificates/Citi_DEVELOPMENT_chain.pem ]; then
+  sudo cp certificates/Citi_DEVELOPMENT_chain.pem /etc/pki/ca-trust/source/
+  sudo update-ca-trust extract
+fi
