@@ -4,14 +4,14 @@ export itemList=/tmp/itemList
 export vaultList=/tmp/vaultList
 export prefix=s3tests-
 
-echo -en "s3deletebuckets.sh\n"
-
 if [ -e ~/.s3cfg ]
   then echo -en "\ns3cfg found, continuing..\n"
   else
     echo -en "\ns3cfg not found..\n"
     exit 0
 fi
+
+echo
 
 function gatherlist-vaults {
   s3cmd ls | awk '{print $3}' | grep $prefix > $vaultList
