@@ -44,16 +44,14 @@ host_base=$(grep -m 1 "host" s3.conf | sed "s/host/host_base/")
 
 touch ~/.s3cfg
 sed -i "s/access_key =.*/$access_key/" ~/.s3cfg
-sed -i "s/secret_key =.*/$secret_key/" cleanupKeys
-sed -i "s/host_base =.*/$host_base/" credentials
+sed -i "s/secret_key =.*/$secret_key/" ~/.s3cfg
+sed -i "s/host_base =.*/$host_base/" ~/.s3cfg
 
 if grep -q "is_secure = false" "$S3TEST_CONF"; then
   sed -i "s/use_https =.*/use_https = False/" ~/.s3cfg
   else
   sed -i "s/use_https =.*/use_https = True/" ~/.s3cfg
 fi
-
-#cp .s3cfg ~/.s3cfg
 
 if [ ! -f ~/.s3cfg ]; then
 	echo "s3cmd build error, exiting" && exit 0
@@ -65,8 +63,6 @@ dos2unix credentials cleanupKeys ~/.s3cfg
 #sed -i "s/\r//g" ~/.s3cfg
 #sed -i "s/\r//g" credentials
 #sed -i "s/\r//g" cleanupKeys
-
-exit 0
 
 DATE=$(date +%Y-%m-%d_%H%M)
 LOG_DIR=output/$DATE
