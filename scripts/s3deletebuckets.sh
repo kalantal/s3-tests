@@ -30,7 +30,7 @@ function deleteitems {
 }
 deleteitems
 
-echo -en '\nDeleting vaults:'
+echo -en '\nDeleting vaults:\n'
 # Delete vaults
 function deletevaults {
   cat $vaultList | while read line ; do s3cmd rb --recursive --force $line -v ; done
