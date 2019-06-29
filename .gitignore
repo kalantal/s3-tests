@@ -14,5 +14,3 @@
 s3.conf
 cleanupKeys
 credentials
-boto.ini
-
