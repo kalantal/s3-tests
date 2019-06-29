@@ -18,19 +18,17 @@ gatherlist && echo -en '\nLsit of vaults:\n' && cat $vaultlist
 
 echo -en '\nDeleting vaults:\n'
 # Delete vaults
-function deletevaults {
-  cat $vaultlist | while read line ; do python scripts/s3wipe --path $line --id $id --key $key --delbucket ; done
-}
-
 function deletevaults-hc {
   cat $vaultlist | while read line ; do python scripts/s3wipe-hc --path $line --id $id --key $key --delbucket ; done
 }
 
-if [ `whoami` = 'root' ]
-  then deletevaults
-    else deletevaults-hc
-fi
+function deletevaults {
+  cat $vaultlist | while read line ; do python scripts/s3wipe --path $line --id $id --key $key --delbucket ; done
+}
 
-deletevaults
+if [ `whoami` != 'root' ]
+  then deletevaults-hc
+	  else deletevaults
+fi
 
 exit 0
