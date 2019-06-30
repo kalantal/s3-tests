@@ -21,5 +21,4 @@ function deletevaults {
 deletevaults
 
 echo
-
 exit 0

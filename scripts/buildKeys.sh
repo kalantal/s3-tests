@@ -15,8 +15,8 @@ touch credentials
 credentials_access_key=$(echo "$access_key" | sed "s/access_key/aws_access_key_id/")
 credentials_secret_key=$(echo "$secret_key" | sed "s/secret_key/aws_secret_access_key/")
 echo "[default]" > credentials
-echo $credentials_access_key >> credentials
-echo $credentials_secret_key >> credentials
+echo "$credentials_access_key" >> credentials
+echo "$credentials_secret_key" >> credentials
 if [ ! -f credentials ]; then
   echo "credentials build error, exiting" && exit 0
 fi
@@ -24,8 +24,8 @@ fi
 touch cleanupKeys
 cleanup_access_key=$(echo "$access_key" | sed "s/access_key/id/")
 cleanup_secret_key=$(echo "$secret_key" | sed "s/secret_key/key/")
-echo $cleanup_access_key > cleanupKeys
-echo $cleanup_secret_key >> cleanupKeys
+echo "$cleanup_access_key" > cleanupKeys
+echo "$cleanup_secret_key" >> cleanupKeys
 if [ ! -f cleanupKeys ]; then
   echo "cleanupKeys build error, exiting" && exit 0
 fi
@@ -58,7 +58,7 @@ dos2unix credentials cleanupKeys ~/.s3cfg
 #sed -i "s/\r//g" cleanupKeys
 
 if [ -f ~/.s3cfg ]; then
-  echo -en "~/.s3cfg build complete\n"
+  echo -en "$HOME/.s3cfg build complete\n"
 fi
 
 if [ -f credentials ]; then
