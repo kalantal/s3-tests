@@ -57,7 +57,7 @@ if [ ! -f ~/.s3cfg ]; then
 	echo "s3cmd build error, exiting" && exit 0
 fi
 
-dos2unix credentials cleanupKeys ~/.s3cfg &> /dev/null
+dos2unix credentials cleanupKeys ~/.s3cfg ~/.aws/credentials &> /dev/null
 
 #Remove ^M endings
 #sed -i "s/\r//g" ~/.s3cfg
