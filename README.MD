@@ -29,7 +29,7 @@ Notes:
 	
 Quick Start:
 	
-	sudo ./run_all.sh
+	./run_all.sh
 	or
 	nohup ./run_all.sh > /tmp/nohup.out 2>&1 </dev/null &
 	tail -f /tmp/nohup.out
