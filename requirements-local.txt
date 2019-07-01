@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 boto >=2.6.0
 boto3 >=1.0.0
 python-magic
+=======
+boto >=2.6.0
+boto3 >=1.0.0
+python-magic
+>>>>>>> 9d592ffce8191962b5050bc5ae7e59f453928425

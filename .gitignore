@@ -1,0 +1,20 @@
+*~
+.#*
+## the next line needs to start with a backslash to avoid looking like
+## a comment
+\#*#
+.*.swp
+
+*.pyc
+*.pyo
+
+/*.egg-info
+/virtualenv
+/output
+
+config.yaml
+
+credentials
+cleanupKeys
+s3.conf
+boto.ini
