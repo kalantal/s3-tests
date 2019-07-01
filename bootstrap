@@ -1,29 +1,47 @@
 #!/bin/sh
 
-mkdir -p output
-
-sudo chmod +x run_all.sh scripts/*
+sudo chmod +x -R run_all.sh scripts/*
 
 echo -en "Verifying required packages\n"
 
 if [ -f /etc/redhat-release ]; then
-  for package in git libevent libevent-devel libffi-devel libgcrypt-devel libgpg-error-devel libxml2 libxslt mailcap perl-Business-ISBN perl-Business-ISBN-Data perl-Compress-Raw-Bzip2 perl-Compress-Raw-Zlib perl-Data-Dumper perl-Digest perl-Digest-MD5 perl-Encode-Locale perl-Error perl-File-Listing perl-Git perl-HTML-Parser perl-HTML-Tagset perl-HTTP-Cookies perl-HTTP-Daemon perl-HTTP-Date perl-HTTP-Message perl-HTTP-Negotiate perl-IO-Compress perl-IO-HTML perl-IO-Socket-IP perl-IO-Socket-SSL perl-libwww-perl perl-LWP-MediaTypes perl-Mozilla-CA perl-Net-HTTP perl-Net-LibIDN perl-Net-SSLeay perl-TermReadKey perl-TimeDate perl-URI perl-WWW-RobotRules perl-XML-LibXML perl-XML-NamespaceSupport perl-XML-SAX perl-XML-SAX-Base perl-XML-Simple python python2-pip python-backports-ssl_match_hostname python-devel python-libs python-setuptools python-virtualenv s3cmd xz-devel zlib-devel dos2unix ; do
-    if [ "$(rpm -qa $package 2>/dev/null)" == "" ]; then
-      missing="${missing:+$missing }$package"
-        else echo -en "rpm: $package - found\n"
+    for package in dos2unix libevent libevent-devel libffi-devel libgcrypt-devel libgpg-error-devel libxml2-devel libxslt-devel python2-pip python-devel python-virtualenv s3cmd xz-devel zlib-devel ; do
+        if [ "$(rpm -qa $package 2>/dev/null)" == "" ]; then
+            missing="${missing:+$missing }$package"
+        fi
+    done
+    if [ -n "$missing" ]; then
+        echo "$0: missing required RPM packages. Installing via sudo." 1>&2
+        sudo yum install dependencies/rpms/$missing --nogpgcheck -y
     fi
-  done
-  if [ -n "$missing" ]; then
-    echo "$0: missing required RPM packages. Installing via sudo." 1>&2
-    sudo yum install dependencies/rpms/$missing* --nogpgcheck -y
-  fi
 fi
 
-virtualenv --no-site-packages --distribute virtualenv
-virtualenv/bin/pip install -r requirements.txt --no-index --find-links="dependencies/pip/"
-virtualenv/bin/python setup.py develop
+if [ ! -d /usr/local/aws ]; then
+	cd dependencies/rpms/
+	unzip dependencies/rpms/awscli-bundle.zip
+	./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
+	cd ../../
+fi
+
+if [ -f /etc/redhat-release ]; then
+    for package in perl-Data-Dumper perl-XML-LibXML perl-XML-SAX perl-XML-SAX-Base perl-XML-Simple ; do
+        if [ "$(rpm -qa $package 2>/dev/null)" == "" ]; then
+            missing="${missing:+$missing }$package"
+        fi
+    done
+    if [ -n "$missing" ]; then
+        echo "$0: missing required RPM packages. Installing via sudo." 1>&2
+        sudo rpm -i dependencies/rpms/$missing --nodeps
+    fi
+fi
 
 if [ -f certificates/Citi_DEVELOPMENT_chain.pem ]; then
   sudo cp certificates/Citi_DEVELOPMENT_chain.pem /etc/pki/ca-trust/source/
   sudo update-ca-trust extract
 fi
+
+virtualenv --no-site-packages --distribute virtualenv
+virtualenv/bin/pip install --upgrade pip --no-index --find-links="dependencies/pip/"
+virtualenv/bin/pip install setuptools==32.3.1
+virtualenv/bin/pip install -r requirements.txt --no-index --find-links="dependencies/pip/"
+virtualenv/bin/python setup.py develop

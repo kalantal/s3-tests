@@ -5,6 +5,7 @@ setup(
     name='s3tests',
     version='0.0.1',
     packages=find_packages(),
+
     author='Tommi Virtanen',
     author_email='tommi.virtanen@dreamhost.com',
     description='Unofficial Amazon AWS S3 compatibility tests',

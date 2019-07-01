@@ -6,7 +6,7 @@ export notDeleted=/tmp/notDeleted
 
 if [ ! -f ~/.aws/credentials ]; then
 	./scripts/buildKeys.sh
-    cp credentials ~/.aws/credentialsd
+    cp credentials ~/.aws/credentials
 fi
 
 python scripts/python/s3objects.py > $objectList
