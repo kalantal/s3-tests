@@ -45,3 +45,7 @@ virtualenv/bin/pip install --upgrade pip --no-index --find-links="dependencies/p
 virtualenv/bin/pip install setuptools==32.3.1
 virtualenv/bin/pip install -r requirements.txt --no-index --find-links="dependencies/pip/"
 virtualenv/bin/python setup.py develop
+
+pip install -r requirements-local.txt --no-index --find-links="dependencies/pip/"
+
+echo -en "Build complete\n"
