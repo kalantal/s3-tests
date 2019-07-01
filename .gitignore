@@ -10,10 +10,11 @@
 
 /*.egg-info
 /virtualenv
-#/output
+/output
 
 config.yaml
 
 credentials
 cleanupKeys
 s3.conf
+boto.ini
