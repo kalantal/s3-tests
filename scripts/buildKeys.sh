@@ -4,6 +4,10 @@ if [ ! -f s3.conf ]; then
   echo "no s3.conf found, see README.MD, exiting" && exit 0
 fi
 
+if [ -f ~/.s3cfg ]; then
+  rm ~/.s3cfg
+fi
+
 if [ ! -f ~/.s3cfg ]; then
   cp scripts/s3cfg ~/.s3cfg
 fi
