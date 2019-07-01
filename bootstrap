@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 sudo chmod +x -R run_all.sh scripts/*
 
@@ -12,12 +12,12 @@ if [ -f /etc/redhat-release ]; then
     done
     if [ -n "$missing" ]; then
         echo "$0: missing required RPM packages. Installing via sudo." 1>&2
-        sudo yum install dependencies/rpms/$missing --nogpgcheck -y
+        sudo yum install dependencies/rpms/"$missing" --nogpgcheck -y
     fi
 fi
 
 if [ ! -d /usr/local/aws ]; then
-	cd dependencies/rpms/
+	cd dependencies/rpms/ || exit
 	unzip dependencies/rpms/awscli-bundle.zip
 	./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
 	cd ../../
@@ -31,7 +31,7 @@ if [ -f /etc/redhat-release ]; then
     done
     if [ -n "$missing" ]; then
         echo "$0: missing required RPM packages. Installing via sudo." 1>&2
-        sudo rpm -i dependencies/rpms/$missing --nodeps
+        sudo rpm -i dependencies/rpms/"$missing" --nodeps
     fi
 fi
 
