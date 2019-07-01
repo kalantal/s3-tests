@@ -4,8 +4,12 @@ if [ ! -f s3.conf ]; then
   echo "no s3.conf found, see README.MD, exiting" && exit 0
 fi
 
+if [ ! -f ~/.s3cfg ]; then
+  cp scripts/s3cfg ~/.s3cfg
+fi
+
 export S3TEST_CONF=s3.conf
-export AWS_SHARED_CREDENTIALS_FILE=credentials
+#export AWS_SHARED_CREDENTIALS_FILE=credentials
 
 #Build key files from s3.conf
 access_key=$(grep -m 1 "access_key" s3.conf | sed 's/ //g')

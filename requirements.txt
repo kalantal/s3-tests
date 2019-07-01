@@ -1,32 +1,14 @@
 PyYAML
-nose
-boto
-boto3
-bunch
-gevent
-isodate
-requests
-pytz
+nose >=1.0.0
+boto >=2.6.0
+boto3 >=1.0.0
+bunch >=1.0.0
+# 0.14 switches to libev, that means bootstrap needs to change too
+gevent >=1.0
+isodate >=0.4.4
+requests >=0.14.0
+pytz >=2011k
 ordereddict
 httplib2
 lxml
 nose-blacklist
-pyopenssl
-botocore
-jmespath
-s3transfer
-greenlet
-six
-chardet
-idna
-urllib3
-certifi
-cryptography
-docutils
-python-dateutil
-futures
-enum34
-asn1crypto
-cffi
-ipaddress
-pycparser

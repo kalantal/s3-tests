@@ -1101,3 +1101,4 @@ def test_bucket_policy_put_obj_request_obj_tag():
 
     headers = {"x-amz-tagging" : "security=public"}
     key1.set_contents_from_string(key1_str, headers=headers)
+
