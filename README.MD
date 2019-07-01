@@ -18,6 +18,7 @@ Notes:
 	If you want to change the prefix, you need to change it in:
 		run_all.sh scripts/s3deletebuckets.sh scripts/s3wipe.sh
 		Hardcoded to prevent a user from creating vaults with no pragmatic way to clean up
+	Do not use keys with escape characters unless you manually build all your key files
 	The scripts assume the configuration file is named: s3.conf
 	"testlist" & "testlist-with-blacklist" contain a list of all tests that can run
 	The default run of the suite is with the blacklist: blacklist/blacklist.txt

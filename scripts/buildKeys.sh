@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set -x
 if [ ! -f s3.conf ]; then
   echo "no s3.conf found, see README.MD, exiting" && exit 0
 fi
