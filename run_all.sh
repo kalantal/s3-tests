@@ -14,7 +14,7 @@ export S3TEST_CONF=s3.conf
 #export AWS_SHARED_CREDENTIALS_FILE=credentials
 export prefix=s3tests-
 
-bash scripts/buildKeys.sh
+bash scripts/buildKeys.sh &> /dev/null
 
 DATE=$(date +%Y-%m-%d_%H%M)
 LOG_DIR=output/$DATE
