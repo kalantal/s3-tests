@@ -19,3 +19,6 @@ cleanupKeys
 s3.conf
 boto.ini
 
+*.ini
+*.cfg
+*.conf
