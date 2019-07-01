@@ -13,7 +13,7 @@ email =
 api_name = ""
 access_key = 
 secret_key = 
-#kms_keyid = 
+kms_keyid = ""
 
 [s3 alt]
 display_name = 
