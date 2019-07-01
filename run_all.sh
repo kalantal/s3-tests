@@ -18,7 +18,7 @@ bash scripts/buildKeys.sh &> /dev/null
 
 DATE=$(date +%Y-%m-%d_%H%M)
 LOG_DIR=output/$DATE
-mkdir -p $LOG_DIR
+mkdir -p "$LOG_DIR"
 test_cmd="S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --with-xunit --xunit-file=$LOG_DIR/nosetests.xml --with-blacklist --blacklist-file=blacklists/blacklist.txt"
 
 (
@@ -46,13 +46,13 @@ test_cmd="S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --with-xunit --xunit
   echo
   echo "======================================================================"
   echo
-) > $LOG_DIR/output.log
+) > "$LOG_DIR"/output.log
 
 echo -en "s3-tests:\n"
-eval $test_cmd 2>&1 | tee -a $LOG_DIR/output.log
+eval "$test_cmd" 2>&1 | tee -a "$LOG_DIR"/output.log
 
-perl scripts/parse-nose.pl -i $LOG_DIR/nosetests.xml -o $LOG_DIR/nosetests.csv
-sed -ri '/teardown/d' $LOG_DIR/nosetests.csv
+perl scripts/parse-nose.pl -i "$LOG_DIR"/nosetests.xml -o "$LOG_DIR"/nosetests.csv
+sed -ri '/teardown/d' "$LOG_DIR"/nosetests.csv
 
 # Cleanup
 #(
@@ -66,6 +66,6 @@ sed -ri '/teardown/d' $LOG_DIR/nosetests.csv
   bash scripts/s3wipe.sh
   echo -en "\nRemaining Vaults:\n"
   s3cmd ls | awk '{print $3}' | grep $prefix
-) >> $LOG_DIR/output.log
+) >> "$LOG_DIR"/output.log
 
 exit 0
