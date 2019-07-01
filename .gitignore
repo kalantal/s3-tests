@@ -10,7 +10,7 @@
 
 /*.egg-info
 /virtualenv
-/output
+#/output
 
 config.yaml
 
@@ -19,5 +19,6 @@ cleanupKeys
 s3.conf
 boto.ini
 
-*.ini
-*.cfg
+#*.ini
+#*.cfg
+#*.conf
