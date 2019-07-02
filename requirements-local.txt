@@ -10,7 +10,6 @@ pytz
 
 #awscli
 awscli
-awscli-plugin-endpoint
 colorama
 rsa
 docutils
