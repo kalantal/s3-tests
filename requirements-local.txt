@@ -7,3 +7,14 @@ python-magic
 
 #s4cmd
 pytz
+
+#awscli
+awscli
+awscli-plugin-endpoint
+colorama
+rsa
+docutils
+PyYAML
+s3transfer
+botocore==1.12.181
+pyasn1
