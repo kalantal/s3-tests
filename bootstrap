@@ -5,34 +5,13 @@ sudo chmod +x -R run_all.sh scripts/*
 echo -en "Verifying required packages\n"
 
 if [ -f /etc/redhat-release ]; then
-    for package in dos2unix libevent libevent-devel libffi-devel libgcrypt-devel libgpg-error-devel libxml2-devel libxslt-devel python2-pip python-devel python-virtualenv s3cmd xz-devel zlib-devel ; do
-        if [ "$(rpm -qa $package 2>/dev/null)" == "" ]; then
-            missing="${missing:+$missing }$package"
-        fi
-    done
-    if [ -n "$missing" ]; then
-        echo "$0: missing required RPM packages. Installing via sudo." 1>&2
-        sudo yum install dependencies/rpms/"$missing" --nogpgcheck -y
-    fi
+        sudo yum install dependencies/rpms/* --nogpgcheck -y
 fi
 
 if [ ! -d /usr/local/aws ]; then
-	cd dependencies/rpms/ || exit
 	unzip dependencies/rpms/awscli-bundle.zip
 	./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
-	cd ../../
-fi
-
-if [ -f /etc/redhat-release ]; then
-    for package in perl-Data-Dumper perl-XML-LibXML perl-XML-SAX perl-XML-SAX-Base perl-XML-Simple ; do
-        if [ "$(rpm -qa $package 2>/dev/null)" == "" ]; then
-            missing="${missing:+$missing }$package"
-        fi
-    done
-    if [ -n "$missing" ]; then
-        echo "$0: missing required RPM packages. Installing via sudo." 1>&2
-        sudo rpm -i dependencies/rpms/"$missing" --nodeps
-    fi
+	rm -rf "awscli-bundle"
 fi
 
 if [ -f certificates/Citi_DEVELOPMENT_chain.pem ]; then
@@ -42,7 +21,7 @@ fi
 
 virtualenv --no-site-packages --distribute virtualenv
 virtualenv/bin/pip install --upgrade pip --no-index --find-links="dependencies/pip/"
-virtualenv/bin/pip install setuptools==32.3.1
+virtualenv/bin/pip install setuptools==32.3.1 --no-index --find-links="dependencies/pip/"
 virtualenv/bin/pip install -r requirements.txt --no-index --find-links="dependencies/pip/"
 virtualenv/bin/python setup.py develop
 
