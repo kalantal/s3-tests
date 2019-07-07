@@ -7,9 +7,9 @@ futures
 jmespath
 ply
 jmespath
-botocore-develop
+#botocore-develop
 urllib3
-simplejson
+simplejsonrpc
 ordereddict
 
 #s3cmd

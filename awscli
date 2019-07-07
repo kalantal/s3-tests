@@ -1,3 +1,0 @@
-#!/bin/bash
-
-aws s3 ls --endpoint-url http://mwdc-plt-obj-wip1.nam.nsroot.net --no-verify-ssl true --color on --no-sign-request true --ca-bundle /etc/pki/ca-trust/source/Citi_DEVELOPMENT_chain.pem
