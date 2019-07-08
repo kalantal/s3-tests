@@ -1,7 +1,10 @@
 #!/bin/env python
 
 import boto3
+import os
 from pprint import pprint
+
+os.environ['REQUESTS_CA_BUNDLE'] = '/etc/ssl/certs/ca-bundle.crt'
 
 def main():
     def enumerate_s3_buckets():
