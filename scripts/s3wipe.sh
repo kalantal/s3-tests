@@ -3,6 +3,7 @@
 source cleanupKeys
 export vaultlist=/tmp/vaultlist
 export prefix=s3tests-
+export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-bundle.crt
 
 if [ ! -f ~/.s3cfg ]; then
 	echo "s3cmd not found, exiting" && exit 0
