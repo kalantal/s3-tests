@@ -4,8 +4,11 @@ import argparse, Queue, logging, random, sys
 import multiprocessing, signal, re
 from multiprocessing.pool import ThreadPool
 import boto.s3.connection
+import os
 
 version = "0.2"
+
+os.environ['REQUESTS_CA_BUNDLE'] = '/etc/ssl/certs/ca-bundle.crt'
 
 # Make sure we have a semi-recent version of boto installed
 try:
