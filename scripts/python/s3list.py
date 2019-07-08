@@ -11,9 +11,9 @@ def main():
 
     #boto3.set_stream_logger('')
     s3 = boto3.client('s3',   
-            aws_access_key_id='kEA8AdJU4u3PKZxdq1Ae',
-            aws_secret_access_key='72vJM62gIjW6PJD03YJvjmyBCKXkWr9sqoNVKYLu',
-            endpoint_url='https://mwdc-plt-obj-wip1.nam.nsroot.net')
+            aws_access_key_id='',
+            aws_secret_access_key='',
+            endpoint_url='https://')
     response = s3.list_buckets()
 
     #print('Existing buckets:')
