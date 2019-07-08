@@ -14,6 +14,7 @@ ordereddict
 docutils
 PyYAML
 s3transfer
+pytz
 
 #s3cmd
 python-magic
