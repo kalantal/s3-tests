@@ -1,28 +1,24 @@
-#!/bin/env python
+#!/usr/bin/python
 
 import boto3
-from pprint import pprint
+import os
 
-def main():
+from pprint import pprint 
 
-    def enumerate_s3_buckets():
-        print "Bucket list:"
-        s3 = boto3.resource('s3')
-        endpoint_url = 's3.amazonaws.com',
-        for bucket in s3.buckets.all():
-             print "s3://" + ("{}".format(bucket.name))
-    enumerate_s3_buckets()
-    
-    print
+os.environ['REQUESTS_CA_BUNDLE'] = '/etc/ssl/certs/ca-bundle.crt'
 
-    def enumerate_s3_objects():
-        print "Object list:"
-        s3 = boto3.resource('s3')
-        endpoint_url = 's3.amazonaws.com',
-        for bucket in s3.buckets.all():
-             for object in bucket.objects.all():
-                 print "s3://" + ("{}".format(object.bucket_name)) + "/" + ("{}".format(object.key))
-    enumerate_s3_objects()
+def main(): 
 
-if __name__ == '__main__':
-    main()
+    #boto3.set_stream_logger('')
+    s3 = boto3.client('s3',   
+            aws_access_key_id='kEA8AdJU4u3PKZxdq1Ae',
+            aws_secret_access_key='72vJM62gIjW6PJD03YJvjmyBCKXkWr9sqoNVKYLu',
+            endpoint_url='https://mwdc-plt-obj-wip1.nam.nsroot.net')
+    response = s3.list_buckets()
+
+    #print('Existing buckets:')
+    for bucket in response['Buckets']:
+         print 's3://' + bucket["Name"]
+
+if __name__ == '__main__': 
+     main()
