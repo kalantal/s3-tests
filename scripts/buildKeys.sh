@@ -5,7 +5,7 @@ if [ ! -f s3.conf ]; then
 fi
 
 if [ -f ~/.s3cfg ]; then
-  rm ~/.s3cfg
+  rm ~/.s3cfg -f
 fi
 
 if [ ! -f ~/.s3cfg ]; then
@@ -13,7 +13,7 @@ if [ ! -f ~/.s3cfg ]; then
 fi
 
 export S3TEST_CONF=s3.conf
-#export AWS_SHARED_CREDENTIALS_FILE=credentials
+export AWS_SHARED_CREDENTIALS_FILE=credentials
 
 #Build key files from s3.conf
 access_key=$(grep -m 1 "access_key" s3.conf | sed 's/ //g')
