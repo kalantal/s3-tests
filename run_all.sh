@@ -10,8 +10,8 @@ if [ ! -f s3.conf ]; then
 fi
 
 export S3TEST_CONF=s3.conf
-#export BOTO_CONFIG=boto.ini
-#export AWS_SHARED_CREDENTIALS_FILE=credentials
+export BOTO_CONFIG=boto.ini
+export AWS_SHARED_CREDENTIALS_FILE=credentials
 export prefix=s3tests-
 export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-bundle.crt
 
@@ -36,8 +36,8 @@ test_cmd="S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --with-xunit --xunit
   echo "S3TEST_CONF"
   cat $S3TEST_CONF
   echo
-  #echo "BOTO_CONFIG"
-  #cat $BOTO_CONFIG
+  echo "BOTO_CONFIG"
+  cat $BOTO_CONFIG
   echo
   echo "credentials"
   cat credentials
@@ -54,12 +54,6 @@ eval "$test_cmd" 2>&1 | tee -a "$LOG_DIR"/output.log
 
 perl scripts/parse-nose.pl -i "$LOG_DIR"/nosetests.xml -o "$LOG_DIR"/nosetests.csv
 sed -ri '/teardown/d' "$LOG_DIR"/nosetests.csv
-
-# Cleanup
-#(
-#  echo -en "Cleanup/n"
-#bash scripts/python/s3delete.sh
-#) >> $LOG_DIR/output.log
 
 (
   echo -en "Cleanup/n"
