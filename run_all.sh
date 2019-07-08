@@ -13,6 +13,7 @@ export S3TEST_CONF=s3.conf
 #export BOTO_CONFIG=boto.ini
 #export AWS_SHARED_CREDENTIALS_FILE=credentials
 export prefix=s3tests-
+export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-bundle.crt
 
 bash scripts/buildKeys.sh &> /dev/null
 
