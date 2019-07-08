@@ -17,7 +17,7 @@ if [ ! -d /usr/local/aws ]; then
 fi
 
 if [ -f certificates/Citi_DEVELOPMENT_chain.pem ]; then
-  sudo cp certificates/Citi_DEVELOPMENT_chain.pem /etc/pki/ca-trust/source/
+  sudo cp certificates/Citi_DEVELOPMENT_chain.pem /etc/pki/ca-trust/source/anchors/
   sudo update-ca-trust extract
 fi
 
