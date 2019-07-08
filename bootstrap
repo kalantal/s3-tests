@@ -10,12 +10,6 @@ if [ -f /etc/redhat-release ]; then
 	sudo rpm -ivh dependencies/perl/* --nodeps
 fi
 
-if [ ! -d /usr/local/aws ]; then
-	unzip dependencies/rpms/awscli-bundle.zip
-	./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
-	rm -rf "awscli-bundle"
-fi
-
 if [ -f certificates/Citi_DEVELOPMENT_chain.pem ]; then
   sudo cp certificates/Citi_DEVELOPMENT_chain.pem /etc/pki/ca-trust/source/anchors/
   sudo update-ca-trust extract
