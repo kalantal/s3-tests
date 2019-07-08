@@ -1,6 +1,5 @@
 #!/usr/bin/bash
 
-source cleanupKeys
 export vaultlist=/tmp/vaultlist
 export prefix=s3tests-
 export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-bundle.crt
@@ -19,7 +18,7 @@ cat $vaultlist
 echo -en '\nDeleting vaults:\n'
 # Delete vaults
 function deletevaults-hc {
-  cat $vaultlist | while read -r line ; do python scripts/s3wipe-hc --path "$line" --id "$id" --key "$key" --delbucket ; done
+  cat $vaultlist | while read -r line ; do python scripts/s3wipe --path "$line" --id "$id" --key "$key" --delbucket ; done
 }
 
 function deletevaults {
