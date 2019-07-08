@@ -66,28 +66,28 @@ def getArgs():
 
 # Set up our logging object
 def loggerSetup(args):
-                                                                              
+
     # Set our maximum severity level to log (i.e. debug or not)               
     if args.quiet:
         logLevel = logging.ERROR
     else:
         logLevel = logging.DEBUG
-                                                                              
+
     # Log configuration                                                       
     logging.basicConfig(                                              
         level=logLevel,                                               
         format="%(asctime)s %(levelname)s: %(message)s",              
         datefmt="[%Y-%m-%d@%H:%M:%S]"                                 
     )                                                                 
-                                                                              
+
     # Create logger and point it at our log file                              
     global logger                                                             
     logger = logging.getLogger("s3wipe")                                     
-                                                                              
+
     # Make the logger emit all unhandled exceptions                           
     sys.excepthook = lambda t, v, x: logger.error(
         "Uncaught exception", exc_info=(t,v,x))
-                                                             
+
     # Supress boto debug logging, since it is very chatty    
     logging.getLogger("boto").setLevel(logging.CRITICAL)     
 
@@ -242,4 +242,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
