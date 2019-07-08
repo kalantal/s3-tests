@@ -60,6 +60,7 @@ fi
 
 dos2unix credentials cleanupKeys ~/.s3cfg &> /dev/null
 
+mkdir -p "~/.aws"
 cp credentials ~/.aws/credentials
 
 #Remove ^M endings
