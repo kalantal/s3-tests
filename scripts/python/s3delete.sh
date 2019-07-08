@@ -3,6 +3,7 @@
 export objectList=/tmp/objectList
 export bucketList=/tmp/bucketList
 export notDeleted=/tmp/notDeleted
+export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-bundle.crt
 
 if [ ! -f ~/.aws/credentials ]; then
 	./scripts/buildKeys.sh
@@ -12,7 +13,6 @@ fi
 python scripts/python/s3objects.py > $objectList
 echo -en "List of objects:\n"
 cat $objectList
-
 
 function deleteObjects {
   cat $objectList | while read -r line ; do s3cmd del --recursive --force "$line" -v ; done
