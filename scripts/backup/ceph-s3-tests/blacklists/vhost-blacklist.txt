@@ -1,0 +1,18 @@
+# This is a blacklist for tests that don't make sense to run with virtual hosting of buckets enabled.
+
+# These tests fail because the bucket names aren't DNS compliant
+s3tests.functional.test_s3.test_bucket_create_naming_bad_long
+s3tests.functional.test_s3.test_bucket_create_naming_bad_starts_nonalpha
+s3tests.functional.test_s3.test_bucket_create_naming_bad_punctuation
+s3tests.functional.test_s3.test_bucket_create_naming_good_long_250
+s3tests.functional.test_s3.test_bucket_create_naming_good_long_251
+s3tests.functional.test_s3.test_bucket_create_naming_good_long_252
+s3tests.functional.test_s3.test_bucket_create_naming_good_long_253
+s3tests.functional.test_s3.test_bucket_create_naming_good_long_254
+s3tests.functional.test_s3.test_bucket_create_naming_good_long_255
+s3tests.functional.test_s3.test_bucket_list_long_name
+s3tests.functional.test_s3.test_bucket_create_naming_dns_long
+s3tests.functional.test_s3.test_bucket_create_naming_dns_dash_at_end
+s3tests.functional.test_s3.test_bucket_create_naming_dns_dot_dot
+s3tests.functional.test_s3.test_bucket_create_naming_dns_dot_dash
+s3tests.functional.test_s3.test_bucket_create_naming_dns_dash_dot
