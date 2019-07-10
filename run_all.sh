@@ -58,6 +58,7 @@ sed -ri '/teardown/d' "$LOG_DIR"/nosetests.csv
 (
   echo -en "Cleanup/n"
   bash scripts/s3deletebuckets.sh
+  bash scripts/s3deletebuckets.sh
   echo -en "\nRemaining Vaults:\n"
   s3cmd ls | awk '{print $3}' | grep $prefix
 ) >> "$LOG_DIR"/output.log
