@@ -17,7 +17,7 @@ config.yaml
 credentials
 cleanupKeys
 s3.conf
-boto.ini
+#boto.ini
 
 #*.ini
 #*.cfg
