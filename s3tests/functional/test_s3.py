@@ -52,6 +52,7 @@ from . import (
     _make_raw_request,
     )
 
+os.environ['REQUESTS_CA_BUNDLE'] = '/etc/ssl/certs/ca-bundle.crt'
 
 def check_access_denied(fn, *args, **kwargs):
     e = assert_raises(boto.exception.S3ResponseError, fn, *args, **kwargs)

@@ -25,6 +25,8 @@ calling_formats = dict(
     subdomain=boto.s3.connection.SubdomainCallingFormat(),
     vhost=boto.s3.connection.VHostCallingFormat(),
     )
+    
+os.environ['REQUESTS_CA_BUNDLE'] = '/etc/ssl/certs/ca-bundle.crt'
 
 def get_prefix():
     assert prefix is not None

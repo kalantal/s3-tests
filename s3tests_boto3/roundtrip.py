@@ -16,6 +16,8 @@ import common
 
 NANOSECOND = int(1e9)
 
+os.environ['REQUESTS_CA_BUNDLE'] = '/etc/ssl/certs/ca-bundle.crt'
+
 def writer(bucket, objname, fp, queue):
     key = bucket.new_key(objname)
 
