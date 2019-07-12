@@ -16,8 +16,6 @@ import common
 
 NANOSECOND = int(1e9)
 
-os.environ['REQUESTS_CA_BUNDLE'] = '/etc/ssl/certs/ca-bundle.crt'
-
 def reader(bucket, worker_id, file_names, queue, rand):
     while True:
         objname = rand.choice(file_names)

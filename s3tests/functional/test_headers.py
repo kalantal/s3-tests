@@ -46,7 +46,6 @@ _custom_headers = {}
 _remove_headers = []
 boto_type = None
 
-os.environ['REQUESTS_CA_BUNDLE'] = '/etc/ssl/certs/ca-bundle.crt'
 
 # HeaderS3Connection and _our_authorize are necessary to be able to arbitrarily
 # overwrite headers. Depending on the version of boto, one or the other is

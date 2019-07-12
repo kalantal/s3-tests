@@ -18,8 +18,6 @@ prefix = ''
 bucket_counter = itertools.count(1)
 key_counter = itertools.count(1)
 
-os.environ['REQUESTS_CA_BUNDLE'] = '/etc/ssl/certs/ca-bundle.crt'
-
 def choose_bucket_prefix(template, max_len=30):
     """
     Choose a prefix for our test buckets, so they're easy to identify.

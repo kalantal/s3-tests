@@ -15,8 +15,6 @@ config = bunch.Bunch
 # this will be assigned by setup()
 prefix = None
 
-os.environ['REQUESTS_CA_BUNDLE'] = '/etc/ssl/certs/ca-bundle.crt'
-
 def get_prefix():
     assert prefix is not None
     return prefix
