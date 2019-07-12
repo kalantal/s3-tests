@@ -15,7 +15,7 @@ if [ -f certificates/Citi_DEVELOPMENT_chain.pem ]; then
   sudo update-ca-trust extract
 fi
 
-virtualenv --no-site-packages --distribute virtualenv
+virtualenv --python=$(which python2) --no-site-packages --distribute virtualenv
 virtualenv/bin/pip install --upgrade pip --no-index --find-links="dependencies/pip/"
 virtualenv/bin/pip install setuptools==32.3.1 --no-index --find-links="dependencies/pip/"
 virtualenv/bin/pip install -r requirements.txt --no-index --find-links="dependencies/pip/"
