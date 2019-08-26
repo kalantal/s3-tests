@@ -715,6 +715,26 @@ def test_bucket_listv2_delimiter_not_exist():
     eq(keys, key_names)
     eq(prefixes, [])
 
+
+@attr(resource='bucket')
+@attr(method='get')
+@attr(operation='list')
+@attr(assertion='list with delimiter not skip special keys')
+def test_bucket_list_delimiter_not_skip_special():
+    key_names = ['0/'] + ['0/%s' % i for i in range(1000, 1999)]
+    key_names2 = ['1999', '1999#', '1999+', '2000']
+    key_names += key_names2
+    bucket_name = _create_objects(keys=key_names)
+    client = get_client()
+
+    response = client.list_objects(Bucket=bucket_name, Delimiter='/')
+    eq(response['Delimiter'], '/')
+
+    keys = _get_keys(response)
+    prefixes = _get_prefixes(response)
+    eq(keys, key_names2)
+    eq(prefixes, ['0/'])
+
 @attr(resource='bucket')
 @attr(method='get')
 @attr(operation='list under prefix')
@@ -1348,18 +1368,6 @@ def test_bucket_list_marker_none():
     response = client.list_objects(Bucket=bucket_name)
     eq(response['Marker'], '')
 
-@attr(resource='bucket')
-@attr(method='get')
-@attr(operation='list all keys with list-objects-v2')
-@attr(assertion='no pagination, no continuationtoken')
-@attr('list-objects-v2')
-def test_bucket_listv2_continuationtoken_none():
-    key_names = ['bar', 'baz', 'foo', 'quxx']
-    bucket_name = _create_objects(keys=key_names)
-    client = get_client()
-
-    response = client.list_objects_v2(Bucket=bucket_name)
-    eq(response['ContinuationToken'], '')
 
 @attr(resource='bucket')
 @attr(method='get')
@@ -1391,6 +1399,47 @@ def test_bucket_listv2_continuationtoken_empty():
     eq(response['IsTruncated'], False)
     keys = _get_keys(response)
     eq(keys, key_names)
+
+@attr(resource='bucket')
+@attr(method='get')
+@attr(operation='list keys with list-objects-v2')
+@attr(assertion='no pagination, non-empty continuationtoken')
+@attr('list-objects-v2')
+def test_bucket_listv2_continuationtoken():
+    key_names = ['bar', 'baz', 'foo', 'quxx']
+    bucket_name = _create_objects(keys=key_names)
+    client = get_client()
+
+    response1 = client.list_objects_v2(Bucket=bucket_name, MaxKeys=1)
+    next_continuation_token = response1['NextContinuationToken']
+
+    response2 = client.list_objects_v2(Bucket=bucket_name, ContinuationToken=next_continuation_token)
+    eq(response2['ContinuationToken'], next_continuation_token)
+    eq(response2['IsTruncated'], False)
+    key_names2 = ['baz', 'foo', 'quxx']
+    keys = _get_keys(response2)
+    eq(keys, key_names2)
+
+@attr(resource='bucket')
+@attr(method='get')
+@attr(operation='list keys with list-objects-v2')
+@attr(assertion='no pagination, non-empty continuationtoken and startafter')
+@attr('list-objects-v2')
+def test_bucket_listv2_both_continuationtoken_startafter():
+    key_names = ['bar', 'baz', 'foo', 'quxx']
+    bucket_name = _create_objects(keys=key_names)
+    client = get_client()
+
+    response1 = client.list_objects_v2(Bucket=bucket_name, StartAfter='bar', MaxKeys=1)
+    next_continuation_token = response1['NextContinuationToken']
+
+    response2 = client.list_objects_v2(Bucket=bucket_name, StartAfter='bar', ContinuationToken=next_continuation_token)
+    eq(response2['ContinuationToken'], next_continuation_token)
+    eq(response2['StartAfter'], 'bar')
+    eq(response2['IsTruncated'], False)
+    key_names2 = ['foo', 'quxx']
+    keys = _get_keys(response2)
+    eq(keys, key_names2)
 
 @attr(resource='bucket')
 @attr(method='get')
@@ -6310,6 +6359,7 @@ def test_object_copy_versioned_bucket():
 @attr(method='put')
 @attr(operation='copy object to/from versioned bucket with url-encoded name')
 @attr(assertion='works')
+@attr('versioning')
 def test_object_copy_versioned_url_encoding():
     bucket = get_new_bucket_resource()
     check_configure_versioning_retry(bucket.name, "Enabled", "Enabled")
@@ -6581,6 +6631,39 @@ def test_multipart_copy_invalid_range():
     if not status in valid_status:
        raise AssertionError("Invalid response " + str(status))
     eq(error_code, 'InvalidRange')
+
+
+@attr(resource='object')
+@attr(method='put')
+@attr(operation='check multipart copy with an improperly formatted range')
+def test_multipart_copy_improper_range():
+    client = get_client()
+    src_key = 'source'
+    src_bucket_name = _create_key_with_random_content(src_key, size=5)
+
+    response = client.create_multipart_upload(
+        Bucket=src_bucket_name, Key='dest')
+    upload_id = response['UploadId']
+
+    copy_source = {'Bucket': src_bucket_name, 'Key': src_key}
+    test_ranges = ['{start}-{end}'.format(start=0, end=2),
+                   'bytes={start}'.format(start=0),
+                   'bytes=hello-world',
+                   'bytes=0-bar',
+                   'bytes=hello-',
+                   'bytes=0-2,3-5']
+
+    for test_range in test_ranges:
+        e = assert_raises(ClientError, client.upload_part_copy,
+                          Bucket=src_bucket_name, Key='dest',
+                          UploadId=upload_id,
+                          CopySource=copy_source,
+                          CopySourceRange=test_range,
+                          PartNumber=1)
+        status, error_code = _get_status_and_error_code(e.response)
+        eq(status, 400)
+        eq(error_code, 'InvalidArgument')
+
 
 @attr(resource='object')
 @attr(method='put')
@@ -7286,6 +7369,7 @@ def test_cors_header_option():
 @attr(method='put')
 @attr(operation='put tags')
 @attr(assertion='succeeds')
+@attr('tagging')
 def test_set_tagging():
     bucket_name = get_new_bucket()
     client = get_client()
@@ -12135,3 +12219,57 @@ def test_object_lock_uploading_obj():
     eq(response['ObjectLockLegalHoldStatus'], 'ON')
     client.put_object_legal_hold(Bucket=bucket_name, Key=key, LegalHold={'Status':'OFF'})
     client.delete_object(Bucket=bucket_name, Key=key, VersionId=response['VersionId'], BypassGovernanceRetention=True)
+
+@attr(resource='object')
+@attr(method='copy')
+@attr(operation='copy w/ x-amz-copy-source-if-match: the latest ETag')
+@attr(assertion='succeeds')
+def test_copy_object_ifmatch_good():
+    bucket_name = get_new_bucket()
+    client = get_client()
+    resp = client.put_object(Bucket=bucket_name, Key='foo', Body='bar')
+
+    client.copy_object(Bucket=bucket_name, CopySource=bucket_name+'/foo', CopySourceIfMatch=resp['ETag'], Key='bar')
+    resp = client.get_object(Bucket=bucket_name, Key='bar')
+    eq(resp['Body'].read(), 'bar')
+
+@attr(resource='object')
+@attr(method='copy')
+@attr(operation='copy w/ x-amz-copy-source-if-match: bogus ETag')
+@attr(assertion='fails 412')
+def test_copy_object_ifmatch_failed():
+    bucket_name = get_new_bucket()
+    client = get_client()
+    client.put_object(Bucket=bucket_name, Key='foo', Body='bar')
+
+    e = assert_raises(ClientError, client.copy_object, Bucket=bucket_name, CopySource=bucket_name+'/foo', CopySourceIfMatch='ABCORZ', Key='bar')
+    status, error_code = _get_status_and_error_code(e.response)
+    eq(status, 412)
+    eq(error_code, 'PreconditionFailed')
+
+@attr(resource='object')
+@attr(method='copy')
+@attr(operation='copy w/ x-amz-copy-source-if-none-match: the latest ETag')
+@attr(assertion='fails 412')
+def test_copy_object_ifnonematch_good():
+    bucket_name = get_new_bucket()
+    client = get_client()
+    resp = client.put_object(Bucket=bucket_name, Key='foo', Body='bar')
+
+    e = assert_raises(ClientError, client.copy_object, Bucket=bucket_name, CopySource=bucket_name+'/foo', CopySourceIfNoneMatch=resp['ETag'], Key='bar')
+    status, error_code = _get_status_and_error_code(e.response)
+    eq(status, 412)
+    eq(error_code, 'PreconditionFailed')
+
+@attr(resource='object')
+@attr(method='copy')
+@attr(operation='copy w/ x-amz-copy-source-if-none-match: bogus ETag')
+@attr(assertion='succeeds')
+def test_copy_object_ifnonematch_failed():
+    bucket_name = get_new_bucket()
+    client = get_client()
+    resp = client.put_object(Bucket=bucket_name, Key='foo', Body='bar')
+
+    client.copy_object(Bucket=bucket_name, CopySource=bucket_name+'/foo', CopySourceIfNoneMatch='ABCORZ', Key='bar')
+    resp = client.get_object(Bucket=bucket_name, Key='bar')
+    eq(resp['Body'].read(), 'bar')
