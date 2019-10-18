@@ -4,7 +4,7 @@ sudo chmod +x -R run_all.sh scripts/*
 
 if [ -f /etc/redhat-release ]; then
 	sudo rpm -ivh dependencies/python-devel-2.7.5-80.el7_6.x86_64.rpm --nodeps
-	sudo yum install dependencies/rpms/* --nogpgcheck -y
+	sudo yum localinstall dependencies/rpms/* --nogpgcheck -y
 	sudo rpm -ivh dependencies/perl/* --nodeps
 fi
 
