@@ -57,14 +57,14 @@ foreach $testsuite ($tests->findnodes('/testsuite')) {
 			($error_message,$junk) = split(/^/,$error_temp,2);
 			chomp $error_message;
 			$error_message =~ s/,/|/g;
-			print OUTFILE "ERROR,$error_type,$error_message\n";
+			print OUTFILE "ERROR, $error_type, $error_message\n";
 			} elsif ($failure_type ne '') {
 				($failure_message,$junk) = split(/^/,$failure_temp,2);
 				chomp $failure_message;
 				$failure_message =~ s/,/|/g;
-				print OUTFILE "FAILED,$failure_type,$failure_message\n";
+				print OUTFILE "FAILED, $failure_type, $failure_message\n";
 				} else {
-					print OUTFILE "PASSED,\n";
+					print OUTFILE "PASSED, \n";
 					}
 		}
 	}
