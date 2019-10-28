@@ -10,7 +10,7 @@ Setup:
 
 You will need to create a configuration file with credentials. The empty configuraion file is:
 
-	sample_s3.conf
+	s3.conf_sample
 	
 Notes:
 
@@ -42,29 +42,29 @@ Additonal options and outputs:
 	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --collect-only --with-blacklist --blacklist-file=blacklists/blacklist.txt 2>&1 | tee output/testlists/testlist-with-blacklist.txt
 	
 	#Run tests to Raw CSV
-	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v 2>&1 | tee nosetestresults.csv
+	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v 2>&1 | tee output/nosetestresults.csv
 	
 	#Run tests to Raw XML
-	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --with-xunit --xunit-file=nosetests.xml
+	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --with-xunit --xunit-file=output/nosetests.xml
 	
 	#Conversation for XML to Human-Readable CSV/XLS
 	perl parse-nose.pl -i nosetests.xml -o nosetests.csv
 
 	#You can specify what test(s) to run:
-	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests s3tests.functional.test_s3:test_bucket_list_empty
+	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests s3tests.functional.test_s3:test_bucket_list_empty -v 2>&1 | tee output/nosetestresults.csv
 
 	#You can filter tests based on their attributes:
-	S3TEST_CONF=aws.conf ./virtualenv/bin/nosetests -a '!fails_on_aws'
+	S3TEST_CONF=aws.conf ./virtualenv/bin/nosetests -a '!fails_on_aws' -v 2>&1 | tee output/nosetestresults.csv
 
 	#Tests can be run in a list:
-	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --with-xunit \
+	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --with-xunit --xunit-file=output/nosetests.xml \
 		s3tests.functional.test_headers:test_object_create_bad_md5_invalid_short \
 		
 	#Tests can be blacklisted:
-	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --with-xunit --with-blacklist --blacklist-file=blacklists/blacklist.txt
+	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --with-xunit --with-blacklist --blacklist-file=blacklists/blacklist.txt --xunit-file=output/nosetests.xml
 	
 	#Test only Boto3 tests:
-	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v -s -A 'not fails_on_rgw' s3tests_boto3.functional
+	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests --with-xunit --xunit-file=output/nosetests.xml -v -s -A 'not fails_on_rgw' s3tests_boto3.functional
 		
 	#Debug (Any stdout output will be printed immediately)
 	S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -vv -s 2>&1 | tee output/$(date +%Y-%m-%d_%H%M)_debug_run
