@@ -1,4 +1,4 @@
-Module,Test,Test status,Error/Failure Type,Error/Failure Message
+Test,Test status,Error/Failure Type,Error/Failure Message
 s3tests.functional.test_headers,test_object_create_date_and_amz_date,PASSED,
 s3tests.functional.test_headers,test_object_create_bad_authorization_none,FAILED,exceptions.AssertionError,404 != 403
 s3tests.functional.test_headers,test_bucket_create_contentlength_none,PASSED,
