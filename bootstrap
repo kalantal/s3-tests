@@ -5,7 +5,16 @@ sudo chmod +x -R run_all.sh scripts/*
 if [ -f /etc/redhat-release ]; then
 	sudo rpm -ivh dependencies/python-devel-2.7.5-80.el7_6.x86_64.rpm --nodeps
 	sudo yum localinstall dependencies/rpms/* --nogpgcheck -y
-	sudo rpm -ivh dependencies/perl/* --nodeps
+#	sudo rpm -ivh dependencies/perl/* --nodeps
+	sudo rpm -ivh dependencies/perl/perl-Data-Dumper-2.145-3.el7.x86_64.rpm --nodeps
+	sudo rpm -ivh dependencies/perl/perl-Error-0.17020-2.el7.noarch.rpm --nodeps
+	sudo rpm -ivh dependencies/perl/perl-Git-1.8.3.1-20.el7.noarch.rpm --nodeps
+	sudo rpm -ivh dependencies/perl/perl-TermReadKey-2.30-20.el7.x86_64.rpm --nodeps
+	sudo rpm -ivh dependencies/perl/perl-XML-LibXML-2.0018-5.el7.x86_64.rpm --nodeps
+	sudo rpm -ivh dependencies/perl/perl-XML-NamespaceSupport-1.11-10.el7.noarch.rpm --nodeps
+	sudo rpm -ivh dependencies/perl/perl-XML-SAX-0.99-9.el7.noarch.rpm --nodeps
+	sudo rpm -ivh dependencies/perl/perl-XML-SAX-Base-1.08-7.el7.noarch.rpm --nodeps
+	sudo rpm -ivh dependencies/perl/perl-XML-Simple-2.20-5.el7.noarch.rpm --nodeps
 fi
 
 if [ -f certificates/Citi_DEVELOPMENT_chain.pem ]; then
