@@ -106,7 +106,7 @@ s3tests.functional.test_s3_website.test_website_xredirect_public_relative
 s3tests.functional.test_s3_website.test_website_xredirect_public_abs
 s3tests.functional.test_s3_website.test_website_xredirect_private_relative
 s3tests.functional.test_s3_website.test_website_xredirect_private_abs
-#s3tests.functional.test_s3_website.test_routing_generator
+s3tests.functional.test_s3_website.test_routing_generator
 s3tests.functional.test_utils.test_generate
 s3tests.fuzz.test.test_fuzzer.test_load_graph
 #s3tests.fuzz.test.test_fuzzer.test_descend_leaf_node
