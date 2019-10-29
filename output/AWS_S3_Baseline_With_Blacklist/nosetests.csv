@@ -104,13 +104,13 @@ s3tests_boto3.functional.test_s3,test_basic_key_count,PASSED,
 s3tests_boto3.functional.test_s3,test_bucket_list_delimiter_basic,PASSED, 
 s3tests_boto3.functional.test_s3,test_bucket_listv2_delimiter_basic,PASSED, 
 s3tests_boto3.functional.test_s3,test_bucket_list_delimiter_prefix,PASSED, 
-s3tests_boto3.functional.test_s3,test_bucket_listv2_delimiter_prefix,FAILED, exceptions.AssertionError, '1Xy1R8eunLNbO/jUrkSDJ2KW95RHKuvDUtIp/ZyC0TfhZQrmfEV2HxLDi7uhzSAh9' != 'asdf'
-s3tests_boto3.functional.test_s3,test_bucket_listv2_delimiter_prefix_ends_with_delimiter,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_listv2_delimiter_prefix,FAILED, exceptions.AssertionError, '15wy5EyU/FsD7SBZZ8AEEexKB6SMhStWloP/gcOV2dcW1N0NMTMfrEkfOST2S+VYz' != 'asdf'
+s3tests_boto3.functional.test_s3,test_bucket_listv2_delimiter_prefix_ends_with_delimiter,ERROR, botocore.errorfactory.NoSuchBucket, An error occurred (NoSuchBucket) when calling the PutObject operation: The specified bucket does not exist
 s3tests_boto3.functional.test_s3,test_bucket_list_delimiter_prefix_ends_with_delimiter,PASSED, 
 s3tests_boto3.functional.test_s3,test_bucket_list_delimiter_alt,PASSED, 
 s3tests_boto3.functional.test_s3,test_bucket_listv2_delimiter_alt,PASSED, 
 s3tests_boto3.functional.test_s3,test_bucket_list_delimiter_prefix_underscore,PASSED, 
-s3tests_boto3.functional.test_s3,test_bucket_listv2_delimiter_prefix_underscore,FAILED, exceptions.AssertionError, '1/fXLnLhEAyyfkoTIj+QqUTz9tGwoolw2LclEsP6OYmfWP57CUgvRwQX5GoB8TadIlmj8OGvycWg=' != '_obj1_'
+s3tests_boto3.functional.test_s3,test_bucket_listv2_delimiter_prefix_underscore,FAILED, exceptions.AssertionError, '1FMAW3MiKcnhlBrmLIha3rRMoRMBCPSt/QK6Jy8X1dHUdlrgg7GhuFRO69oe8uGDSiBcDHIm2Chw=' != '_obj1_'
 s3tests_boto3.functional.test_s3,test_bucket_list_delimiter_percentage,PASSED, 
 s3tests_boto3.functional.test_s3,test_bucket_listv2_delimiter_percentage,PASSED, 
 s3tests_boto3.functional.test_s3,test_bucket_list_delimiter_whitespace,PASSED, 
@@ -120,7 +120,7 @@ s3tests_boto3.functional.test_s3,test_bucket_listv2_delimiter_dot,PASSED,
 s3tests_boto3.functional.test_s3,test_bucket_list_delimiter_unreadable,PASSED, 
 s3tests_boto3.functional.test_s3,test_bucket_listv2_delimiter_unreadable,PASSED, 
 s3tests_boto3.functional.test_s3,test_bucket_list_delimiter_empty,PASSED, 
-s3tests_boto3.functional.test_s3,test_bucket_listv2_delimiter_empty,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_listv2_delimiter_empty,ERROR, botocore.errorfactory.NoSuchBucket, An error occurred (NoSuchBucket) when calling the PutObject operation: The specified bucket does not exist
 s3tests_boto3.functional.test_s3,test_bucket_list_delimiter_none,PASSED, 
 s3tests_boto3.functional.test_s3,test_bucket_listv2_delimiter_none,PASSED, 
 s3tests_boto3.functional.test_s3,test_bucket_listv2_fetchowner_notempty,PASSED, 
@@ -161,7 +161,7 @@ s3tests_boto3.functional.test_s3,test_bucket_list_unordered,FAILED, exceptions.A
 s3tests_boto3.functional.test_s3,test_bucket_listv2_unordered,FAILED, exceptions.AssertionError, ClientError not raised
 s3tests_boto3.functional.test_s3,test_bucket_list_maxkeys_invalid,PASSED, 
 s3tests_boto3.functional.test_s3,test_bucket_list_marker_none,PASSED, 
-s3tests_boto3.functional.test_s3,test_bucket_list_marker_empty,ERROR, botocore.errorfactory.NoSuchBucket, An error occurred (NoSuchBucket) when calling the PutObject operation: The specified bucket does not exist
+s3tests_boto3.functional.test_s3,test_bucket_list_marker_empty,PASSED, 
 s3tests_boto3.functional.test_s3,test_bucket_listv2_continuationtoken_empty,ERROR, botocore.exceptions.ClientError, An error occurred (InvalidArgument) when calling the ListObjectsV2 operation: The continuation token provided is incorrect
 s3tests_boto3.functional.test_s3,test_bucket_listv2_continuationtoken,PASSED, 
 s3tests_boto3.functional.test_s3,test_bucket_listv2_both_continuationtoken_startafter,ERROR, exceptions.KeyError, 'StartAfter'
@@ -216,7 +216,7 @@ s3tests_boto3.functional.test_s3,test_post_object_set_key_from_filename,PASSED,
 s3tests_boto3.functional.test_s3,test_post_object_ignored_header,PASSED, 
 s3tests_boto3.functional.test_s3,test_post_object_case_insensitive_condition_fields,PASSED, 
 s3tests_boto3.functional.test_s3,test_post_object_escaped_field_values,PASSED, 
-s3tests_boto3.functional.test_s3,test_post_object_success_redirect_action,FAILED, exceptions.AssertionError, 404 != 200
+s3tests_boto3.functional.test_s3,test_post_object_success_redirect_action,PASSED, 
 s3tests_boto3.functional.test_s3,test_post_object_invalid_signature,PASSED, 
 s3tests_boto3.functional.test_s3,test_post_object_invalid_access_key,PASSED, 
 s3tests_boto3.functional.test_s3,test_post_object_invalid_date_format,PASSED, 
@@ -264,11 +264,11 @@ s3tests_boto3.functional.test_s3,test_object_raw_authenticated,PASSED,
 s3tests_boto3.functional.test_s3,test_object_raw_response_headers,PASSED, 
 s3tests_boto3.functional.test_s3,test_object_raw_authenticated_bucket_acl,PASSED, 
 s3tests_boto3.functional.test_s3,test_object_raw_authenticated_object_acl,PASSED, 
-s3tests_boto3.functional.test_s3,test_object_raw_authenticated_bucket_gone,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_raw_authenticated_bucket_gone,FAILED, exceptions.AssertionError, 'NoSuchKey' != 'NoSuchBucket'
 s3tests_boto3.functional.test_s3,test_object_raw_authenticated_object_gone,PASSED, 
 s3tests_boto3.functional.test_s3,test_object_raw_get_x_amz_expires_not_expired,PASSED, 
 s3tests_boto3.functional.test_s3,test_object_raw_get_x_amz_expires_out_range_zero,PASSED, 
-s3tests_boto3.functional.test_s3,test_object_raw_get_x_amz_expires_out_max_range,FAILED, exceptions.AssertionError, 400 != 403
+s3tests_boto3.functional.test_s3,test_object_raw_get_x_amz_expires_out_max_range,ERROR, botocore.errorfactory.NoSuchBucket, An error occurred (NoSuchBucket) when calling the PutObject operation: The specified bucket does not exist
 s3tests_boto3.functional.test_s3,test_object_raw_get_x_amz_expires_out_positive_range,FAILED, exceptions.AssertionError, 400 != 403
 s3tests_boto3.functional.test_s3,test_object_anon_put,PASSED, 
 s3tests_boto3.functional.test_s3,test_object_anon_put_write_access,PASSED, 
@@ -297,7 +297,7 @@ s3tests_boto3.functional.test_s3,test_bucket_get_location,ERROR, botocore.except
 s3tests_boto3.functional.test_s3,test_bucket_create_exists_nonowner,FAILED, exceptions.AssertionError, ClientError not raised
 s3tests_boto3.functional.test_s3,test_bucket_acl_default,FAILED, exceptions.AssertionError, 'justinjrestivo' != 'JustinRestivo'
 s3tests_boto3.functional.test_s3,test_bucket_acl_canned_during_create,FAILED, exceptions.AssertionError, 'FULL_CONTROL' != 'READ'
-s3tests_boto3.functional.test_s3,test_bucket_acl_canned,ERROR, botocore.errorfactory.NoSuchBucket, An error occurred (NoSuchBucket) when calling the GetBucketAcl operation: The specified bucket does not exist
+s3tests_boto3.functional.test_s3,test_bucket_acl_canned,FAILED, exceptions.AssertionError, 'FULL_CONTROL' != 'READ'
 s3tests_boto3.functional.test_s3,test_bucket_acl_canned_publicreadwrite,FAILED, exceptions.AssertionError, 'FULL_CONTROL' != 'READ'
 s3tests_boto3.functional.test_s3,test_bucket_acl_canned_authenticatedread,FAILED, exceptions.AssertionError, 'FULL_CONTROL' != 'READ'
 s3tests_boto3.functional.test_s3,test_object_acl_default,FAILED, exceptions.AssertionError, 'justinjrestivo' != 'JustinRestivo'
@@ -318,7 +318,7 @@ s3tests_boto3.functional.test_s3,test_object_acl_readacp,FAILED, exceptions.Asse
 s3tests_boto3.functional.test_s3,test_bucket_acl_grant_userid_fullcontrol,FAILED, exceptions.AssertionError, 'justinjrestivo' != 'JustinRestivo2'
 s3tests_boto3.functional.test_s3,test_bucket_acl_grant_userid_read,FAILED, exceptions.AssertionError, 'FULL_CONTROL' != 'READ'
 s3tests_boto3.functional.test_s3,test_bucket_acl_grant_userid_readacp,FAILED, exceptions.AssertionError, 'FULL_CONTROL' != 'READ_ACP'
-s3tests_boto3.functional.test_s3,test_bucket_acl_grant_userid_write,FAILED, exceptions.AssertionError, 'FULL_CONTROL' != 'WRITE'
+s3tests_boto3.functional.test_s3,test_bucket_acl_grant_userid_write,FAILED, exceptions.AssertionError, 1 != 2
 s3tests_boto3.functional.test_s3,test_bucket_acl_grant_userid_writeacp,FAILED, exceptions.AssertionError, 'FULL_CONTROL' != 'WRITE_ACP'
 s3tests_boto3.functional.test_s3,test_bucket_acl_grant_nonexist_user,PASSED, 
 s3tests_boto3.functional.test_s3,test_bucket_acl_no_grants,FAILED, exceptions.AssertionError, ClientError not raised
@@ -326,7 +326,7 @@ s3tests_boto3.functional.test_s3,test_object_header_acl_grants,FAILED, exception
 s3tests_boto3.functional.test_s3,test_bucket_header_acl_grants,FAILED, exceptions.AssertionError, 'justinjrestivo' != 'JustinRestivo2'
 s3tests_boto3.functional.test_s3,test_bucket_acl_grant_email,FAILED, exceptions.AssertionError, 'justinjrestivo' != 'JustinRestivo2'
 s3tests_boto3.functional.test_s3,test_bucket_acl_grant_email_notexist,PASSED, 
-s3tests_boto3.functional.test_s3,test_bucket_acl_revoke_all,FAILED, exceptions.AssertionError, 1 != 0
+s3tests_boto3.functional.test_s3,test_bucket_acl_revoke_all,PASSED, 
 s3tests_boto3.functional.test_s3,test_logging_toggle,ERROR, botocore.exceptions.ClientError, An error occurred (InvalidTargetBucketForLogging) when calling the PutBucketLogging operation: You must give the log-delivery group WRITE and READ_ACP permissions to the target bucket
 s3tests_boto3.functional.test_s3,test_access_bucket_private_object_private,FAILED, exceptions.AssertionError, ClientError not raised
 s3tests_boto3.functional.test_s3,test_access_bucket_private_objectv2_private,FAILED, exceptions.AssertionError, ClientError not raised
@@ -411,7 +411,7 @@ s3tests_boto3.functional.test_s3,test_ranged_request_invalid_range,PASSED,
 s3tests_boto3.functional.test_s3,test_ranged_request_empty_object,PASSED, 
 s3tests_boto3.functional.test_s3,test_lifecycle_set,PASSED, 
 s3tests_boto3.functional.test_s3,test_lifecycle_get,PASSED, 
-s3tests_boto3.functional.test_s3,test_lifecycle_get_no_id,ERROR, botocore.exceptions.ClientError, An error occurred (NoSuchLifecycleConfiguration) when calling the GetBucketLifecycleConfiguration operation: The lifecycle configuration does not exist
+s3tests_boto3.functional.test_s3,test_lifecycle_get_no_id,PASSED, 
 s3tests_boto3.functional.test_s3,test_lifecycle_expiration,PASSED, 
 s3tests_boto3.functional.test_s3,test_lifecyclev2_expiration,FAILED, exceptions.AssertionError, 6 != 4
 s3tests_boto3.functional.test_s3,test_lifecycle_expiration_versioning_enabled,FAILED, exceptions.AssertionError, 'Enabled' != None
@@ -437,7 +437,7 @@ s3tests_boto3.functional.test_s3,test_encrypted_transfer_13b,ERROR, botocore.exc
 s3tests_boto3.functional.test_s3,test_encryption_sse_c_method_head,ERROR, botocore.exceptions.ClientError, An error occurred (InvalidArgument) when calling the PutObject operation: Requests specifying Server Side Encryption with Customer provided keys must be made over a secure connection.
 s3tests_boto3.functional.test_s3,test_encryption_sse_c_present,ERROR, botocore.exceptions.ClientError, An error occurred (InvalidArgument) when calling the PutObject operation: Requests specifying Server Side Encryption with Customer provided keys must be made over a secure connection.
 s3tests_boto3.functional.test_s3,test_encryption_sse_c_other_key,ERROR, botocore.exceptions.ClientError, An error occurred (InvalidArgument) when calling the PutObject operation: Requests specifying Server Side Encryption with Customer provided keys must be made over a secure connection.
-s3tests_boto3.functional.test_s3,test_encryption_sse_c_invalid_md5,PASSED, 
+s3tests_boto3.functional.test_s3,test_encryption_sse_c_invalid_md5,FAILED, exceptions.AssertionError, 404 != 400
 s3tests_boto3.functional.test_s3,test_encryption_sse_c_no_md5,PASSED, 
 s3tests_boto3.functional.test_s3,test_encryption_sse_c_no_key,PASSED, 
 s3tests_boto3.functional.test_s3,test_encryption_key_no_sse_c,PASSED, 
@@ -482,7 +482,7 @@ s3tests_boto3.functional.test_s3,test_post_object_tags_authenticated_request,PAS
 s3tests_boto3.functional.test_s3,test_put_obj_with_tags,PASSED, 
 s3tests_boto3.functional.test_s3,test_get_tags_acl_public,PASSED, 
 s3tests_boto3.functional.test_s3,test_put_tags_acl_public,PASSED, 
-s3tests_boto3.functional.test_s3,test_delete_tags_obj_public,PASSED, 
+s3tests_boto3.functional.test_s3,test_delete_tags_obj_public,ERROR, botocore.errorfactory.NoSuchBucket, An error occurred (NoSuchBucket) when calling the PutObject operation: The specified bucket does not exist
 s3tests_boto3.functional.test_s3,test_bucket_policy_get_obj_existing_tag,FAILED, exceptions.AssertionError, ClientError not raised
 s3tests_boto3.functional.test_s3,test_bucket_policy_get_obj_tagging_existing_tag,FAILED, exceptions.AssertionError, ClientError not raised
 s3tests_boto3.functional.test_s3,test_bucket_policy_put_obj_tagging_existing_tag,FAILED, exceptions.AssertionError, ClientError not raised
@@ -498,7 +498,7 @@ s3tests_boto3.functional.test_s3,test_object_lock_put_obj_lock_invalid_bucket,PA
 s3tests_boto3.functional.test_s3,test_object_lock_put_obj_lock_with_days_and_years,PASSED, 
 s3tests_boto3.functional.test_s3,test_object_lock_put_obj_lock_invalid_days,FAILED, exceptions.AssertionError, 'InvalidArgument' != 'InvalidRetentionPeriod'
 s3tests_boto3.functional.test_s3,test_object_lock_put_obj_lock_invalid_years,PASSED, 
-s3tests_boto3.functional.test_s3,test_object_lock_put_obj_lock_invalid_status,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_lock_put_obj_lock_invalid_status,FAILED, exceptions.AssertionError, 404 != 400
 s3tests_boto3.functional.test_s3,test_object_lock_suspend_versioning,PASSED, 
 s3tests_boto3.functional.test_s3,test_object_lock_get_obj_lock,PASSED, 
 s3tests_boto3.functional.test_s3,test_object_lock_get_obj_lock_invalid_bucket,PASSED, 
@@ -561,4 +561,4 @@ test_realistic.TestFileValidator,test_new_file_is_valid,PASSED,
 test_realistic.TestFileValidator,test_new_file_is_valid_on_several_calls,PASSED, 
 test_realistic.TestFileValidator,test_new_file_is_valid_when_size_is_1,PASSED, 
 test_realistic.TestFiles,test_random_file_valid,PASSED, 
-Tests = 562 Errors = 69 Failures = 91 Skip = 0
+Tests = 562 Errors = 70 Failures = 92 Skip = 0
