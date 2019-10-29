@@ -10,10 +10,10 @@ bucket prefix = s3tests-{random}-
 display_name = 
 user_id = 
 email = 
-api_name = ""
+api_name = default
 access_key = 
 secret_key = 
-kms_keyid = ""
+#kms_keyid = XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 [s3 alt]
 display_name = 
