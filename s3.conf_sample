@@ -1,70 +1,30 @@
 [DEFAULT]
-## this section is just used for host, port and bucket_prefix
-
-# host set for rgw in vstart.sh
 host = s3.amazonaws.com
-
-# port set for rgw in vstart.sh
-port = 8080
-
-## say "False" to disable TLS
+port = 443
 is_secure = True
 
 [fixtures]
-## all the buckets created will start with this prefix;
-## {random} will be filled with random characters to pad
-## the prefix to 30 characters long, and avoid collisions
 bucket prefix = s3tests-{random}-
 
 [s3 main]
-# main display_name set in vstart.sh
-display_name = XXXXXXXXXXXXXX
-
-# main user_idname set in vstart.sh
-user_id = XXXXXX
-
-# main email set in vstart.sh
-email = XXXXXXXXXXXXXXXXXXXXXXXX
-
-# zonegroup api_name for bucket location
+display_name = 
+user_id = 
+email = 
 api_name = default
-
-## main AWS access key
-access_key = XXXXXXXXXXXXXXXXXXXX
-
-## main AWS secret key
-secret_key = XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-## replace with key id obtained when secret is created, or delete if KMS not tested
+access_key = 
+secret_key = 
 #kms_keyid = XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 [s3 alt]
-# alt display_name set in vstart.sh
-display_name = XXXXXXXXXXXXX
-## alt email set in vstart.sh
-email = XXXXXXXXXXXXXXXXXXXXXXXX
-
-# alt user_id set in vstart.sh
-user_id = XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-# alt AWS access key set in vstart.sh
-access_key = XXXXXXXXXXXXXXXXXXXX
-
-# alt AWS secret key set in vstart.sh
-secret_key = XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+display_name = 
+email = 
+user_id = 
+access_key = 
+secret_key = 
 
 [s3 tenant]
-# tenant display_name set in vstart.sh
-display_name = XXXXXXXXXXXXX
-
-# tenant user_id set in vstart.sh
-user_id = XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-# tenant AWS secret key set in vstart.sh
-access_key = XXXXXXXXXXXXXXXXXXXX
-
-# tenant AWS secret key set in vstart.sh
-secret_key = XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-# tenant email set in vstart.sh
-email = XXXXXXXXXXXXXXXXXXXXXXXX
+display_name = 
+user_id = 
+access_key = 
+secret_key = 
+email = 
