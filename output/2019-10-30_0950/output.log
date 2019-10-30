@@ -1,0 +1,71 @@
+COMMAND: S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --with-xunit --xunit-file=output/2019-10-30_0950/nosetests.xml --with-blacklist --blacklist-file=blacklists/blacklist.txt
+
+ENVIRONMENT:
+======================================================================
+S3TEST_CONF=s3.conf
+BOTO_CONFIG=boto.ini
+======================================================================
+
+CONFIG:
+======================================================================
+S3TEST_CONF
+[DEFAULT]
+host = s3.amazonaws.com
+#port = 80
+is_secure = true
+
+[fixtures]
+bucket prefix = s3tests-{random}-
+
+[s3 main]
+display_name = JustinRestivo
+user_id = 52d0a0b67578b2a04c26e426d2ae33fc3f2309fc89db487c66d2d7235b70d9fb
+email = justinjrestivo@gmail.com
+access_key = AKIAXSJ4KSEHEJTKSQG4
+secret_key = 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
+
+[s3 alt]
+display_name = JustinRestivo2
+email = justinjrestivo@gmail.com
+user_id = 52d0a0b67578b2a04c26e426d2ae33fc3f2309fc89db487c66d2d7235b70d9fb
+access_key = AKIAXSJ4KSEHACQRJC7N
+secret_key = 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
+
+BOTO_CONFIG
+[Boto]
+debug = 0
+num_retries = 0
+connection_stale_duration = 180
+is_secure = False
+https_validate_certificates = False
+ca_certificates_file = /etc/ssl/certs/ca-bundle.crt
+http_socket_timeout = 100
+send_crlf_after_proxy_auth_headers = False
+tcp_keepalive = True
+
+credentials
+[default]
+aws_access_key_id=AKIAXSJ4KSEHEJTKSQG4
+aws_secret_access_key=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
+
+cleanupKeys
+id=AKIAXSJ4KSEHEJTKSQG4
+key=YGtgU5YVxAI8Iwq07xxdlEXssO786WbZCPqMcZ5t
+
+======================================================================
+
+Usage: nosetests [options]
+
+nosetests: error: no such option: --with-blacklist
+Cleanup/n
+Lsit of vaults:
+
+Deleting vaults:
+
+
+Lsit of vaults:
+
+Deleting vaults:
+
+
+Remaining Vaults:

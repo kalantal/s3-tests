@@ -39,4 +39,4 @@ virtualenv --no-site-packages --distribute virtualenv
 ./virtualenv/bin/python setup.py develop
 
 # for use with local scripts
-#pip install -r requirements-local.txt --no-index --user --find-links="dependencies/pip/"
+pip install -r requirements-local.txt --no-index --user --find-links="dependencies/pip/"

@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite name="nosetests" tests="2" errors="0" failures="0" skip="0"><testcase classname="s3tests.functional.test_headers" name="test_object_create_bad_md5_invalid_short" time="0.349"></testcase><testcase classname="s3tests.functional.test_headers" name="test_object_create_bad_md5_bad" time="0.339"></testcase></testsuite>
