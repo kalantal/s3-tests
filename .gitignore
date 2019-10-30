@@ -11,6 +11,7 @@
 /*.egg-info
 /virtualenv
 #/output
+/output
 
 config.yaml
 
