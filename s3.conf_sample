@@ -1,7 +1,7 @@
 [DEFAULT]
 host = s3.amazonaws.com
-port = 443
-is_secure = True
+#port = 80
+is_secure = true
 
 [fixtures]
 bucket prefix = s3tests-{random}-
@@ -10,10 +10,8 @@ bucket prefix = s3tests-{random}-
 display_name = 
 user_id = 
 email = 
-api_name = default
 access_key = 
 secret_key = 
-#kms_keyid = XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 [s3 alt]
 display_name = 
@@ -21,10 +19,3 @@ email =
 user_id = 
 access_key = 
 secret_key = 
-
-[s3 tenant]
-display_name = 
-user_id = 
-access_key = 
-secret_key = 
-email = 
