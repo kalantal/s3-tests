@@ -14,6 +14,13 @@ function gatherlist {
 }
 gatherlist && echo -en '\nLsit of vaults:\n' && cat $vaultlist
 
+# Delete objects after clean
+echo -en '\nDeleting objects\n'
+function deleteobjects {
+  cat $vaultlist | while read -r line ; do aws --endpoint=http://mwdc-plt-obj-wip1.nam.nsroot.net s3 rm s3://"$line" --recursive; done
+}
+deleteobjects
+
 # Delete vaults after clean
 echo -en '\nDeleting vaults\n'
 function deletevaults {
