@@ -353,7 +353,7 @@ s3tests.functional.test_s3.test_object_raw_get_x_amz_expires_out_positive_range
 #s3tests.functional.test_s3.test_multipart_upload
 #s3tests.functional.test_s3.test_multipart_copy_special_names
 #s3tests.functional.test_s3.test_multipart_copy_versioned
-#s3tests.functional.test_s3.test_multipart_upload_resend_part
+s3tests.functional.test_s3.test_multipart_upload_resend_part
 #s3tests.functional.test_s3.test_multipart_upload_multiple_sizes
 #s3tests.functional.test_s3.test_multipart_copy_multiple_sizes
 #s3tests.functional.test_s3.test_multipart_upload_size_too_small
