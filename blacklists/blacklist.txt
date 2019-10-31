@@ -374,7 +374,7 @@ s3tests.functional.test_s3.test_object_storage_class_copy_multipart
 #s3tests.functional.test_s3.test_bucket_acls_changes_persistent
 #s3tests.functional.test_s3.test_stress_bucket_acls_changes
 #s3tests.functional.test_s3.test_set_cors
-#s3tests.functional.test_s3.test_cors_origin_response
+s3tests.functional.test_s3.test_cors_origin_response
 #s3tests.functional.test_s3.test_cors_origin_wildcard
 #s3tests.functional.test_s3.test_cors_header_option
 #s3tests.functional.test_s3.test_atomic_read_1mb
