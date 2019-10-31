@@ -1,0 +1,564 @@
+Module,Test,Test status,Error/Failure Type,Error/Failure Message
+s3tests.functional.test_s3,test_bucket_create_naming_bad_punctuation,PASSED, 
+s3tests.functional.test_s3,test_versioning_obj_read_not_exist_null,ERROR, boto.exception.S3ResponseError, S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3,test_append_object,ERROR, boto.exception.S3ResponseError, S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3,test_append_normal_object,ERROR, boto.exception.S3ResponseError, S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3,test_append_object_position_wrong,ERROR, boto.exception.S3ResponseError, S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3,test_logging_toggle,ERROR, boto.exception.S3ResponseError, S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3,test_atomic_write_bucket_gone,ERROR, boto.exception.S3ResponseError, S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3,test_encryption_sse_c_multipart_invalid_chunks_1,ERROR, boto.exception.S3ResponseError, S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3,test_encryption_sse_c_multipart_invalid_chunks_2,ERROR, boto.exception.S3ResponseError, S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3,test_bucket_policy_different_tenant,ERROR, boto.exception.S3ResponseError, S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3,test_bucket_policy_set_condition_operator_end_with_IfExists,ERROR, boto.exception.S3ResponseError, S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3,test_bucket_policy_put_obj_enc,ERROR, boto.exception.S3ResponseError, S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3,test_bucket_policy_put_obj_request_obj_tag,ERROR, boto.exception.S3ResponseError, S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3_website,check_can_test_website,ERROR, boto.exception.S3ResponseError, S3ResponseError: 400 Bad Request
+<nose.suite,ContextSuite context=test_routing_generator>:setup,ERROR, boto.exception.S3ResponseError, S3ResponseError: 400 Bad Request
+s3tests.fuzz.test.test_fuzzer,test_descend_leaf_node,PASSED, 
+s3tests.fuzz.test.test_fuzzer,test_descend_node,PASSED, 
+s3tests.fuzz.test.test_fuzzer,test_descend_bad_node,PASSED, 
+s3tests.fuzz.test.test_fuzzer,test_descend_nonexistant_child,PASSED, 
+s3tests.fuzz.test.test_fuzzer,test_expand_random_printable,PASSED, 
+s3tests.fuzz.test.test_fuzzer,test_expand_random_binary,PASSED, 
+s3tests.fuzz.test.test_fuzzer,test_expand_random_printable_no_whitespace,PASSED, 
+s3tests.fuzz.test.test_fuzzer,test_expand_random_binary_no_whitespace,PASSED, 
+s3tests.fuzz.test.test_fuzzer,test_expand_random_no_args,PASSED, 
+s3tests.fuzz.test.test_fuzzer,test_expand_random_no_charset,PASSED, 
+s3tests.fuzz.test.test_fuzzer,test_expand_random_exact_length,PASSED, 
+s3tests.fuzz.test.test_fuzzer,test_expand_random_bad_charset,PASSED, 
+s3tests.fuzz.test.test_fuzzer,test_expand_random_missing_length,PASSED, 
+s3tests.fuzz.test.test_fuzzer,test_assemble_decision,PASSED, 
+s3tests.fuzz.test.test_fuzzer,test_expand_escape,PASSED, 
+s3tests.fuzz.test.test_fuzzer,test_expand_indirect,PASSED, 
+s3tests.fuzz.test.test_fuzzer,test_expand_indirect_double,PASSED, 
+s3tests.fuzz.test.test_fuzzer,test_expand_recursive,PASSED, 
+s3tests.fuzz.test.test_fuzzer,test_expand_recursive_mutual,PASSED, 
+s3tests.fuzz.test.test_fuzzer,test_expand_recursive_not_too_eager,PASSED, 
+s3tests.fuzz.test.test_fuzzer,test_make_choice_unweighted_with_space,PASSED, 
+s3tests.fuzz.test.test_fuzzer,test_weighted_choices,PASSED, 
+s3tests.fuzz.test.test_fuzzer,test_null_choices,PASSED, 
+s3tests.fuzz.test.test_fuzzer,test_weighted_null_choices,PASSED, 
+s3tests.fuzz.test.test_fuzzer,test_null_child,PASSED, 
+s3tests.fuzz.test.test_fuzzer,test_weighted_set,PASSED, 
+s3tests.fuzz.test.test_fuzzer,test_header_presence,PASSED, 
+s3tests.fuzz.test.test_fuzzer,test_duplicate_header,PASSED, 
+s3tests.fuzz.test.test_fuzzer,test_expand_headers,PASSED, 
+test_realistic.TestFileValidator,test_new_file_is_valid,PASSED, 
+test_realistic.TestFileValidator,test_new_file_is_valid_on_several_calls,PASSED, 
+test_realistic.TestFileValidator,test_new_file_is_valid_when_size_is_1,PASSED, 
+test_realistic.TestFiles,test_random_file_valid,PASSED, 
+s3tests_boto3.functional.test_headers,test_object_create_bad_md5_invalid_short,PASSED, 
+s3tests_boto3.functional.test_headers,test_object_create_bad_md5_bad,PASSED, 
+s3tests_boto3.functional.test_headers,test_object_create_bad_md5_empty,PASSED, 
+s3tests_boto3.functional.test_headers,test_object_create_bad_md5_none,PASSED, 
+s3tests_boto3.functional.test_headers,test_object_create_bad_expect_mismatch,PASSED, 
+s3tests_boto3.functional.test_headers,test_object_create_bad_expect_empty,PASSED, 
+s3tests_boto3.functional.test_headers,test_object_create_bad_expect_none,PASSED, 
+s3tests_boto3.functional.test_headers,test_object_create_bad_contentlength_empty,PASSED, 
+s3tests_boto3.functional.test_headers,test_object_create_bad_contentlength_negative,PASSED, 
+s3tests_boto3.functional.test_headers,test_object_create_bad_contentlength_none,FAILED, exceptions.AssertionError, ClientError not raised
+s3tests_boto3.functional.test_headers,test_object_create_bad_contentlength_mismatch_above,ERROR, exceptions.NameError, global name 'add_headers_before_sign' is not defined
+s3tests_boto3.functional.test_headers,test_object_create_bad_contenttype_invalid,PASSED, 
+s3tests_boto3.functional.test_headers,test_object_create_bad_contenttype_empty,PASSED, 
+s3tests_boto3.functional.test_headers,test_object_create_bad_contenttype_none,PASSED, 
+s3tests_boto3.functional.test_headers,test_object_create_bad_authorization_empty,FAILED, exceptions.AssertionError, ClientError not raised
+s3tests_boto3.functional.test_headers,test_object_create_date_and_amz_date,ERROR, botocore.exceptions.ClientError, An error occurred (SignatureDoesNotMatch) when calling the PutObject operation: The request signature we calculated does not match the signature you provided. Check your key and signing method.
+s3tests_boto3.functional.test_headers,test_object_create_amz_date_and_no_date,ERROR, botocore.exceptions.ClientError, An error occurred (SignatureDoesNotMatch) when calling the PutObject operation: The request signature we calculated does not match the signature you provided. Check your key and signing method.
+s3tests_boto3.functional.test_headers,test_object_create_bad_authorization_none,FAILED, exceptions.AssertionError, ClientError not raised
+s3tests_boto3.functional.test_headers,test_bucket_create_contentlength_none,PASSED, 
+s3tests_boto3.functional.test_headers,test_object_acl_create_contentlength_none,PASSED, 
+s3tests_boto3.functional.test_headers,test_bucket_put_bad_canned_acl,PASSED, 
+s3tests_boto3.functional.test_headers,test_bucket_create_bad_expect_mismatch,PASSED, 
+s3tests_boto3.functional.test_headers,test_bucket_create_bad_expect_empty,PASSED, 
+s3tests_boto3.functional.test_headers,test_bucket_create_bad_contentlength_empty,PASSED, 
+s3tests_boto3.functional.test_headers,test_bucket_create_bad_contentlength_negative,PASSED, 
+s3tests_boto3.functional.test_headers,test_bucket_create_bad_contentlength_none,PASSED, 
+s3tests_boto3.functional.test_headers,test_bucket_create_bad_authorization_empty,FAILED, exceptions.AssertionError, ClientError not raised
+s3tests_boto3.functional.test_headers,test_bucket_create_bad_authorization_none,FAILED, exceptions.AssertionError, ClientError not raised
+s3tests_boto3.functional.test_headers,test_object_create_bad_md5_invalid_garbage_aws2,PASSED, 
+s3tests_boto3.functional.test_headers,test_object_create_bad_contentlength_mismatch_below_aws2,PASSED, 
+s3tests_boto3.functional.test_headers,test_object_create_bad_authorization_incorrect_aws2,FAILED, exceptions.AssertionError, ClientError not raised
+s3tests_boto3.functional.test_headers,test_object_create_bad_authorization_invalid_aws2,FAILED, exceptions.AssertionError, ClientError not raised
+s3tests_boto3.functional.test_headers,test_object_create_bad_ua_empty_aws2,PASSED, 
+s3tests_boto3.functional.test_headers,test_object_create_bad_ua_none_aws2,PASSED, 
+s3tests_boto3.functional.test_headers,test_object_create_bad_date_invalid_aws2,PASSED, 
+s3tests_boto3.functional.test_headers,test_object_create_bad_date_empty_aws2,PASSED, 
+s3tests_boto3.functional.test_headers,test_object_create_bad_date_none_aws2,FAILED, exceptions.AssertionError, ClientError not raised
+s3tests_boto3.functional.test_headers,test_object_create_bad_date_before_today_aws2,PASSED, 
+s3tests_boto3.functional.test_headers,test_object_create_bad_date_before_epoch_aws2,PASSED, 
+s3tests_boto3.functional.test_headers,test_object_create_bad_date_after_end_aws2,PASSED, 
+s3tests_boto3.functional.test_headers,test_bucket_create_bad_authorization_invalid_aws2,FAILED, exceptions.AssertionError, ClientError not raised
+s3tests_boto3.functional.test_headers,test_bucket_create_bad_ua_empty_aws2,PASSED, 
+s3tests_boto3.functional.test_headers,test_bucket_create_bad_ua_none_aws2,PASSED, 
+s3tests_boto3.functional.test_headers,test_bucket_create_bad_date_invalid_aws2,PASSED, 
+s3tests_boto3.functional.test_headers,test_bucket_create_bad_date_empty_aws2,PASSED, 
+s3tests_boto3.functional.test_headers,test_bucket_create_bad_date_none_aws2,FAILED, exceptions.AssertionError, ClientError not raised
+s3tests_boto3.functional.test_headers,test_bucket_create_bad_date_before_today_aws2,PASSED, 
+s3tests_boto3.functional.test_headers,test_bucket_create_bad_date_after_today_aws2,PASSED, 
+s3tests_boto3.functional.test_headers,test_bucket_create_bad_date_before_epoch_aws2,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_list_empty,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_list_distinct,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_list_many,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_listv2_many,PASSED, 
+s3tests_boto3.functional.test_s3,test_basic_key_count,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_list_delimiter_basic,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_listv2_delimiter_basic,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_list_delimiter_prefix,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_listv2_delimiter_prefix,FAILED, exceptions.AssertionError, '15wy5EyU/FsD7SBZZ8AEEexKB6SMhStWloP/gcOV2dcW1N0NMTMfrEkfOST2S+VYz' != 'asdf'
+s3tests_boto3.functional.test_s3,test_bucket_listv2_delimiter_prefix_ends_with_delimiter,ERROR, botocore.errorfactory.NoSuchBucket, An error occurred (NoSuchBucket) when calling the PutObject operation: The specified bucket does not exist
+s3tests_boto3.functional.test_s3,test_bucket_list_delimiter_prefix_ends_with_delimiter,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_list_delimiter_alt,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_listv2_delimiter_alt,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_list_delimiter_prefix_underscore,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_listv2_delimiter_prefix_underscore,FAILED, exceptions.AssertionError, '1FMAW3MiKcnhlBrmLIha3rRMoRMBCPSt/QK6Jy8X1dHUdlrgg7GhuFRO69oe8uGDSiBcDHIm2Chw=' != '_obj1_'
+s3tests_boto3.functional.test_s3,test_bucket_list_delimiter_percentage,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_listv2_delimiter_percentage,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_list_delimiter_whitespace,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_listv2_delimiter_whitespace,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_list_delimiter_dot,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_listv2_delimiter_dot,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_list_delimiter_unreadable,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_listv2_delimiter_unreadable,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_list_delimiter_empty,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_listv2_delimiter_empty,ERROR, botocore.errorfactory.NoSuchBucket, An error occurred (NoSuchBucket) when calling the PutObject operation: The specified bucket does not exist
+s3tests_boto3.functional.test_s3,test_bucket_list_delimiter_none,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_listv2_delimiter_none,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_listv2_fetchowner_notempty,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_listv2_fetchowner_defaultempty,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_listv2_fetchowner_empty,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_list_delimiter_not_exist,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_listv2_delimiter_not_exist,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_list_delimiter_not_skip_special,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_list_prefix_basic,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_listv2_prefix_basic,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_list_prefix_alt,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_listv2_prefix_alt,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_list_prefix_empty,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_listv2_prefix_empty,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_list_prefix_none,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_listv2_prefix_none,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_list_prefix_not_exist,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_listv2_prefix_not_exist,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_list_prefix_unreadable,FAILED, exceptions.AssertionError, '%0A' != '\n'
+s3tests_boto3.functional.test_s3,test_bucket_listv2_prefix_unreadable,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_list_prefix_delimiter_basic,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_listv2_prefix_delimiter_basic,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_list_prefix_delimiter_alt,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_listv2_prefix_delimiter_alt,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_list_prefix_delimiter_prefix_not_exist,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_listv2_prefix_delimiter_prefix_not_exist,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_list_prefix_delimiter_delimiter_not_exist,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_listv2_prefix_delimiter_delimiter_not_exist,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_list_prefix_delimiter_prefix_delimiter_not_exist,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_listv2_prefix_delimiter_prefix_delimiter_not_exist,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_list_maxkeys_one,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_listv2_maxkeys_one,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_list_maxkeys_zero,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_listv2_maxkeys_zero,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_list_maxkeys_none,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_listv2_maxkeys_none,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_list_unordered,FAILED, exceptions.AssertionError, ClientError not raised
+s3tests_boto3.functional.test_s3,test_bucket_listv2_unordered,FAILED, exceptions.AssertionError, ClientError not raised
+s3tests_boto3.functional.test_s3,test_bucket_list_maxkeys_invalid,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_list_marker_none,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_list_marker_empty,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_listv2_continuationtoken_empty,ERROR, botocore.exceptions.ClientError, An error occurred (InvalidArgument) when calling the ListObjectsV2 operation: The continuation token provided is incorrect
+s3tests_boto3.functional.test_s3,test_bucket_listv2_continuationtoken,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_listv2_both_continuationtoken_startafter,ERROR, exceptions.KeyError, 'StartAfter'
+s3tests_boto3.functional.test_s3,test_bucket_list_marker_unreadable,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_listv2_startafter_unreadable,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_list_marker_not_in_list,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_listv2_startafter_not_in_list,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_list_marker_after_list,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_listv2_startafter_after_list,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_list_return_data,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_list_objects_anonymous,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_listv2_objects_anonymous,ERROR, botocore.exceptions.ClientError, An error occurred (AccessDenied) when calling the ListObjectsV2 operation: Access Denied
+s3tests_boto3.functional.test_s3,test_bucket_list_objects_anonymous_fail,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_listv2_objects_anonymous_fail,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_notexist,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucketv2_notexist,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_delete_notexist,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_delete_nonempty,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_concurrent_set_canned_acl,FAILED, exceptions.AssertionError, False != True
+s3tests_boto3.functional.test_s3,test_object_write_to_nonexist_bucket,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_create_delete,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_read_notexist,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_requestid_matches_header_on_error,PASSED, 
+s3tests_boto3.functional.test_s3,test_multi_object_delete,PASSED, 
+s3tests_boto3.functional.test_s3,test_multi_objectv2_delete,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_head_zero_bytes,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_write_check_etag,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_write_cache_control,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_write_expires,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_write_read_update_read_delete,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_set_get_metadata_none_to_good,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_set_get_metadata_none_to_empty,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_set_get_metadata_overwrite_to_empty,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_set_get_unicode_metadata,FAILED, exceptions.AssertionError, u'=?UTF-8?Q?Hello_World=C3=83=C2=A9?=' != u'Hello World\xe9'
+s3tests_boto3.functional.test_s3,test_object_set_get_non_utf8_metadata,ERROR, botocore.exceptions.ClientError, An error occurred (SignatureDoesNotMatch) when calling the PutObject operation: The request signature we calculated does not match the signature you provided. Check your key and signing method.
+s3tests_boto3.functional.test_s3,test_object_set_get_metadata_empty_to_unreadable_prefix,ERROR, botocore.exceptions.ClientError, An error occurred (SignatureDoesNotMatch) when calling the PutObject operation: The request signature we calculated does not match the signature you provided. Check your key and signing method.
+s3tests_boto3.functional.test_s3,test_object_set_get_metadata_empty_to_unreadable_suffix,ERROR, botocore.exceptions.ClientError, An error occurred (SignatureDoesNotMatch) when calling the PutObject operation: The request signature we calculated does not match the signature you provided. Check your key and signing method.
+s3tests_boto3.functional.test_s3,test_object_set_get_metadata_empty_to_unreadable_infix,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_set_get_metadata_overwrite_to_unreadable_prefix,ERROR, botocore.exceptions.ClientError, An error occurred (SignatureDoesNotMatch) when calling the PutObject operation: The request signature we calculated does not match the signature you provided. Check your key and signing method.
+s3tests_boto3.functional.test_s3,test_object_set_get_metadata_overwrite_to_unreadable_suffix,ERROR, botocore.exceptions.ClientError, An error occurred (SignatureDoesNotMatch) when calling the PutObject operation: The request signature we calculated does not match the signature you provided. Check your key and signing method.
+s3tests_boto3.functional.test_s3,test_object_set_get_metadata_overwrite_to_unreadable_infix,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_metadata_replaced_on_put,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_write_file,PASSED, 
+s3tests_boto3.functional.test_s3,test_post_object_anonymous_request,PASSED, 
+s3tests_boto3.functional.test_s3,test_post_object_authenticated_request,PASSED, 
+s3tests_boto3.functional.test_s3,test_post_object_authenticated_no_content_type,PASSED, 
+s3tests_boto3.functional.test_s3,test_post_object_authenticated_request_bad_access_key,PASSED, 
+s3tests_boto3.functional.test_s3,test_post_object_set_success_code,PASSED, 
+s3tests_boto3.functional.test_s3,test_post_object_set_invalid_success_code,PASSED, 
+s3tests_boto3.functional.test_s3,test_post_object_upload_larger_than_chunk,PASSED, 
+s3tests_boto3.functional.test_s3,test_post_object_set_key_from_filename,PASSED, 
+s3tests_boto3.functional.test_s3,test_post_object_ignored_header,PASSED, 
+s3tests_boto3.functional.test_s3,test_post_object_case_insensitive_condition_fields,PASSED, 
+s3tests_boto3.functional.test_s3,test_post_object_escaped_field_values,PASSED, 
+s3tests_boto3.functional.test_s3,test_post_object_success_redirect_action,PASSED, 
+s3tests_boto3.functional.test_s3,test_post_object_invalid_signature,PASSED, 
+s3tests_boto3.functional.test_s3,test_post_object_invalid_access_key,PASSED, 
+s3tests_boto3.functional.test_s3,test_post_object_invalid_date_format,PASSED, 
+s3tests_boto3.functional.test_s3,test_post_object_no_key_specified,PASSED, 
+s3tests_boto3.functional.test_s3,test_post_object_missing_signature,PASSED, 
+s3tests_boto3.functional.test_s3,test_post_object_missing_policy_condition,PASSED, 
+s3tests_boto3.functional.test_s3,test_post_object_user_specified_header,PASSED, 
+s3tests_boto3.functional.test_s3,test_post_object_request_missing_policy_specified_field,PASSED, 
+s3tests_boto3.functional.test_s3,test_post_object_condition_is_case_sensitive,PASSED, 
+s3tests_boto3.functional.test_s3,test_post_object_expires_is_case_sensitive,PASSED, 
+s3tests_boto3.functional.test_s3,test_post_object_expired_policy,PASSED, 
+s3tests_boto3.functional.test_s3,test_post_object_invalid_request_field_value,PASSED, 
+s3tests_boto3.functional.test_s3,test_post_object_missing_expires_condition,PASSED, 
+s3tests_boto3.functional.test_s3,test_post_object_missing_conditions_list,PASSED, 
+s3tests_boto3.functional.test_s3,test_post_object_upload_size_limit_exceeded,PASSED, 
+s3tests_boto3.functional.test_s3,test_post_object_missing_content_length_argument,PASSED, 
+s3tests_boto3.functional.test_s3,test_post_object_invalid_content_length_argument,PASSED, 
+s3tests_boto3.functional.test_s3,test_post_object_upload_size_below_minimum,PASSED, 
+s3tests_boto3.functional.test_s3,test_post_object_empty_conditions,PASSED, 
+s3tests_boto3.functional.test_s3,test_get_object_ifmatch_good,PASSED, 
+s3tests_boto3.functional.test_s3,test_get_object_ifmatch_failed,PASSED, 
+s3tests_boto3.functional.test_s3,test_get_object_ifnonematch_good,PASSED, 
+s3tests_boto3.functional.test_s3,test_get_object_ifnonematch_failed,PASSED, 
+s3tests_boto3.functional.test_s3,test_get_object_ifmodifiedsince_good,PASSED, 
+s3tests_boto3.functional.test_s3,test_get_object_ifmodifiedsince_failed,PASSED, 
+s3tests_boto3.functional.test_s3,test_get_object_ifunmodifiedsince_good,PASSED, 
+s3tests_boto3.functional.test_s3,test_get_object_ifunmodifiedsince_failed,PASSED, 
+s3tests_boto3.functional.test_s3,test_put_object_ifmatch_good,ERROR, botocore.exceptions.ClientError, An error occurred (NotImplemented) when calling the PutObject operation: A header you provided implies functionality that is not implemented
+s3tests_boto3.functional.test_s3,test_put_object_ifmatch_failed,FAILED, exceptions.AssertionError, 501 != 412
+s3tests_boto3.functional.test_s3,test_put_object_ifmatch_overwrite_existed_good,ERROR, botocore.exceptions.ClientError, An error occurred (NotImplemented) when calling the PutObject operation: A header you provided implies functionality that is not implemented
+s3tests_boto3.functional.test_s3,test_put_object_ifmatch_nonexisted_failed,FAILED, exceptions.AssertionError, 501 != 412
+s3tests_boto3.functional.test_s3,test_put_object_ifnonmatch_good,ERROR, botocore.exceptions.ClientError, An error occurred (NotImplemented) when calling the PutObject operation: A header you provided implies functionality that is not implemented
+s3tests_boto3.functional.test_s3,test_put_object_ifnonmatch_failed,FAILED, exceptions.AssertionError, 501 != 412
+s3tests_boto3.functional.test_s3,test_put_object_ifnonmatch_nonexisted_good,ERROR, botocore.exceptions.ClientError, An error occurred (NotImplemented) when calling the PutObject operation: A header you provided implies functionality that is not implemented
+s3tests_boto3.functional.test_s3,test_put_object_ifnonmatch_overwrite_existed_failed,FAILED, exceptions.AssertionError, 501 != 412
+s3tests_boto3.functional.test_s3,test_object_raw_get,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_raw_get_bucket_gone,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_delete_key_bucket_gone,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_raw_get_object_gone,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_head,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_head_extended,ERROR, exceptions.KeyError, 'x-rgw-object-count'
+s3tests_boto3.functional.test_s3,test_object_raw_get_bucket_acl,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_raw_get_object_acl,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_raw_authenticated,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_raw_response_headers,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_raw_authenticated_bucket_acl,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_raw_authenticated_object_acl,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_raw_authenticated_bucket_gone,FAILED, exceptions.AssertionError, 'NoSuchKey' != 'NoSuchBucket'
+s3tests_boto3.functional.test_s3,test_object_raw_authenticated_object_gone,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_raw_get_x_amz_expires_not_expired,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_raw_get_x_amz_expires_out_range_zero,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_raw_get_x_amz_expires_out_max_range,ERROR, botocore.errorfactory.NoSuchBucket, An error occurred (NoSuchBucket) when calling the PutObject operation: The specified bucket does not exist
+s3tests_boto3.functional.test_s3,test_object_raw_get_x_amz_expires_out_positive_range,FAILED, exceptions.AssertionError, 400 != 403
+s3tests_boto3.functional.test_s3,test_object_anon_put,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_anon_put_write_access,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_put_authenticated,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_raw_put_authenticated_expired,FAILED, exceptions.AssertionError, 400 != 403
+s3tests_boto3.functional.test_s3,test_bucket_create_naming_bad_starts_nonalpha,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_create_naming_bad_short_empty,ERROR, botocore.exceptions.ParamValidationError, Parameter validation failed:
+s3tests_boto3.functional.test_s3,test_bucket_create_naming_bad_short_one,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_create_naming_bad_short_two,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_create_naming_bad_long,ERROR, botocore.exceptions.ParamValidationError, Parameter validation failed:
+s3tests_boto3.functional.test_s3,test_bucket_create_naming_good_long_60,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_create_naming_good_long_61,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_create_naming_good_long_62,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_create_naming_good_long_63,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_list_long_name,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_create_naming_bad_ip,FAILED, exceptions.AssertionError, 409 != 400
+s3tests_boto3.functional.test_s3,test_bucket_create_naming_bad_punctuation,ERROR, botocore.exceptions.ParamValidationError, Parameter validation failed:
+s3tests_boto3.functional.test_s3,test_bucket_create_naming_dns_underscore,FAILED, exceptions.AssertionError, 409 != 400
+s3tests_boto3.functional.test_s3,test_bucket_create_naming_dns_long,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_create_naming_dns_dash_at_end,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_create_naming_dns_dot_dot,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_create_naming_dns_dot_dash,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_create_naming_dns_dash_dot,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_create_exists,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_get_location,ERROR, botocore.exceptions.ClientError, An error occurred (InvalidLocationConstraint) when calling the CreateBucket operation: The specified location-constraint is not valid
+s3tests_boto3.functional.test_s3,test_bucket_create_exists_nonowner,FAILED, exceptions.AssertionError, ClientError not raised
+s3tests_boto3.functional.test_s3,test_bucket_acl_default,FAILED, exceptions.AssertionError, 'justinjrestivo' != 'JustinRestivo'
+s3tests_boto3.functional.test_s3,test_bucket_acl_canned_during_create,FAILED, exceptions.AssertionError, 'FULL_CONTROL' != 'READ'
+s3tests_boto3.functional.test_s3,test_bucket_acl_canned,FAILED, exceptions.AssertionError, 'FULL_CONTROL' != 'READ'
+s3tests_boto3.functional.test_s3,test_bucket_acl_canned_publicreadwrite,FAILED, exceptions.AssertionError, 'FULL_CONTROL' != 'READ'
+s3tests_boto3.functional.test_s3,test_bucket_acl_canned_authenticatedread,FAILED, exceptions.AssertionError, 'FULL_CONTROL' != 'READ'
+s3tests_boto3.functional.test_s3,test_object_acl_default,FAILED, exceptions.AssertionError, 'justinjrestivo' != 'JustinRestivo'
+s3tests_boto3.functional.test_s3,test_object_acl_canned_during_create,FAILED, exceptions.AssertionError, 'FULL_CONTROL' != 'READ'
+s3tests_boto3.functional.test_s3,test_object_acl_canned,FAILED, exceptions.AssertionError, 'FULL_CONTROL' != 'READ'
+s3tests_boto3.functional.test_s3,test_object_acl_canned_publicreadwrite,FAILED, exceptions.AssertionError, 'FULL_CONTROL' != 'READ'
+s3tests_boto3.functional.test_s3,test_object_acl_canned_authenticatedread,FAILED, exceptions.AssertionError, 'FULL_CONTROL' != 'READ'
+s3tests_boto3.functional.test_s3,test_object_acl_canned_bucketownerread,ERROR, exceptions.KeyError, 'ID'
+s3tests_boto3.functional.test_s3,test_object_acl_canned_bucketownerfullcontrol,ERROR, exceptions.KeyError, 'ID'
+s3tests_boto3.functional.test_s3,test_object_acl_full_control_verify_owner,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_acl_full_control_verify_attributes,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_acl_canned_private_to_private,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_acl,FAILED, exceptions.AssertionError, 'justinjrestivo' != 'JustinRestivo'
+s3tests_boto3.functional.test_s3,test_object_acl_write,FAILED, exceptions.AssertionError, 'justinjrestivo' != 'JustinRestivo'
+s3tests_boto3.functional.test_s3,test_object_acl_writeacp,FAILED, exceptions.AssertionError, 'justinjrestivo' != 'JustinRestivo'
+s3tests_boto3.functional.test_s3,test_object_acl_read,FAILED, exceptions.AssertionError, 'justinjrestivo' != 'JustinRestivo'
+s3tests_boto3.functional.test_s3,test_object_acl_readacp,FAILED, exceptions.AssertionError, 'justinjrestivo' != 'JustinRestivo'
+s3tests_boto3.functional.test_s3,test_bucket_acl_grant_userid_fullcontrol,FAILED, exceptions.AssertionError, 'justinjrestivo' != 'JustinRestivo2'
+s3tests_boto3.functional.test_s3,test_bucket_acl_grant_userid_read,FAILED, exceptions.AssertionError, 'FULL_CONTROL' != 'READ'
+s3tests_boto3.functional.test_s3,test_bucket_acl_grant_userid_readacp,FAILED, exceptions.AssertionError, 'FULL_CONTROL' != 'READ_ACP'
+s3tests_boto3.functional.test_s3,test_bucket_acl_grant_userid_write,FAILED, exceptions.AssertionError, 1 != 2
+s3tests_boto3.functional.test_s3,test_bucket_acl_grant_userid_writeacp,FAILED, exceptions.AssertionError, 'FULL_CONTROL' != 'WRITE_ACP'
+s3tests_boto3.functional.test_s3,test_bucket_acl_grant_nonexist_user,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_acl_no_grants,FAILED, exceptions.AssertionError, ClientError not raised
+s3tests_boto3.functional.test_s3,test_object_header_acl_grants,FAILED, exceptions.AssertionError, 'justinjrestivo' != 'JustinRestivo2'
+s3tests_boto3.functional.test_s3,test_bucket_header_acl_grants,FAILED, exceptions.AssertionError, 'justinjrestivo' != 'JustinRestivo2'
+s3tests_boto3.functional.test_s3,test_bucket_acl_grant_email,FAILED, exceptions.AssertionError, 'justinjrestivo' != 'JustinRestivo2'
+s3tests_boto3.functional.test_s3,test_bucket_acl_grant_email_notexist,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_acl_revoke_all,PASSED, 
+s3tests_boto3.functional.test_s3,test_logging_toggle,ERROR, botocore.exceptions.ClientError, An error occurred (InvalidTargetBucketForLogging) when calling the PutBucketLogging operation: You must give the log-delivery group WRITE and READ_ACP permissions to the target bucket
+s3tests_boto3.functional.test_s3,test_access_bucket_private_object_private,FAILED, exceptions.AssertionError, ClientError not raised
+s3tests_boto3.functional.test_s3,test_access_bucket_private_objectv2_private,FAILED, exceptions.AssertionError, ClientError not raised
+s3tests_boto3.functional.test_s3,test_access_bucket_private_object_publicread,FAILED, exceptions.AssertionError, ClientError not raised
+s3tests_boto3.functional.test_s3,test_access_bucket_private_objectv2_publicread,FAILED, exceptions.AssertionError, ClientError not raised
+s3tests_boto3.functional.test_s3,test_access_bucket_private_object_publicreadwrite,FAILED, exceptions.AssertionError, ClientError not raised
+s3tests_boto3.functional.test_s3,test_access_bucket_private_objectv2_publicreadwrite,FAILED, exceptions.AssertionError, ClientError not raised
+s3tests_boto3.functional.test_s3,test_access_bucket_publicread_object_private,FAILED, exceptions.AssertionError, ClientError not raised
+s3tests_boto3.functional.test_s3,test_access_bucket_publicread_object_publicread,FAILED, exceptions.AssertionError, ClientError not raised
+s3tests_boto3.functional.test_s3,test_access_bucket_publicread_object_publicreadwrite,FAILED, exceptions.AssertionError, ClientError not raised
+s3tests_boto3.functional.test_s3,test_access_bucket_publicreadwrite_object_private,FAILED, exceptions.AssertionError, ClientError not raised
+s3tests_boto3.functional.test_s3,test_access_bucket_publicreadwrite_object_publicread,FAILED, exceptions.AssertionError, ClientError not raised
+s3tests_boto3.functional.test_s3,test_access_bucket_publicreadwrite_object_publicreadwrite,FAILED, exceptions.AssertionError, ClientError not raised
+s3tests_boto3.functional.test_s3,test_buckets_create_then_list,PASSED, 
+s3tests_boto3.functional.test_s3,test_list_buckets_anonymous,ERROR, exceptions.TypeError, expected string or buffer
+s3tests_boto3.functional.test_s3,test_list_buckets_invalid_auth,PASSED, 
+s3tests_boto3.functional.test_s3,test_list_buckets_bad_auth,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_create_naming_good_starts_alpha,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_create_naming_good_starts_digit,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_create_naming_good_contains_period,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_create_naming_good_contains_hyphen,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_recreate_not_overriding,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_create_special_key_names,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_list_special_prefix,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_copy_zero_size,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_copy_same_bucket,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_copy_verify_contenttype,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_copy_to_itself,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_copy_to_itself_with_metadata,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_copy_diff_bucket,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_copy_not_owned_bucket,FAILED, exceptions.AssertionError, ClientError not raised
+s3tests_boto3.functional.test_s3,test_object_copy_not_owned_object_bucket,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_copy_canned_acl,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_copy_retaining_metadata,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_copy_replacing_metadata,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_copy_bucket_not_found,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_copy_key_not_found,PASSED, 
+s3tests_boto3.functional.test_s3,test_multipart_upload_empty,FAILED, exceptions.AssertionError, 'InvalidRequest' != 'MalformedXML'
+s3tests_boto3.functional.test_s3,test_multipart_upload_small,PASSED, 
+s3tests_boto3.functional.test_s3,test_multipart_copy_small,PASSED, 
+s3tests_boto3.functional.test_s3,test_multipart_copy_invalid_range,FAILED, exceptions.AssertionError, 'InvalidArgument' != 'InvalidRange'
+s3tests_boto3.functional.test_s3,test_multipart_copy_improper_range,PASSED, 
+s3tests_boto3.functional.test_s3,test_multipart_copy_without_range,PASSED, 
+s3tests_boto3.functional.test_s3,test_multipart_copy_special_names,PASSED, 
+s3tests_boto3.functional.test_s3,test_multipart_upload,ERROR, exceptions.KeyError, 'x-rgw-bytes-used'
+s3tests_boto3.functional.test_s3,test_multipart_upload_resend_part,PASSED, 
+s3tests_boto3.functional.test_s3,test_multipart_upload_multiple_sizes,PASSED, 
+s3tests_boto3.functional.test_s3,test_multipart_copy_multiple_sizes,PASSED, 
+s3tests_boto3.functional.test_s3,test_multipart_upload_size_too_small,PASSED, 
+s3tests_boto3.functional.test_s3,test_multipart_upload_contents,PASSED, 
+s3tests_boto3.functional.test_s3,test_multipart_upload_overwrite_existing_object,PASSED, 
+s3tests_boto3.functional.test_s3,test_abort_multipart_upload,ERROR, exceptions.KeyError, 'x-rgw-bytes-used'
+s3tests_boto3.functional.test_s3,test_abort_multipart_upload_not_found,PASSED, 
+s3tests_boto3.functional.test_s3,test_list_multipart_upload,PASSED, 
+s3tests_boto3.functional.test_s3,test_multipart_upload_missing_part,PASSED, 
+s3tests_boto3.functional.test_s3,test_multipart_upload_incorrect_etag,PASSED, 
+s3tests_boto3.functional.test_s3,test_100_continue,PASSED, 
+s3tests_boto3.functional.test_s3,test_set_cors,PASSED, 
+s3tests_boto3.functional.test_s3,test_cors_origin_response,FAILED, exceptions.AssertionError, 403 != 400
+s3tests_boto3.functional.test_s3,test_cors_origin_wildcard,PASSED, 
+s3tests_boto3.functional.test_s3,test_cors_header_option,PASSED, 
+s3tests_boto3.functional.test_s3,test_set_tagging,FAILED, exceptions.AssertionError, 'NoSuchTagSet' != 'NoSuchTagSetError'
+s3tests_boto3.functional.test_s3,test_atomic_read_1mb,PASSED, 
+s3tests_boto3.functional.test_s3,test_atomic_read_4mb,PASSED, 
+s3tests_boto3.functional.test_s3,test_atomic_read_8mb,PASSED, 
+s3tests_boto3.functional.test_s3,test_atomic_write_1mb,PASSED, 
+s3tests_boto3.functional.test_s3,test_atomic_write_4mb,PASSED, 
+s3tests_boto3.functional.test_s3,test_atomic_write_8mb,PASSED, 
+s3tests_boto3.functional.test_s3,test_atomic_dual_write_1mb,PASSED, 
+s3tests_boto3.functional.test_s3,test_atomic_dual_write_4mb,PASSED, 
+s3tests_boto3.functional.test_s3,test_atomic_dual_write_8mb,PASSED, 
+s3tests_boto3.functional.test_s3,test_atomic_conditional_write_1mb,ERROR, botocore.exceptions.ClientError, An error occurred (NotImplemented) when calling the PutObject operation: A header you provided implies functionality that is not implemented
+s3tests_boto3.functional.test_s3,test_atomic_dual_conditional_write_1mb,FAILED, exceptions.AssertionError, 501 != 412
+s3tests_boto3.functional.test_s3,test_atomic_write_bucket_gone,PASSED, 
+s3tests_boto3.functional.test_s3,test_atomic_multipart_upload_write,PASSED, 
+s3tests_boto3.functional.test_s3,test_multipart_resend_first_finishes_last,ERROR, botocore.exceptions.ClientError, An error occurred (InvalidPartOrder) when calling the CompleteMultipartUpload operation: The list of parts was not in ascending order. Parts must be ordered by part number.
+s3tests_boto3.functional.test_s3,test_ranged_request_response_code,PASSED, 
+s3tests_boto3.functional.test_s3,test_ranged_big_request_response_code,PASSED, 
+s3tests_boto3.functional.test_s3,test_ranged_request_skip_leading_bytes_response_code,PASSED, 
+s3tests_boto3.functional.test_s3,test_ranged_request_return_trailing_bytes_response_code,PASSED, 
+s3tests_boto3.functional.test_s3,test_ranged_request_invalid_range,PASSED, 
+s3tests_boto3.functional.test_s3,test_ranged_request_empty_object,PASSED, 
+s3tests_boto3.functional.test_s3,test_lifecycle_set,PASSED, 
+s3tests_boto3.functional.test_s3,test_lifecycle_get,PASSED, 
+s3tests_boto3.functional.test_s3,test_lifecycle_get_no_id,PASSED, 
+s3tests_boto3.functional.test_s3,test_lifecycle_expiration,PASSED, 
+s3tests_boto3.functional.test_s3,test_lifecyclev2_expiration,FAILED, exceptions.AssertionError, 6 != 4
+s3tests_boto3.functional.test_s3,test_lifecycle_expiration_versioning_enabled,FAILED, exceptions.AssertionError, 'Enabled' != None
+s3tests_boto3.functional.test_s3,test_lifecycle_id_too_long,PASSED, 
+s3tests_boto3.functional.test_s3,test_lifecycle_same_id,PASSED, 
+s3tests_boto3.functional.test_s3,test_lifecycle_invalid_status,PASSED, 
+s3tests_boto3.functional.test_s3,test_lifecycle_set_date,PASSED, 
+s3tests_boto3.functional.test_s3,test_lifecycle_set_invalid_date,PASSED, 
+s3tests_boto3.functional.test_s3,test_lifecycle_expiration_date,FAILED, exceptions.AssertionError, 2 != 1
+s3tests_boto3.functional.test_s3,test_lifecycle_expiration_days0,ERROR, botocore.exceptions.ClientError, An error occurred (InvalidArgument) when calling the PutBucketLifecycleConfiguration operation: 'Days' for Expiration action must be a positive integer
+s3tests_boto3.functional.test_s3,test_lifecycle_set_noncurrent,PASSED, 
+s3tests_boto3.functional.test_s3,test_lifecycle_noncur_expiration,FAILED, exceptions.AssertionError, 'Enabled' != None
+s3tests_boto3.functional.test_s3,test_lifecycle_set_deletemarker,PASSED, 
+s3tests_boto3.functional.test_s3,test_lifecycle_set_filter,PASSED, 
+s3tests_boto3.functional.test_s3,test_lifecycle_set_empty_filter,PASSED, 
+s3tests_boto3.functional.test_s3,test_lifecycle_deletemarker_expiration,FAILED, exceptions.AssertionError, 'Enabled' != None
+s3tests_boto3.functional.test_s3,test_lifecycle_set_multipart,PASSED, 
+s3tests_boto3.functional.test_s3,test_lifecycle_multipart_expiration,FAILED, exceptions.AssertionError, 2 != 1
+s3tests_boto3.functional.test_s3,test_encrypted_transfer_1b,ERROR, botocore.exceptions.ClientError, An error occurred (InvalidArgument) when calling the PutObject operation: Requests specifying Server Side Encryption with Customer provided keys must be made over a secure connection.
+s3tests_boto3.functional.test_s3,test_encrypted_transfer_1kb,ERROR, botocore.exceptions.ClientError, An error occurred (InvalidArgument) when calling the PutObject operation: Requests specifying Server Side Encryption with Customer provided keys must be made over a secure connection.
+s3tests_boto3.functional.test_s3,test_encrypted_transfer_1MB,ERROR, botocore.exceptions.ClientError, An error occurred (InvalidArgument) when calling the PutObject operation: Requests specifying Server Side Encryption with Customer provided keys must be made over a secure connection.
+s3tests_boto3.functional.test_s3,test_encrypted_transfer_13b,ERROR, botocore.exceptions.ClientError, An error occurred (InvalidArgument) when calling the PutObject operation: Requests specifying Server Side Encryption with Customer provided keys must be made over a secure connection.
+s3tests_boto3.functional.test_s3,test_encryption_sse_c_method_head,ERROR, botocore.exceptions.ClientError, An error occurred (InvalidArgument) when calling the PutObject operation: Requests specifying Server Side Encryption with Customer provided keys must be made over a secure connection.
+s3tests_boto3.functional.test_s3,test_encryption_sse_c_present,ERROR, botocore.exceptions.ClientError, An error occurred (InvalidArgument) when calling the PutObject operation: Requests specifying Server Side Encryption with Customer provided keys must be made over a secure connection.
+s3tests_boto3.functional.test_s3,test_encryption_sse_c_other_key,ERROR, botocore.exceptions.ClientError, An error occurred (InvalidArgument) when calling the PutObject operation: Requests specifying Server Side Encryption with Customer provided keys must be made over a secure connection.
+s3tests_boto3.functional.test_s3,test_encryption_sse_c_invalid_md5,FAILED, exceptions.AssertionError, 404 != 400
+s3tests_boto3.functional.test_s3,test_encryption_sse_c_no_md5,PASSED, 
+s3tests_boto3.functional.test_s3,test_encryption_sse_c_no_key,PASSED, 
+s3tests_boto3.functional.test_s3,test_encryption_key_no_sse_c,PASSED, 
+s3tests_boto3.functional.test_s3,test_encryption_sse_c_multipart_upload,ERROR, botocore.exceptions.ClientError, An error occurred (InvalidArgument) when calling the CreateMultipartUpload operation: Requests specifying Server Side Encryption with Customer provided keys must be made over a secure connection.
+s3tests_boto3.functional.test_s3,test_encryption_sse_c_multipart_invalid_chunks_1,PASSED, 
+s3tests_boto3.functional.test_s3,test_encryption_sse_c_multipart_invalid_chunks_2,PASSED, 
+s3tests_boto3.functional.test_s3,test_encryption_sse_c_multipart_bad_download,ERROR, botocore.exceptions.ClientError, An error occurred (InvalidArgument) when calling the CreateMultipartUpload operation: Requests specifying Server Side Encryption with Customer provided keys must be made over a secure connection.
+s3tests_boto3.functional.test_s3,test_encryption_sse_c_post_object_authenticated_request,FAILED, exceptions.AssertionError, 400 != 204
+s3tests_boto3.functional.test_s3,test_sse_kms_method_head,ERROR, botocore.exceptions.ClientError, An error occurred (InvalidArgument) when calling the PutObject operation: Requests specifying Server Side Encryption with AWS KMS managed keys must be made over a secure connection.
+s3tests_boto3.functional.test_s3,test_sse_kms_present,ERROR, botocore.exceptions.ClientError, An error occurred (InvalidArgument) when calling the PutObject operation: Requests specifying Server Side Encryption with AWS KMS managed keys must be made over a secure connection.
+s3tests_boto3.functional.test_s3,test_sse_kms_no_key,PASSED, 
+s3tests_boto3.functional.test_s3,test_sse_kms_not_declared,PASSED, 
+s3tests_boto3.functional.test_s3,test_sse_kms_multipart_upload,ERROR, botocore.exceptions.ClientError, An error occurred (InvalidArgument) when calling the CreateMultipartUpload operation: Requests specifying Server Side Encryption with AWS KMS managed keys must be made over a secure connection.
+s3tests_boto3.functional.test_s3,test_sse_kms_multipart_invalid_chunks_1,ERROR, botocore.exceptions.ClientError, An error occurred (InvalidArgument) when calling the CreateMultipartUpload operation: Requests specifying Server Side Encryption with AWS KMS managed keys must be made over a secure connection.
+s3tests_boto3.functional.test_s3,test_sse_kms_multipart_invalid_chunks_2,ERROR, botocore.exceptions.ClientError, An error occurred (InvalidArgument) when calling the CreateMultipartUpload operation: Requests specifying Server Side Encryption with AWS KMS managed keys must be made over a secure connection.
+s3tests_boto3.functional.test_s3,test_sse_kms_post_object_authenticated_request,FAILED, exceptions.AssertionError, 400 != 204
+s3tests_boto3.functional.test_s3,test_sse_kms_transfer_1b,ERROR, botocore.exceptions.ClientError, An error occurred (InvalidArgument) when calling the PutObject operation: Requests specifying Server Side Encryption with AWS KMS managed keys must be made over a secure connection.
+s3tests_boto3.functional.test_s3,test_sse_kms_transfer_1kb,ERROR, botocore.exceptions.ClientError, An error occurred (InvalidArgument) when calling the PutObject operation: Requests specifying Server Side Encryption with AWS KMS managed keys must be made over a secure connection.
+s3tests_boto3.functional.test_s3,test_sse_kms_transfer_1MB,ERROR, botocore.exceptions.ClientError, An error occurred (InvalidArgument) when calling the PutObject operation: Requests specifying Server Side Encryption with AWS KMS managed keys must be made over a secure connection.
+s3tests_boto3.functional.test_s3,test_sse_kms_transfer_13b,ERROR, botocore.exceptions.ClientError, An error occurred (InvalidArgument) when calling the PutObject operation: Requests specifying Server Side Encryption with AWS KMS managed keys must be made over a secure connection.
+s3tests_boto3.functional.test_s3,test_sse_kms_read_declare,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_policy,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucketv2_policy,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_policy_acl,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucketv2_policy_acl,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_policy_different_tenant,ERROR, botocore.exceptions.ClientError, An error occurred (MalformedPolicy) when calling the PutBucketPolicy operation: Policy has invalid resource
+s3tests_boto3.functional.test_s3,test_bucketv2_policy_different_tenant,ERROR, botocore.exceptions.ClientError, An error occurred (MalformedPolicy) when calling the PutBucketPolicy operation: Policy has invalid resource
+s3tests_boto3.functional.test_s3,test_bucket_policy_another_bucket,ERROR, botocore.exceptions.ClientError, An error occurred (MalformedPolicy) when calling the PutBucketPolicy operation: Policy has invalid resource
+s3tests_boto3.functional.test_s3,test_bucketv2_policy_another_bucket,ERROR, botocore.exceptions.ClientError, An error occurred (MalformedPolicy) when calling the PutBucketPolicy operation: Policy has invalid resource
+s3tests_boto3.functional.test_s3,test_bucket_policy_set_condition_operator_end_with_IfExists,FAILED, exceptions.AssertionError, ClientError not raised
+s3tests_boto3.functional.test_s3,test_get_obj_tagging,PASSED, 
+s3tests_boto3.functional.test_s3,test_get_obj_head_tagging,PASSED, 
+s3tests_boto3.functional.test_s3,test_put_max_tags,PASSED, 
+s3tests_boto3.functional.test_s3,test_put_excess_tags,FAILED, exceptions.AssertionError, 'BadRequest' != 'InvalidTag'
+s3tests_boto3.functional.test_s3,test_put_max_kvsize_tags,PASSED, 
+s3tests_boto3.functional.test_s3,test_put_excess_key_tags,PASSED, 
+s3tests_boto3.functional.test_s3,test_put_excess_val_tags,PASSED, 
+s3tests_boto3.functional.test_s3,test_put_modify_tags,FAILED, exceptions.AssertionError, [{u'Value': 'val2'| u'Key': 'key2'}| {u'Value': 'val'| u'Key': 'key'}] != [{'Value': 'val'| 'Key': 'key'}| {'Value': 'val2'| 'Key': 'key2'}]
+s3tests_boto3.functional.test_s3,test_put_delete_tags,PASSED, 
+s3tests_boto3.functional.test_s3,test_post_object_tags_anonymous_request,FAILED, exceptions.AssertionError, 403 != 204
+s3tests_boto3.functional.test_s3,test_post_object_tags_authenticated_request,PASSED, 
+s3tests_boto3.functional.test_s3,test_put_obj_with_tags,PASSED, 
+s3tests_boto3.functional.test_s3,test_get_tags_acl_public,PASSED, 
+s3tests_boto3.functional.test_s3,test_put_tags_acl_public,PASSED, 
+s3tests_boto3.functional.test_s3,test_delete_tags_obj_public,ERROR, botocore.errorfactory.NoSuchBucket, An error occurred (NoSuchBucket) when calling the PutObject operation: The specified bucket does not exist
+s3tests_boto3.functional.test_s3,test_bucket_policy_get_obj_existing_tag,FAILED, exceptions.AssertionError, ClientError not raised
+s3tests_boto3.functional.test_s3,test_bucket_policy_get_obj_tagging_existing_tag,FAILED, exceptions.AssertionError, ClientError not raised
+s3tests_boto3.functional.test_s3,test_bucket_policy_put_obj_tagging_existing_tag,FAILED, exceptions.AssertionError, ClientError not raised
+s3tests_boto3.functional.test_s3,test_bucket_policy_put_obj_copy_source,FAILED, exceptions.AssertionError, ClientError not raised
+s3tests_boto3.functional.test_s3,test_bucket_policy_put_obj_copy_source_meta,FAILED, exceptions.AssertionError, ClientError not raised
+s3tests_boto3.functional.test_s3,test_bucket_policy_put_obj_acl,PASSED, 
+s3tests_boto3.functional.test_s3,test_bucket_policy_put_obj_grant,FAILED, exceptions.AssertionError, ClientError not raised
+s3tests_boto3.functional.test_s3,test_bucket_policy_put_obj_enc,ERROR, botocore.exceptions.ClientError, An error occurred (InvalidArgument) when calling the PutObject operation: Server Side Encryption with Customer provided key is incompatible with the encryption method specified
+s3tests_boto3.functional.test_s3,test_bucket_policy_put_obj_request_obj_tag,FAILED, exceptions.AssertionError, ClientError not raised
+s3tests_boto3.functional.test_s3,test_bucket_policy_get_obj_acl_existing_tag,FAILED, exceptions.AssertionError, ClientError not raised
+s3tests_boto3.functional.test_s3,test_object_lock_put_obj_lock,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_lock_put_obj_lock_invalid_bucket,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_lock_put_obj_lock_with_days_and_years,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_lock_put_obj_lock_invalid_days,FAILED, exceptions.AssertionError, 'InvalidArgument' != 'InvalidRetentionPeriod'
+s3tests_boto3.functional.test_s3,test_object_lock_put_obj_lock_invalid_years,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_lock_put_obj_lock_invalid_status,FAILED, exceptions.AssertionError, 404 != 400
+s3tests_boto3.functional.test_s3,test_object_lock_suspend_versioning,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_lock_get_obj_lock,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_lock_get_obj_lock_invalid_bucket,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_lock_put_obj_retention,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_lock_put_obj_retention_invalid_bucket,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_lock_put_obj_retention_invalid_mode,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_lock_get_obj_retention,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_lock_get_obj_retention_invalid_bucket,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_lock_put_obj_retention_versionid,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_lock_put_obj_retention_override_default_retention,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_lock_put_obj_retention_increase_period,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_lock_put_obj_retention_shorten_period,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_lock_put_obj_retention_shorten_period_bypass,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_lock_delete_object_with_retention,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_lock_put_legal_hold,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_lock_put_legal_hold_invalid_bucket,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_lock_put_legal_hold_invalid_status,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_lock_get_legal_hold,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_lock_get_legal_hold_invalid_bucket,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_lock_delete_object_with_legal_hold_on,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_lock_delete_object_with_legal_hold_off,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_lock_get_obj_metadata,PASSED, 
+s3tests_boto3.functional.test_s3,test_object_lock_uploading_obj,PASSED, 
+s3tests_boto3.functional.test_s3,test_copy_object_ifmatch_good,PASSED, 
+s3tests_boto3.functional.test_s3,test_copy_object_ifmatch_failed,PASSED, 
+s3tests_boto3.functional.test_s3,test_copy_object_ifnonematch_good,PASSED, 
+s3tests_boto3.functional.test_s3,test_copy_object_ifnonematch_failed,PASSED, 
+s3tests_boto3.functional.test_utils,test_generate,PASSED, 
+s3tests_boto3.fuzz.test.test_fuzzer,test_load_graph,PASSED, 
+s3tests_boto3.fuzz.test.test_fuzzer,test_descend_leaf_node,PASSED, 
+s3tests_boto3.fuzz.test.test_fuzzer,test_descend_node,PASSED, 
+s3tests_boto3.fuzz.test.test_fuzzer,test_descend_bad_node,PASSED, 
+s3tests_boto3.fuzz.test.test_fuzzer,test_descend_nonexistant_child,PASSED, 
+s3tests_boto3.fuzz.test.test_fuzzer,test_expand_random_printable,PASSED, 
+s3tests_boto3.fuzz.test.test_fuzzer,test_expand_random_binary,PASSED, 
+s3tests_boto3.fuzz.test.test_fuzzer,test_expand_random_printable_no_whitespace,PASSED, 
+s3tests_boto3.fuzz.test.test_fuzzer,test_expand_random_binary_no_whitespace,PASSED, 
+s3tests_boto3.fuzz.test.test_fuzzer,test_expand_random_no_args,PASSED, 
+s3tests_boto3.fuzz.test.test_fuzzer,test_expand_random_no_charset,PASSED, 
+s3tests_boto3.fuzz.test.test_fuzzer,test_expand_random_exact_length,PASSED, 
+s3tests_boto3.fuzz.test.test_fuzzer,test_expand_random_bad_charset,PASSED, 
+s3tests_boto3.fuzz.test.test_fuzzer,test_expand_random_missing_length,PASSED, 
+s3tests_boto3.fuzz.test.test_fuzzer,test_assemble_decision,PASSED, 
+s3tests_boto3.fuzz.test.test_fuzzer,test_expand_escape,PASSED, 
+s3tests_boto3.fuzz.test.test_fuzzer,test_expand_indirect,PASSED, 
+s3tests_boto3.fuzz.test.test_fuzzer,test_expand_indirect_double,PASSED, 
+s3tests_boto3.fuzz.test.test_fuzzer,test_expand_recursive,PASSED, 
+s3tests_boto3.fuzz.test.test_fuzzer,test_expand_recursive_mutual,PASSED, 
+s3tests_boto3.fuzz.test.test_fuzzer,test_expand_recursive_not_too_eager,PASSED, 
+s3tests_boto3.fuzz.test.test_fuzzer,test_make_choice_unweighted_with_space,PASSED, 
+s3tests_boto3.fuzz.test.test_fuzzer,test_weighted_choices,PASSED, 
+s3tests_boto3.fuzz.test.test_fuzzer,test_null_choices,PASSED, 
+s3tests_boto3.fuzz.test.test_fuzzer,test_weighted_null_choices,PASSED, 
+s3tests_boto3.fuzz.test.test_fuzzer,test_null_child,PASSED, 
+s3tests_boto3.fuzz.test.test_fuzzer,test_weighted_set,PASSED, 
+s3tests_boto3.fuzz.test.test_fuzzer,test_header_presence,PASSED, 
+s3tests_boto3.fuzz.test.test_fuzzer,test_duplicate_header,PASSED, 
+s3tests_boto3.fuzz.test.test_fuzzer,test_expand_headers,PASSED, 
+test_realistic.TestFileValidator,test_new_file_is_valid,PASSED, 
+test_realistic.TestFileValidator,test_new_file_is_valid_on_several_calls,PASSED, 
+test_realistic.TestFileValidator,test_new_file_is_valid_when_size_is_1,PASSED, 
+test_realistic.TestFiles,test_random_file_valid,PASSED, 
+Tests = 562 Errors = 70 Failures = 92 Skip = 0
