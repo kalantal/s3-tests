@@ -1,7 +1,7 @@
 [DEFAULT]
 host = s3.amazonaws.com
-#port = 80
-is_secure = true
+port = 80
+is_secure = false
 
 [fixtures]
 bucket prefix = s3tests-{random}-
