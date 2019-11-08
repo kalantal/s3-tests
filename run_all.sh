@@ -22,7 +22,9 @@ LOG_DIR=output/$DATE
 mkdir -p "$LOG_DIR"
 
 #With Blacklist
-test_cmd="S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --with-xunit --xunit-file=$LOG_DIR/nosetests.xml --with-blacklist --blacklist-file=blacklists/blacklist.txt"
+test_cmd="PYTHONHTTPSVERIFY=0 S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --with-xunit --xunit-file=$LOG_DIR/nosetests.xml --with-blacklist --blacklist-file=blacklists/blacklist.txt"
+
+#PYTHONHTTPSVERIFY=0
 
 #Witout Blacklist
 #test_cmd="S3TEST_CONF=s3.conf ./virtualenv/bin/nosetests -v --with-xunit --xunit-file=$LOG_DIR/nosetests.xml"
