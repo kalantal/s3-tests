@@ -1,0 +1,583 @@
+Module	Test	Test status	Error/Failure Type	Error/Failure Message
+s3tests.functional.test_headers	test_object_create_bad_md5_invalid_short	FAILED	 exceptions.AssertionError	 u'BadDigest' != 'InvalidDigest'
+s3tests.functional.test_headers	test_object_create_bad_md5_bad	PASSED	 	
+s3tests.functional.test_headers	test_object_create_bad_md5_empty	PASSED	 	
+s3tests.functional.test_headers	test_object_create_bad_md5_unreadable	ERROR	 socket.error	 [Errno 104] Connection reset by peer
+s3tests.functional.test_headers	test_object_create_bad_md5_none	PASSED	 	
+s3tests.functional.test_headers	test_object_create_bad_expect_mismatch	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 417 Expectation Failed
+s3tests.functional.test_headers	test_object_create_bad_expect_empty	PASSED	 	
+s3tests.functional.test_headers	test_object_create_bad_expect_none	PASSED	 	
+s3tests.functional.test_headers	test_object_create_bad_expect_unreadable	ERROR	 socket.error	 [Errno 104] Connection reset by peer
+s3tests.functional.test_headers	test_object_create_bad_contentlength_empty	FAILED	 exceptions.AssertionError	 u'BadDigest' != None
+s3tests.functional.test_headers	test_object_create_bad_contentlength_negative	ERROR	 socket.error	 [Errno 104] Connection reset by peer
+s3tests.functional.test_headers	test_object_create_bad_contentlength_none	FAILED	 exceptions.AssertionError	 400 != 411
+s3tests.functional.test_headers	test_object_create_bad_contentlength_unreadable	ERROR	 socket.error	 [Errno 104] Connection reset by peer
+s3tests.functional.test_headers	test_object_create_bad_contentlength_mismatch_above	ERROR	 socket.timeout	 timed out
+s3tests.functional.test_headers	test_object_create_bad_contenttype_invalid	PASSED	 	
+s3tests.functional.test_headers	test_object_create_bad_contenttype_empty	PASSED	 	
+s3tests.functional.test_headers	test_object_create_bad_contenttype_none	PASSED	 	
+s3tests.functional.test_headers	test_object_create_bad_contenttype_unreadable	ERROR	 socket.error	 [Errno 104] Connection reset by peer
+s3tests.functional.test_headers	test_object_create_bad_authorization_unreadable	ERROR	 socket.error	 [Errno 104] Connection reset by peer
+s3tests.functional.test_headers	test_object_create_bad_authorization_empty	FAILED	 exceptions.AssertionError	 400 != 403
+s3tests.functional.test_headers	test_object_create_date_and_amz_date	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 403 Forbidden
+s3tests.functional.test_headers	test_object_create_amz_date_and_no_date	PASSED	 	
+s3tests.functional.test_headers	test_object_create_bad_authorization_none	PASSED	 	
+s3tests.functional.test_headers	test_bucket_create_contentlength_none	PASSED	 	
+s3tests.functional.test_headers	test_object_acl_create_contentlength_none	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_headers	test_bucket_put_bad_canned_acl	FAILED	 exceptions.AssertionError	 501 != 400
+s3tests.functional.test_headers	test_bucket_create_bad_expect_mismatch	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 417 Expectation Failed
+s3tests.functional.test_headers	test_bucket_create_bad_expect_empty	PASSED	 	
+s3tests.functional.test_headers	test_bucket_create_bad_expect_unreadable	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 400 Bad Request: invalid header value
+s3tests.functional.test_headers	test_bucket_create_bad_contentlength_empty	FAILED	 exceptions.AssertionError	 S3ResponseError not raised
+s3tests.functional.test_headers	test_bucket_create_bad_contentlength_negative	PASSED	 	
+s3tests.functional.test_headers	test_bucket_create_bad_contentlength_none	PASSED	 	
+s3tests.functional.test_headers	test_bucket_create_bad_contentlength_unreadable	PASSED	 	
+s3tests.functional.test_headers	test_bucket_create_bad_authorization_unreadable	FAILED	 exceptions.AssertionError	 400 != 403
+s3tests.functional.test_headers	test_bucket_create_bad_authorization_empty	FAILED	 exceptions.AssertionError	 400 != 403
+s3tests.functional.test_headers	test_bucket_create_bad_authorization_none	PASSED	 	
+s3tests.functional.test_headers	test_object_create_bad_md5_invalid_garbage_aws2	PASSED	 	
+s3tests.functional.test_headers	test_object_create_bad_contentlength_mismatch_below_aws2	PASSED	 	
+s3tests.functional.test_headers	test_object_create_bad_authorization_incorrect_aws2	PASSED	 	
+s3tests.functional.test_headers	test_object_create_bad_authorization_invalid_aws2	FAILED	 exceptions.AssertionError	 u'MissingFields' != 'InvalidArgument'
+s3tests.functional.test_headers	test_object_create_bad_ua_empty_aws2	PASSED	 	
+s3tests.functional.test_headers	test_object_create_bad_ua_unreadable_aws2	ERROR	 socket.error	 [Errno 104] Connection reset by peer
+s3tests.functional.test_headers	test_object_create_bad_ua_none_aws2	PASSED	 	
+s3tests.functional.test_headers	test_object_create_bad_date_invalid_aws2	FAILED	 exceptions.AssertionError	 400 != 403
+s3tests.functional.test_headers	test_object_create_bad_date_empty_aws2	FAILED	 exceptions.AssertionError	 400 != 403
+s3tests.functional.test_headers	test_object_create_bad_date_unreadable_aws2	ERROR	 socket.error	 [Errno 104] Connection reset by peer
+s3tests.functional.test_headers	test_object_create_bad_date_none_aws2	FAILED	 exceptions.AssertionError	 400 != 403
+s3tests.functional.test_headers	test_object_create_bad_date_before_today_aws2	PASSED	 	
+s3tests.functional.test_headers	test_object_create_bad_date_after_today_aws2	PASSED	 	
+s3tests.functional.test_headers	test_object_create_bad_date_before_epoch_aws2	FAILED	 exceptions.AssertionError	 u'RequestTimeTooSkewed' != 'AccessDenied'
+s3tests.functional.test_headers	test_object_create_bad_date_after_end_aws2	PASSED	 	
+s3tests.functional.test_headers	test_bucket_create_bad_authorization_invalid_aws2	FAILED	 exceptions.AssertionError	 u'MissingFields' != 'InvalidArgument'
+s3tests.functional.test_headers	test_bucket_create_bad_ua_empty_aws2	PASSED	 	
+s3tests.functional.test_headers	test_bucket_create_bad_ua_unreadable_aws2	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 400 Bad Request: invalid header value
+s3tests.functional.test_headers	test_bucket_create_bad_ua_none_aws2	PASSED	 	
+s3tests.functional.test_headers	test_bucket_create_bad_date_invalid_aws2	FAILED	 exceptions.AssertionError	 400 != 403
+s3tests.functional.test_headers	test_bucket_create_bad_date_empty_aws2	FAILED	 exceptions.AssertionError	 400 != 403
+s3tests.functional.test_headers	test_bucket_create_bad_date_unreadable_aws2	FAILED	 exceptions.AssertionError	 400 != 403
+s3tests.functional.test_headers	test_bucket_create_bad_date_none_aws2	FAILED	 exceptions.AssertionError	 400 != 403
+s3tests.functional.test_headers	test_bucket_create_bad_date_before_today_aws2	PASSED	 	
+s3tests.functional.test_headers	test_bucket_create_bad_date_after_today_aws2	PASSED	 	
+s3tests.functional.test_headers	test_bucket_create_bad_date_before_epoch_aws2	FAILED	 exceptions.AssertionError	 u'RequestTimeTooSkewed' != 'AccessDenied'
+s3tests.functional.test_headers	test_object_create_bad_md5_invalid_garbage_aws4	PASSED	 	
+s3tests.functional.test_headers	test_object_create_bad_contentlength_mismatch_below_aws4	PASSED	 	
+s3tests.functional.test_headers	test_object_create_bad_authorization_incorrect_aws4	PASSED	 	
+s3tests.functional.test_headers	test_object_create_bad_authorization_invalid_aws4	PASSED	 	
+s3tests.functional.test_headers	test_object_create_bad_ua_empty_aws4	PASSED	 	
+s3tests.functional.test_headers	test_object_create_bad_ua_unreadable_aws4	PASSED	 	
+s3tests.functional.test_headers	test_object_create_bad_ua_none_aws4	PASSED	 	
+s3tests.functional.test_headers	test_object_create_bad_date_invalid_aws4	PASSED	 	
+s3tests.functional.test_headers	test_object_create_bad_amz_date_invalid_aws4	PASSED	 	
+s3tests.functional.test_headers	test_object_create_bad_date_empty_aws4	PASSED	 	
+s3tests.functional.test_headers	test_object_create_bad_amz_date_empty_aws4	PASSED	 	
+s3tests.functional.test_headers	test_object_create_bad_date_unreadable_aws4	PASSED	 	
+s3tests.functional.test_headers	test_object_create_bad_amz_date_unreadable_aws4	PASSED	 	
+s3tests.functional.test_headers	test_object_create_bad_date_none_aws4	PASSED	 	
+s3tests.functional.test_headers	test_object_create_bad_amz_date_none_aws4	PASSED	 	
+s3tests.functional.test_headers	test_object_create_bad_date_before_today_aws4	PASSED	 	
+s3tests.functional.test_headers	test_object_create_bad_amz_date_before_today_aws4	PASSED	 	
+s3tests.functional.test_headers	test_object_create_bad_date_after_today_aws4	PASSED	 	
+s3tests.functional.test_headers	test_object_create_bad_amz_date_after_today_aws4	PASSED	 	
+s3tests.functional.test_headers	test_object_create_bad_date_before_epoch_aws4	PASSED	 	
+s3tests.functional.test_headers	test_object_create_bad_amz_date_before_epoch_aws4	PASSED	 	
+s3tests.functional.test_headers	test_object_create_bad_date_after_end_aws4	PASSED	 	
+s3tests.functional.test_headers	test_object_create_bad_amz_date_after_end_aws4	PASSED	 	
+s3tests.functional.test_headers	test_object_create_missing_signed_custom_header_aws4	PASSED	 	
+s3tests.functional.test_headers	test_object_create_missing_signed_header_aws4	PASSED	 	
+s3tests.functional.test_headers	test_bucket_create_bad_authorization_invalid_aws4	PASSED	 	
+s3tests.functional.test_headers	test_bucket_create_bad_ua_empty_aws4	PASSED	 	
+s3tests.functional.test_headers	test_bucket_create_bad_ua_unreadable_aws4	PASSED	 	
+s3tests.functional.test_headers	test_bucket_create_bad_ua_none_aws4	PASSED	 	
+s3tests.functional.test_headers	test_bucket_create_bad_date_invalid_aws4	PASSED	 	
+s3tests.functional.test_headers	test_bucket_create_bad_amz_date_invalid_aws4	PASSED	 	
+s3tests.functional.test_headers	test_bucket_create_bad_date_empty_aws4	PASSED	 	
+s3tests.functional.test_headers	test_bucket_create_bad_amz_date_empty_aws4	PASSED	 	
+s3tests.functional.test_headers	test_bucket_create_bad_date_unreadable_aws4	PASSED	 	
+s3tests.functional.test_headers	test_bucket_create_bad_amz_date_unreadable_aws4	PASSED	 	
+s3tests.functional.test_headers	test_bucket_create_bad_date_none_aws4	PASSED	 	
+s3tests.functional.test_headers	test_bucket_create_bad_amz_date_none_aws4	PASSED	 	
+s3tests.functional.test_headers	test_bucket_create_bad_date_before_today_aws4	PASSED	 	
+s3tests.functional.test_headers	test_bucket_create_bad_amz_date_before_today_aws4	PASSED	 	
+s3tests.functional.test_headers	test_bucket_create_bad_date_after_today_aws4	PASSED	 	
+s3tests.functional.test_headers	test_bucket_create_bad_amz_date_after_today_aws4	PASSED	 	
+s3tests.functional.test_headers	test_bucket_create_bad_date_before_epoch_aws4	PASSED	 	
+s3tests.functional.test_headers	test_bucket_create_bad_amz_date_before_epoch_aws4	PASSED	 	
+s3tests.functional.test_s3	test_bucket_list_empty	PASSED	 	
+s3tests.functional.test_s3	test_bucket_list_distinct	PASSED	 	
+s3tests.functional.test_s3	test_bucket_list_many	PASSED	 	
+s3tests.functional.test_s3	test_bucket_list_delimiter_basic	PASSED	 	
+s3tests.functional.test_s3	test_bucket_list_delimiter_prefix	PASSED	 	
+s3tests.functional.test_s3	test_bucket_list_delimiter_prefix_ends_with_delimiter	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3	test_bucket_list_delimiter_alt	PASSED	 	
+s3tests.functional.test_s3	test_bucket_list_delimiter_prefix_underscore	PASSED	 	
+s3tests.functional.test_s3	test_bucket_list_delimiter_percentage	PASSED	 	
+s3tests.functional.test_s3	test_bucket_list_delimiter_whitespace	PASSED	 	
+s3tests.functional.test_s3	test_bucket_list_delimiter_dot	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3	test_bucket_list_delimiter_unreadable	PASSED	 	
+s3tests.functional.test_s3	test_bucket_list_delimiter_empty	PASSED	 	
+s3tests.functional.test_s3	test_bucket_list_delimiter_none	PASSED	 	
+s3tests.functional.test_s3	test_bucket_list_delimiter_not_exist	PASSED	 	
+s3tests.functional.test_s3	test_bucket_list_prefix_basic	PASSED	 	
+s3tests.functional.test_s3	test_bucket_list_prefix_alt	PASSED	 	
+s3tests.functional.test_s3	test_bucket_list_prefix_empty	PASSED	 	
+s3tests.functional.test_s3	test_bucket_list_prefix_none	PASSED	 	
+s3tests.functional.test_s3	test_bucket_list_prefix_not_exist	PASSED	 	
+s3tests.functional.test_s3	test_bucket_list_prefix_unreadable	PASSED	 	
+s3tests.functional.test_s3	test_bucket_list_prefix_delimiter_basic	PASSED	 	
+s3tests.functional.test_s3	test_bucket_list_prefix_delimiter_alt	PASSED	 	
+s3tests.functional.test_s3	test_bucket_list_prefix_delimiter_prefix_not_exist	PASSED	 	
+s3tests.functional.test_s3	test_bucket_list_prefix_delimiter_delimiter_not_exist	PASSED	 	
+s3tests.functional.test_s3	test_bucket_list_prefix_delimiter_prefix_delimiter_not_exist	PASSED	 	
+s3tests.functional.test_s3	test_bucket_list_maxkeys_one	PASSED	 	
+s3tests.functional.test_s3	test_bucket_list_maxkeys_zero	PASSED	 	
+s3tests.functional.test_s3	test_bucket_list_maxkeys_none	PASSED	 	
+s3tests.functional.test_s3	test_bucket_list_maxkeys_invalid	PASSED	 	
+s3tests.functional.test_s3	test_bucket_list_maxkeys_unreadable	PASSED	 	
+s3tests.functional.test_s3	test_bucket_list_marker_none	PASSED	 	
+s3tests.functional.test_s3	test_bucket_list_marker_empty	PASSED	 	
+s3tests.functional.test_s3	test_bucket_list_marker_unreadable	PASSED	 	
+s3tests.functional.test_s3	test_bucket_list_marker_not_in_list	PASSED	 	
+s3tests.functional.test_s3	test_bucket_list_marker_after_list	PASSED	 	
+s3tests.functional.test_s3	test_bucket_list_marker_before_list	PASSED	 	
+s3tests.functional.test_s3	test_bucket_list_return_data	FAILED	 exceptions.AssertionError	 u'02d6176db174dc93cb1b899f7c6078f08654445fe8cf1b6ce98d8855f66bdbf4' != ''
+s3tests.functional.test_s3	test_bucket_list_return_data_versioning	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_bucket_list_marker_versioning	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_bucket_list_object_time	PASSED	 	
+s3tests.functional.test_s3	test_bucket_list_objects_anonymous	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_bucket_list_objects_anonymous_fail	PASSED	 	
+s3tests.functional.test_s3	test_bucket_notexist	PASSED	 	
+s3tests.functional.test_s3	test_bucket_delete_notexist	PASSED	 	
+s3tests.functional.test_s3	test_bucket_delete_nonempty	PASSED	 	
+s3tests.functional.test_s3	test_bucket_concurrent_set_canned_acl	FAILED	 exceptions.AssertionError	 False != True
+s3tests.functional.test_s3	test_object_write_to_nonexist_bucket	PASSED	 	
+s3tests.functional.test_s3	test_bucket_create_delete	PASSED	 	
+s3tests.functional.test_s3	test_object_read_notexist	PASSED	 	
+s3tests.functional.test_s3	test_object_requestid_on_error	PASSED	 	
+s3tests.functional.test_s3	test_object_requestid_matchs_header_on_error	PASSED	 	
+s3tests.functional.test_s3	test_object_create_unreadable	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3	test_multi_object_delete	PASSED	 	
+s3tests.functional.test_s3	test_object_head_zero_bytes	PASSED	 	
+s3tests.functional.test_s3	test_object_write_check_etag	PASSED	 	
+s3tests.functional.test_s3	test_object_write_cache_control	PASSED	 	
+s3tests.functional.test_s3	test_object_write_expires	PASSED	 	
+s3tests.functional.test_s3	test_object_write_read_update_read_delete	PASSED	 	
+s3tests.functional.test_s3	test_object_set_get_metadata_none_to_good	PASSED	 	
+s3tests.functional.test_s3	test_object_set_get_metadata_none_to_empty	PASSED	 	
+s3tests.functional.test_s3	test_object_set_get_metadata_overwrite_to_good	PASSED	 	
+s3tests.functional.test_s3	test_object_set_get_metadata_overwrite_to_empty	PASSED	 	
+s3tests.functional.test_s3	test_object_set_get_unicode_metadata	PASSED	 	
+s3tests.functional.test_s3	test_object_set_get_non_utf8_metadata	ERROR	 socket.error	 [Errno 104] Connection reset by peer
+s3tests.functional.test_s3	test_object_set_get_metadata_empty_to_unreadable_prefix	ERROR	 socket.error	 [Errno 104] Connection reset by peer
+s3tests.functional.test_s3	test_object_set_get_metadata_empty_to_unreadable_suffix	ERROR	 socket.error	 [Errno 104] Connection reset by peer
+s3tests.functional.test_s3	test_object_set_get_metadata_empty_to_unreadable_infix	ERROR	 socket.error	 [Errno 104] Connection reset by peer
+s3tests.functional.test_s3	test_object_set_get_metadata_overwrite_to_unreadable_prefix	ERROR	 socket.error	 [Errno 104] Connection reset by peer
+s3tests.functional.test_s3	test_object_set_get_metadata_overwrite_to_unreadable_suffix	ERROR	 socket.error	 [Errno 104] Connection reset by peer
+s3tests.functional.test_s3	test_object_set_get_metadata_overwrite_to_unreadable_infix	ERROR	 socket.error	 [Errno 104] Connection reset by peer
+s3tests.functional.test_s3	test_object_metadata_replaced_on_put	PASSED	 	
+s3tests.functional.test_s3	test_object_write_file	PASSED	 	
+s3tests.functional.test_s3	test_post_object_anonymous_request	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_post_object_authenticated_request	FAILED	 exceptions.AssertionError	 400 != 204
+s3tests.functional.test_s3	test_post_object_authenticated_no_content_type	FAILED	 exceptions.AssertionError	 400 != 204
+s3tests.functional.test_s3	test_post_object_authenticated_request_bad_access_key	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_post_object_set_success_code	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_post_object_set_invalid_success_code	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_post_object_upload_larger_than_chunk	FAILED	 exceptions.AssertionError	 400 != 204
+s3tests.functional.test_s3	test_post_object_set_key_from_filename	FAILED	 exceptions.AssertionError	 400 != 204
+s3tests.functional.test_s3	test_post_object_ignored_header	FAILED	 exceptions.AssertionError	 400 != 204
+s3tests.functional.test_s3	test_post_object_case_insensitive_condition_fields	FAILED	 exceptions.AssertionError	 400 != 204
+s3tests.functional.test_s3	test_post_object_escaped_field_values	FAILED	 exceptions.AssertionError	 400 != 204
+s3tests.functional.test_s3	test_post_object_success_redirect_action	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_post_object_invalid_signature	FAILED	 exceptions.AssertionError	 400 != 403
+s3tests.functional.test_s3	test_post_object_invalid_access_key	FAILED	 exceptions.AssertionError	 400 != 403
+s3tests.functional.test_s3	test_post_object_invalid_date_format	PASSED	 	
+s3tests.functional.test_s3	test_post_object_no_key_specified	PASSED	 	
+s3tests.functional.test_s3	test_post_object_missing_signature	PASSED	 	
+s3tests.functional.test_s3	test_post_object_missing_policy_condition	FAILED	 exceptions.AssertionError	 400 != 403
+s3tests.functional.test_s3	test_post_object_user_specified_header	FAILED	 exceptions.AssertionError	 400 != 204
+s3tests.functional.test_s3	test_post_object_request_missing_policy_specified_field	FAILED	 exceptions.AssertionError	 400 != 403
+s3tests.functional.test_s3	test_post_object_condition_is_case_sensitive	PASSED	 	
+s3tests.functional.test_s3	test_post_object_expires_is_case_sensitive	PASSED	 	
+s3tests.functional.test_s3	test_post_object_expired_policy	FAILED	 exceptions.AssertionError	 400 != 403
+s3tests.functional.test_s3	test_post_object_invalid_request_field_value	FAILED	 exceptions.AssertionError	 400 != 403
+s3tests.functional.test_s3	test_post_object_missing_expires_condition	PASSED	 	
+s3tests.functional.test_s3	test_post_object_missing_conditions_list	PASSED	 	
+s3tests.functional.test_s3	test_post_object_upload_size_limit_exceeded	PASSED	 	
+s3tests.functional.test_s3	test_post_object_missing_content_length_argument	PASSED	 	
+s3tests.functional.test_s3	test_post_object_invalid_content_length_argument	PASSED	 	
+s3tests.functional.test_s3	test_post_object_upload_size_below_minimum	PASSED	 	
+s3tests.functional.test_s3	test_post_object_empty_conditions	PASSED	 	
+s3tests.functional.test_s3	test_get_object_ifmatch_good	PASSED	 	
+s3tests.functional.test_s3	test_get_object_ifmatch_failed	PASSED	 	
+s3tests.functional.test_s3	test_get_object_ifnonematch_good	PASSED	 	
+s3tests.functional.test_s3	test_get_object_ifnonematch_failed	PASSED	 	
+s3tests.functional.test_s3	test_get_object_ifmodifiedsince_good	PASSED	 	
+s3tests.functional.test_s3	test_get_object_ifmodifiedsince_failed	PASSED	 	
+s3tests.functional.test_s3	test_get_object_ifunmodifiedsince_good	PASSED	 	
+s3tests.functional.test_s3	test_get_object_ifunmodifiedsince_failed	PASSED	 	
+s3tests.functional.test_s3	test_put_object_ifmatch_good	PASSED	 	
+s3tests.functional.test_s3	test_put_object_ifmatch_failed	FAILED	 exceptions.AssertionError	 S3ResponseError not raised
+s3tests.functional.test_s3	test_put_object_ifmatch_overwrite_existed_good	PASSED	 	
+s3tests.functional.test_s3	test_put_object_ifmatch_nonexisted_failed	FAILED	 exceptions.AssertionError	 S3ResponseError not raised
+s3tests.functional.test_s3	test_put_object_ifnonmatch_good	PASSED	 	
+s3tests.functional.test_s3	test_put_object_ifnonmatch_failed	FAILED	 exceptions.AssertionError	 S3ResponseError not raised
+s3tests.functional.test_s3	test_put_object_ifnonmatch_nonexisted_good	PASSED	 	
+s3tests.functional.test_s3	test_put_object_ifnonmatch_overwrite_existed_failed	FAILED	 exceptions.AssertionError	 S3ResponseError not raised
+s3tests.functional.test_s3	test_object_raw_get	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_object_raw_get_bucket_gone	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_object_delete_key_bucket_gone	PASSED	 	
+s3tests.functional.test_s3	test_object_raw_get_object_gone	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_bucket_head	PASSED	 	
+s3tests.functional.test_s3	test_bucket_head_extended	PASSED	 	
+s3tests.functional.test_s3	test_object_raw_get_bucket_acl	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_object_raw_get_object_acl	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_object_raw_authenticated	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_object_raw_response_headers	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_object_raw_authenticated_bucket_acl	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_object_raw_authenticated_object_acl	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_object_raw_authenticated_bucket_gone	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_object_raw_authenticated_object_gone	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_object_raw_get_x_amz_expires_not_expired	PASSED	 	
+s3tests.functional.test_s3	test_object_raw_get_x_amz_expires_out_range_zero	PASSED	 	
+s3tests.functional.test_s3	test_object_raw_get_x_amz_expires_out_max_range	PASSED	 	
+s3tests.functional.test_s3	test_object_raw_get_x_amz_expires_out_positive_range	PASSED	 	
+s3tests.functional.test_s3	test_object_raw_put	PASSED	 	
+s3tests.functional.test_s3	test_object_raw_put_write_access	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_object_raw_put_authenticated	PASSED	 	
+s3tests.functional.test_s3	test_object_raw_put_authenticated_expired	PASSED	 	
+s3tests.functional.test_s3	test_bucket_create_naming_bad_starts_nonalpha	PASSED	 	
+s3tests.functional.test_s3	test_bucket_create_naming_bad_short_empty	FAILED	 exceptions.AssertionError	 None != 'MethodNotAllowed'
+s3tests.functional.test_s3	test_bucket_create_naming_bad_short_one	PASSED	 	
+s3tests.functional.test_s3	test_bucket_create_naming_bad_short_two	PASSED	 	
+s3tests.functional.test_s3	test_bucket_create_naming_bad_long	PASSED	 	
+s3tests.functional.test_s3	test_bucket_create_naming_good_long_250	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3	test_bucket_create_naming_good_long_251	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3	test_bucket_create_naming_good_long_252	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3	test_bucket_create_naming_good_long_253	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3	test_bucket_create_naming_good_long_254	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3	test_bucket_create_naming_good_long_255	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3	test_bucket_list_long_name	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3	test_bucket_create_naming_bad_ip	PASSED	 	
+s3tests.functional.test_s3	test_bucket_create_naming_bad_punctuation	PASSED	 	
+s3tests.functional.test_s3	test_bucket_create_naming_dns_underscore	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3	test_bucket_create_naming_dns_long	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3	test_bucket_create_naming_dns_dash_at_end	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3	test_bucket_create_naming_dns_dot_dot	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3	test_bucket_create_naming_dns_dot_dash	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3	test_bucket_create_naming_dns_dash_dot	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3	test_bucket_create_exists	PASSED	 	
+s3tests.functional.test_s3	test_bucket_configure_recreate	PASSED	 	
+s3tests.functional.test_s3	test_bucket_get_location	PASSED	 	
+s3tests.functional.test_s3	test_bucket_create_exists_nonowner	FAILED	 exceptions.AssertionError	 u'BucketAlreadyOwnedByYou' != 'BucketAlreadyExists'
+s3tests.functional.test_s3	test_bucket_delete_nonowner	FAILED	 exceptions.AssertionError	 S3ResponseError not raised
+s3tests.functional.test_s3	test_bucket_acl_default	FAILED	 exceptions.AssertionError	 '' != 'root'
+s3tests.functional.test_s3	test_bucket_acl_canned_during_create	FAILED	 exceptions.AssertionError	 1 != 2
+s3tests.functional.test_s3	test_bucket_acl_canned	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_bucket_acl_canned_publicreadwrite	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_bucket_acl_canned_authenticatedread	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_object_acl_default	FAILED	 exceptions.AssertionError	 None != ''
+s3tests.functional.test_s3	test_object_acl_canned_during_create	FAILED	 exceptions.AssertionError	 1 != 2
+s3tests.functional.test_s3	test_object_acl_canned	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_object_acl_canned_publicreadwrite	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_object_acl_canned_authenticatedread	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_object_acl_canned_bucketownerread	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_object_acl_canned_bucketownerfullcontrol	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_object_acl_full_control_verify_owner	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_object_acl_full_control_verify_attributes	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_bucket_acl_canned_private_to_private	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_bucket_acl_xml_fullcontrol	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_bucket_acl_xml_write	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_bucket_acl_xml_writeacp	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_bucket_acl_xml_read	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_bucket_acl_xml_readacp	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_object_acl_xml	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_object_acl_xml_write	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_object_acl_xml_writeacp	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_object_acl_xml_read	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_object_acl_xml_readacp	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_bucket_acl_grant_userid_fullcontrol	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_bucket_acl_grant_userid_read	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_bucket_acl_grant_userid_readacp	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_bucket_acl_grant_userid_write	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_bucket_acl_grant_userid_writeacp	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_bucket_acl_grant_nonexist_user	FAILED	 exceptions.AssertionError	 501 != 400
+s3tests.functional.test_s3	test_bucket_acl_no_grants	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_object_header_acl_grants	FAILED	 exceptions.AssertionError	 1 != 5
+s3tests.functional.test_s3	test_bucket_header_acl_grants	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3	test_bucket_acl_grant_email	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_bucket_acl_grant_email_notexist	FAILED	 exceptions.AssertionError	 501 != 400
+s3tests.functional.test_s3	test_bucket_acl_revoke_all	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_logging_toggle	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_access_bucket_private_object_private	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_access_bucket_private_object_publicread	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_access_bucket_private_object_publicreadwrite	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_access_bucket_publicread_object_private	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_access_bucket_publicread_object_publicread	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_access_bucket_publicread_object_publicreadwrite	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_access_bucket_publicreadwrite_object_private	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_access_bucket_publicreadwrite_object_publicread	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_access_bucket_publicreadwrite_object_publicreadwrite	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_object_set_valid_acl	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_object_giveaway	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_buckets_create_then_list	PASSED	 	
+s3tests.functional.test_s3	test_list_buckets_anonymous	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 403 Forbidden
+s3tests.functional.test_s3	test_list_buckets_invalid_auth	PASSED	 	
+s3tests.functional.test_s3	test_list_buckets_bad_auth	PASSED	 	
+s3tests.functional.test_s3	test_bucket_create_naming_good_starts_alpha	PASSED	 	
+s3tests.functional.test_s3	test_bucket_create_naming_good_starts_digit	PASSED	 	
+s3tests.functional.test_s3	test_bucket_create_naming_good_contains_period	PASSED	 	
+s3tests.functional.test_s3	test_bucket_create_naming_good_contains_hyphen	PASSED	 	
+s3tests.functional.test_s3	test_bucket_recreate_not_overriding	ERROR	 boto.exception.S3CreateError	 S3CreateError: 409 Conflict
+s3tests.functional.test_s3	test_bucket_create_special_key_names	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_bucket_list_special_prefix	PASSED	 	
+s3tests.functional.test_s3	test_object_copy_zero_size	PASSED	 	
+s3tests.functional.test_s3	test_object_copy_same_bucket	PASSED	 	
+s3tests.functional.test_s3	test_object_copy_verify_contenttype	PASSED	 	
+s3tests.functional.test_s3	test_object_copy_to_itself	PASSED	 	
+s3tests.functional.test_s3	test_object_copy_to_itself_with_metadata	PASSED	 	
+s3tests.functional.test_s3	test_object_copy_diff_bucket	PASSED	 	
+s3tests.functional.test_s3	test_object_copy_not_owned_bucket	PASSED	 	
+s3tests.functional.test_s3	test_object_copy_not_owned_object_bucket	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_object_copy_canned_acl	FAILED	 exceptions.AssertionError	 403 != 200
+s3tests.functional.test_s3	test_object_copy_retaining_metadata	PASSED	 	
+s3tests.functional.test_s3	test_object_copy_replacing_metadata	PASSED	 	
+s3tests.functional.test_s3	test_object_copy_bucket_not_found	PASSED	 	
+s3tests.functional.test_s3	test_object_copy_key_not_found	PASSED	 	
+s3tests.functional.test_s3	test_object_copy_versioned_bucket	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_object_copy_versioning_multipart_upload	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_multipart_upload_empty	PASSED	 	
+s3tests.functional.test_s3	test_multipart_upload_small	PASSED	 	
+s3tests.functional.test_s3	test_multipart_copy_small	PASSED	 	
+s3tests.functional.test_s3	test_multipart_copy_invalid_range	PASSED	 	
+s3tests.functional.test_s3	test_multipart_copy_without_range	PASSED	 	
+s3tests.functional.test_s3	test_multipart_upload	PASSED	 	
+s3tests.functional.test_s3	test_multipart_copy_special_names	PASSED	 	
+s3tests.functional.test_s3	test_multipart_copy_versioned	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_multipart_upload_resend_part	PASSED	 	
+s3tests.functional.test_s3	test_multipart_upload_multiple_sizes	PASSED	 	
+s3tests.functional.test_s3	test_multipart_copy_multiple_sizes	PASSED	 	
+s3tests.functional.test_s3	test_multipart_upload_size_too_small	PASSED	 	
+s3tests.functional.test_s3	test_multipart_upload_contents	PASSED	 	
+s3tests.functional.test_s3	test_multipart_upload_overwrite_existing_object	PASSED	 	
+s3tests.functional.test_s3	test_abort_multipart_upload	PASSED	 	
+s3tests.functional.test_s3	test_abort_multipart_upload_not_found	PASSED	 	
+s3tests.functional.test_s3	test_list_multipart_upload	FAILED	 exceptions.AssertionError	 1 != 0
+s3tests.functional.test_s3	test_multipart_upload_missing_part	PASSED	 	
+s3tests.functional.test_s3	test_multipart_upload_incorrect_etag	PASSED	 	
+s3tests.functional.test_s3	test_object_storage_class	PASSED	 	
+s3tests.functional.test_s3	test_object_storage_class_multipart	PASSED	 	
+s3tests.functional.test_s3	test_object_modify_storage_class	PASSED	 	
+s3tests.functional.test_s3	test_object_modify_storage_class_multipart	PASSED	 	
+s3tests.functional.test_s3	test_object_storage_class_copy	PASSED	 	
+s3tests.functional.test_s3	test_object_storage_class_copy_multipart	PASSED	 	
+s3tests.functional.test_s3	test_100_continue	ERROR	 exceptions.UnboundLocalError	 local variable 'data' referenced before assignment
+s3tests.functional.test_s3	test_bucket_acls_changes_persistent	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_stress_bucket_acls_changes	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_set_cors	FAILED	 exceptions.AssertionError	 403 != 404
+s3tests.functional.test_s3	test_cors_origin_response	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_cors_origin_wildcard	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_cors_header_option	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_atomic_read_1mb	PASSED	 	
+s3tests.functional.test_s3	test_atomic_read_4mb	PASSED	 	
+s3tests.functional.test_s3	test_atomic_read_8mb	ERROR	 socket.timeout	 timed out
+s3tests.functional.test_s3	test_atomic_write_1mb	PASSED	 	
+s3tests.functional.test_s3	test_atomic_write_4mb	ERROR	 socket.timeout	 timed out
+s3tests.functional.test_s3	test_atomic_write_8mb	ERROR	 socket.timeout	 timed out
+s3tests.functional.test_s3	test_atomic_dual_write_1mb	PASSED	 	
+s3tests.functional.test_s3	test_atomic_dual_write_4mb	ERROR	 socket.timeout	 timed out
+s3tests.functional.test_s3	test_atomic_dual_write_8mb	ERROR	 socket.timeout	 timed out
+s3tests.functional.test_s3	test_atomic_conditional_write_1mb	PASSED	 	
+s3tests.functional.test_s3	test_atomic_dual_conditional_write_1mb	FAILED	 exceptions.AssertionError	 S3ResponseError not raised
+s3tests.functional.test_s3	test_atomic_write_bucket_gone	PASSED	 	
+s3tests.functional.test_s3	test_atomic_multipart_upload_write	PASSED	 	
+s3tests.functional.test_s3	test_multipart_resend_first_finishes_last	PASSED	 	
+s3tests.functional.test_s3	test_ranged_request_response_code	PASSED	 	
+s3tests.functional.test_s3	test_ranged_big_request_response_code	PASSED	 	
+s3tests.functional.test_s3	test_ranged_request_skip_leading_bytes_response_code	PASSED	 	
+s3tests.functional.test_s3	test_ranged_request_return_trailing_bytes_response_code	PASSED	 	
+s3tests.functional.test_s3	test_ranged_request_invalid_range	PASSED	 	
+s3tests.functional.test_s3	test_ranged_request_empty_object	PASSED	 	
+s3tests.functional.test_s3	check_can_test_multiregion	PASSED	 	
+s3tests.functional.test_s3	test_region_bucket_create_secondary_access_remove_master	PASSED	 	
+s3tests.functional.test_s3	test_region_bucket_create_master_access_remove_secondary	PASSED	 	
+s3tests.functional.test_s3	test_region_copy_object	PASSED	 	
+s3tests.functional.test_s3	test_versioning_bucket_create_suspend	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_versioning_obj_create_read_remove	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_versioning_obj_create_read_remove_head	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_versioning_obj_plain_null_version_removal	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_versioning_obj_plain_null_version_overwrite	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_versioning_obj_plain_null_version_overwrite_suspended	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_versioning_obj_suspend_versions	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_versioning_obj_suspend_versions_simple	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_versioning_obj_create_versions_remove_all	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_versioning_obj_create_versions_remove_special_names	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_versioning_obj_create_overwrite_multipart	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_versioning_obj_list_marker	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_versioning_copy_obj_version	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_versioning_multi_object_delete	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_versioning_multi_object_delete_with_marker	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_versioning_multi_object_delete_with_marker_create	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_versioned_object_acl	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_versioned_object_acl_no_version_specified	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_versioned_concurrent_object_create_concurrent_remove	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_versioned_concurrent_object_create_and_remove	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_lifecycle_set	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3	test_lifecycle_get	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3	test_lifecycle_get_no_id	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3	test_lifecycle_expiration	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3	test_lifecycle_transition	PASSED	 	
+s3tests.functional.test_s3	test_lifecycle_transition_single_rule_multi_trans	PASSED	 	
+s3tests.functional.test_s3	test_lifecycle_id_too_long	FAILED	 exceptions.AssertionError	 u'MalformedXML' != 'InvalidArgument'
+s3tests.functional.test_s3	test_lifecycle_same_id	FAILED	 exceptions.AssertionError	 u'MalformedXML' != 'InvalidArgument'
+s3tests.functional.test_s3	test_lifecycle_invalid_status	PASSED	 	
+s3tests.functional.test_s3	test_lifecycle_rules_conflicted	FAILED	 exceptions.AssertionError	 u'MalformedXML' != 'InvalidRequest'
+s3tests.functional.test_s3	test_lifecycle_set_date	FAILED	 exceptions.AssertionError	 400 != 200
+s3tests.functional.test_s3	test_lifecycle_set_invalid_date	PASSED	 	
+s3tests.functional.test_s3	test_lifecycle_expiration_date	FAILED	 exceptions.AssertionError	 2 != 1
+s3tests.functional.test_s3	test_lifecycle_set_noncurrent	FAILED	 exceptions.AssertionError	 400 != 200
+s3tests.functional.test_s3	test_lifecycle_noncur_expiration	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_lifecycle_set_noncurrent_transition	PASSED	 	
+s3tests.functional.test_s3	test_lifecycle_noncur_transition	PASSED	 	
+s3tests.functional.test_s3	test_lifecycle_set_deletemarker	FAILED	 exceptions.AssertionError	 204 != 200
+s3tests.functional.test_s3	test_lifecycle_set_filter	FAILED	 exceptions.AssertionError	 204 != 200
+s3tests.functional.test_s3	test_lifecycle_set_empty_filter	FAILED	 exceptions.AssertionError	 204 != 200
+s3tests.functional.test_s3	test_lifecycle_deletemarker_expiration	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_lifecycle_set_multipart	FAILED	 exceptions.AssertionError	 400 != 200
+s3tests.functional.test_s3	test_lifecycle_multipart_expiration	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3	test_encrypted_transfer_1b	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3	test_encrypted_transfer_1kb	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3	test_encrypted_transfer_1MB	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3	test_encrypted_transfer_13b	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3	test_encryption_sse_c_method_head	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3	test_encryption_sse_c_present	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3	test_encryption_sse_c_other_key	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3	test_encryption_sse_c_invalid_md5	PASSED	 	
+s3tests.functional.test_s3	test_encryption_sse_c_no_md5	PASSED	 	
+s3tests.functional.test_s3	test_encryption_sse_c_no_key	PASSED	 	
+s3tests.functional.test_s3	test_encryption_key_no_sse_c	PASSED	 	
+s3tests.functional.test_s3	test_encryption_sse_c_multipart_upload	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3	test_encryption_sse_c_multipart_invalid_chunks_1	PASSED	 	
+s3tests.functional.test_s3	test_encryption_sse_c_multipart_invalid_chunks_2	PASSED	 	
+s3tests.functional.test_s3	test_encryption_sse_c_multipart_bad_download	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3	test_encryption_sse_c_post_object_authenticated_request	FAILED	 exceptions.AssertionError	 400 != 204
+s3tests.functional.test_s3	test_sse_kms_transfer_1b	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_sse_kms_transfer_1kb	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_sse_kms_transfer_1MB	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_sse_kms_transfer_13b	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_sse_kms_method_head	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_sse_kms_present	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_sse_kms_no_key	PASSED	 	
+s3tests.functional.test_s3	test_sse_kms_not_declared	FAILED	 exceptions.AssertionError	 501 != 400
+s3tests.functional.test_s3	test_sse_kms_multipart_upload	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_sse_kms_multipart_invalid_chunks_1	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_sse_kms_multipart_invalid_chunks_2	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_sse_kms_post_object_authenticated_request	FAILED	 exceptions.AssertionError	 400 != 204
+s3tests.functional.test_s3	test_sse_kms_barb_transfer_1b	PASSED	 	
+s3tests.functional.test_s3	test_sse_kms_barb_transfer_1kb	PASSED	 	
+s3tests.functional.test_s3	test_sse_kms_barb_transfer_1MB	PASSED	 	
+s3tests.functional.test_s3	test_sse_kms_barb_transfer_13b	PASSED	 	
+s3tests.functional.test_s3	test_sse_kms_read_declare	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_bucket_policy	PASSED	 	
+s3tests.functional.test_s3	test_bucket_policy_acl	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_bucket_policy_different_tenant	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3	test_bucket_policy_another_bucket	PASSED	 	
+s3tests.functional.test_s3	test_bucket_policy_set_condition_operator_end_with_IfExists	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3	test_bucket_policy_list_bucket_with_prefix	FAILED	 exceptions.AssertionError	 200 != 403
+s3tests.functional.test_s3	test_bucket_policy_list_bucket_with_maxkeys	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3	test_bucket_policy_list_bucket_with_delimiter	FAILED	 exceptions.AssertionError	 200 != 403
+s3tests.functional.test_s3	test_bucket_policy_list_put_bucket_acl_canned_acl	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3	test_bucket_policy_list_put_bucket_acl_grants	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3	test_get_obj_tagging	FAILED	 exceptions.AssertionError	 501 != 200
+s3tests.functional.test_s3	test_get_obj_head_tagging	FAILED	 exceptions.AssertionError	 501 != 200
+s3tests.functional.test_s3	test_put_max_tags	FAILED	 exceptions.AssertionError	 501 != 200
+s3tests.functional.test_s3	test_put_excess_tags	FAILED	 exceptions.AssertionError	 501 != 400
+s3tests.functional.test_s3	test_put_max_kvsize_tags	FAILED	 exceptions.AssertionError	 501 != 200
+s3tests.functional.test_s3	test_put_excess_key_tags	FAILED	 exceptions.AssertionError	 501 != 400
+s3tests.functional.test_s3	test_put_excess_val_tags	FAILED	 exceptions.AssertionError	 501 != 400
+s3tests.functional.test_s3	test_put_modify_tags	FAILED	 exceptions.AssertionError	 501 != 200
+s3tests.functional.test_s3	test_put_delete_tags	FAILED	 exceptions.AssertionError	 501 != 200
+s3tests.functional.test_s3	test_post_object_tags_anonymous_request	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_post_object_tags_authenticated_request	FAILED	 exceptions.AssertionError	 400 != 204
+s3tests.functional.test_s3	test_put_obj_with_tags	FAILED	 exceptions.AssertionError	 403 != 200
+s3tests.functional.test_s3	test_get_tags_acl_public	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3	test_put_tags_acl_public	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3	test_delete_tags_obj_public	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3	test_versioning_bucket_atomic_upload_return_version_id	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_versioning_bucket_multipart_upload_return_version_id	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 501 Not Implemented
+s3tests.functional.test_s3	test_bucket_policy_get_obj_existing_tag	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3	test_bucket_policy_get_obj_tagging_existing_tag	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3	test_bucket_policy_put_obj_tagging_existing_tag	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3	test_bucket_policy_put_obj_copy_source	FAILED	 exceptions.AssertionError	 S3ResponseError not raised
+s3tests.functional.test_s3	test_bucket_policy_put_obj_copy_source_meta	FAILED	 exceptions.AssertionError	 S3ResponseError not raised
+s3tests.functional.test_s3	test_bucket_policy_put_obj_acl	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3	test_bucket_policy_put_obj_grant	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3	test_bucket_policy_put_obj_enc	FAILED	 exceptions.AssertionError	 S3ResponseError not raised
+s3tests.functional.test_s3	test_bucket_policy_put_obj_request_obj_tag	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3	test_bucket_policy_get_obj_acl_existing_tag	ERROR	 boto.exception.S3ResponseError	 S3ResponseError: 400 Bad Request
+s3tests.functional.test_s3_website	check_can_test_website	ERROR	 xml.sax._exceptions.SAXParseException	 <unknown>:1:0: no element found
+s3tests.functional.test_s3_website	test_website_nonexistant_bucket_s3	ERROR	 xml.sax._exceptions.SAXParseException	 <unknown>:1:0: no element found
+s3tests.functional.test_s3_website	test_website_nonexistant_bucket_rgw	ERROR	 xml.sax._exceptions.SAXParseException	 <unknown>:1:0: no element found
+s3tests.functional.test_s3_website	test_website_public_bucket_list_public_index	ERROR	 xml.sax._exceptions.SAXParseException	 <unknown>:1:0: no element found
+s3tests.functional.test_s3_website	test_website_private_bucket_list_public_index	ERROR	 xml.sax._exceptions.SAXParseException	 <unknown>:1:0: no element found
+s3tests.functional.test_s3_website	test_website_private_bucket_list_empty	ERROR	 xml.sax._exceptions.SAXParseException	 <unknown>:1:0: no element found
+s3tests.functional.test_s3_website	test_website_public_bucket_list_empty	ERROR	 xml.sax._exceptions.SAXParseException	 <unknown>:1:0: no element found
+s3tests.functional.test_s3_website	test_website_public_bucket_list_private_index	ERROR	 xml.sax._exceptions.SAXParseException	 <unknown>:1:0: no element found
+s3tests.functional.test_s3_website	test_website_private_bucket_list_private_index	ERROR	 xml.sax._exceptions.SAXParseException	 <unknown>:1:0: no element found
+s3tests.functional.test_s3_website	test_website_private_bucket_list_empty_missingerrordoc	ERROR	 xml.sax._exceptions.SAXParseException	 <unknown>:1:0: no element found
+s3tests.functional.test_s3_website	test_website_public_bucket_list_empty_missingerrordoc	ERROR	 xml.sax._exceptions.SAXParseException	 <unknown>:1:0: no element found
+s3tests.functional.test_s3_website	test_website_public_bucket_list_private_index_missingerrordoc	ERROR	 xml.sax._exceptions.SAXParseException	 <unknown>:1:0: no element found
+s3tests.functional.test_s3_website	test_website_private_bucket_list_private_index_missingerrordoc	ERROR	 xml.sax._exceptions.SAXParseException	 <unknown>:1:0: no element found
+s3tests.functional.test_s3_website	test_website_private_bucket_list_empty_blockederrordoc	ERROR	 xml.sax._exceptions.SAXParseException	 <unknown>:1:0: no element found
+s3tests.functional.test_s3_website	test_website_public_bucket_list_empty_blockederrordoc	ERROR	 xml.sax._exceptions.SAXParseException	 <unknown>:1:0: no element found
+s3tests.functional.test_s3_website	test_website_public_bucket_list_private_index_blockederrordoc	ERROR	 xml.sax._exceptions.SAXParseException	 <unknown>:1:0: no element found
+s3tests.functional.test_s3_website	test_website_private_bucket_list_private_index_blockederrordoc	ERROR	 xml.sax._exceptions.SAXParseException	 <unknown>:1:0: no element found
+s3tests.functional.test_s3_website	test_website_private_bucket_list_empty_gooderrordoc	ERROR	 xml.sax._exceptions.SAXParseException	 <unknown>:1:0: no element found
+s3tests.functional.test_s3_website	test_website_public_bucket_list_empty_gooderrordoc	ERROR	 xml.sax._exceptions.SAXParseException	 <unknown>:1:0: no element found
+s3tests.functional.test_s3_website	test_website_public_bucket_list_private_index_gooderrordoc	ERROR	 xml.sax._exceptions.SAXParseException	 <unknown>:1:0: no element found
+s3tests.functional.test_s3_website	test_website_private_bucket_list_private_index_gooderrordoc	ERROR	 xml.sax._exceptions.SAXParseException	 <unknown>:1:0: no element found
+s3tests.functional.test_s3_website	test_website_bucket_private_redirectall_base	ERROR	 xml.sax._exceptions.SAXParseException	 <unknown>:1:0: no element found
+s3tests.functional.test_s3_website	test_website_bucket_private_redirectall_path	ERROR	 xml.sax._exceptions.SAXParseException	 <unknown>:1:0: no element found
+s3tests.functional.test_s3_website	test_website_bucket_private_redirectall_path_upgrade	ERROR	 xml.sax._exceptions.SAXParseException	 <unknown>:1:0: no element found
+s3tests.functional.test_s3_website	test_website_xredirect_nonwebsite	ERROR	 xml.sax._exceptions.SAXParseException	 <unknown>:1:0: no element found
+s3tests.functional.test_s3_website	test_website_xredirect_public_relative	ERROR	 xml.sax._exceptions.SAXParseException	 <unknown>:1:0: no element found
+s3tests.functional.test_s3_website	test_website_xredirect_public_abs	ERROR	 xml.sax._exceptions.SAXParseException	 <unknown>:1:0: no element found
+s3tests.functional.test_s3_website	test_website_xredirect_private_relative	ERROR	 xml.sax._exceptions.SAXParseException	 <unknown>:1:0: no element found
+s3tests.functional.test_s3_website	test_website_xredirect_private_abs	ERROR	 xml.sax._exceptions.SAXParseException	 <unknown>:1:0: no element found
+<nose.suite	ContextSuite context=test_routing_generator>:setup	ERROR	 xml.sax._exceptions.SAXParseException	 <unknown>:1:0: no element found
+s3tests.functional.test_utils	test_generate	PASSED	 	
+s3tests.fuzz.test.test_fuzzer	test_load_graph	PASSED	 	
+s3tests.fuzz.test.test_fuzzer	test_descend_leaf_node	PASSED	 	
+s3tests.fuzz.test.test_fuzzer	test_descend_node	PASSED	 	
+s3tests.fuzz.test.test_fuzzer	test_descend_bad_node	PASSED	 	
+s3tests.fuzz.test.test_fuzzer	test_descend_nonexistant_child	PASSED	 	
+s3tests.fuzz.test.test_fuzzer	test_expand_random_printable	PASSED	 	
+s3tests.fuzz.test.test_fuzzer	test_expand_random_binary	PASSED	 	
+s3tests.fuzz.test.test_fuzzer	test_expand_random_printable_no_whitespace	PASSED	 	
+s3tests.fuzz.test.test_fuzzer	test_expand_random_binary_no_whitespace	PASSED	 	
+s3tests.fuzz.test.test_fuzzer	test_expand_random_no_args	PASSED	 	
+s3tests.fuzz.test.test_fuzzer	test_expand_random_no_charset	PASSED	 	
+s3tests.fuzz.test.test_fuzzer	test_expand_random_exact_length	PASSED	 	
+s3tests.fuzz.test.test_fuzzer	test_expand_random_bad_charset	PASSED	 	
+s3tests.fuzz.test.test_fuzzer	test_expand_random_missing_length	PASSED	 	
+s3tests.fuzz.test.test_fuzzer	test_assemble_decision	PASSED	 	
+s3tests.fuzz.test.test_fuzzer	test_expand_escape	PASSED	 	
+s3tests.fuzz.test.test_fuzzer	test_expand_indirect	PASSED	 	
+s3tests.fuzz.test.test_fuzzer	test_expand_indirect_double	PASSED	 	
+s3tests.fuzz.test.test_fuzzer	test_expand_recursive	PASSED	 	
+s3tests.fuzz.test.test_fuzzer	test_expand_recursive_mutual	PASSED	 	
+s3tests.fuzz.test.test_fuzzer	test_expand_recursive_not_too_eager	PASSED	 	
+s3tests.fuzz.test.test_fuzzer	test_make_choice_unweighted_with_space	PASSED	 	
+s3tests.fuzz.test.test_fuzzer	test_weighted_choices	PASSED	 	
+s3tests.fuzz.test.test_fuzzer	test_null_choices	PASSED	 	
+s3tests.fuzz.test.test_fuzzer	test_weighted_null_choices	PASSED	 	
+s3tests.fuzz.test.test_fuzzer	test_null_child	PASSED	 	
+s3tests.fuzz.test.test_fuzzer	test_weighted_set	PASSED	 	
+s3tests.fuzz.test.test_fuzzer	test_header_presence	PASSED	 	
+s3tests.fuzz.test.test_fuzzer	test_duplicate_header	PASSED	 	
+s3tests.fuzz.test.test_fuzzer	test_expand_headers	PASSED	 	
+test_realistic.TestFileValidator	test_new_file_is_valid	PASSED	 	
+test_realistic.TestFileValidator	test_new_file_is_valid_on_several_calls	PASSED	 	
+test_realistic.TestFileValidator	test_new_file_is_valid_when_size_is_1	PASSED	 	
+test_realistic.TestFiles	test_random_file_valid	PASSED	 	
+Tests = 581 Errors = 213 Failures = 82 Skip = 65				
